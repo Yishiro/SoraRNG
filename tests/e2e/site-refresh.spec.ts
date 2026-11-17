@@ -68,6 +68,7 @@ for (const width of [1280, 375])
       path: `.local/refreshed-collection-${width}.png`,
       fullPage: true,
     });
+    await page.getByText('Plus de filtres et d’options').click();
     await page
       .getByRole('checkbox', { name: 'Afficher les légendes dans la grille' })
       .check();
@@ -75,6 +76,7 @@ for (const width of [1280, 375])
       6,
     );
     await page.reload();
+    await page.getByText('Plus de filtres et d’options').click();
     await expect(
       page.getByRole('checkbox', {
         name: 'Afficher les légendes dans la grille',

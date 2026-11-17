@@ -39,7 +39,7 @@ export default function Trades({
     const data = await r.json();
     if (!r.ok)
       throw new Error(data.error ?? 'Impossible de charger les échanges');
-    if (version === readVersion.current) setTrades(data);
+    if (version === readVersion.current && Array.isArray(data)) setTrades(data);
   }
   useEffect(() => {
     const refresh = () => {

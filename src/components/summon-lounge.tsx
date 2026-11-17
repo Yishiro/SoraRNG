@@ -55,11 +55,11 @@ export default function SummonLounge({
       <div className="summon-edition-header">
         <div>
           <span className="eyebrow">KINGDOM HEARTS · ÉDITION 01</span>
-          <h2>
+          <h1>
             La prochaine rencontre
             <br />
             se cache ici.
-          </h2>
+          </h1>
           <p>
             Choisissez un sachet. Déchirez le sceau. Découvrez vos cinq cartes,
             une à une.

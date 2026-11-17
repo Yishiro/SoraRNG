@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Clover, Sparkle } from 'lucide-react';
 import type { Player } from '../game/core';
 import { boosts, summonOdds, type BoostKind } from '../game/boosts';
 
@@ -28,13 +29,18 @@ export default function BoostShop({
           {Math.ceil((active.expiresAt - now) / 60000)} min.
         </p>
       )}
-      <div className="action-row">
+      <div className="shop-grid">
         {(['rare', 'holo'] as const).map((kind) => {
           const boost = boosts[kind];
+          const Icon = kind === 'rare' ? Clover : Sparkle;
           return (
-            <div className="panel" key={kind}>
-              <h3>{boost.name}</h3>
-              <p>{boost.description}</p>
+            <div
+              className={`purchase boost-tile${active?.kind === kind ? ' active' : ''}`}
+              key={kind}
+            >
+              <Icon aria-hidden="true" />
+              <strong>{boost.name}</strong>
+              <span>{boost.description}</span>
               <button
                 className="outline"
                 disabled={

@@ -8,7 +8,9 @@ import {
   LayoutGrid,
   BookOpen,
   WandSparkles,
-  ArrowLeftRight,
+  Gavel,
+  Handshake,
+  Map as MapIcon,
   ShoppingBag,
   ScrollText,
   Trophy,
@@ -41,6 +43,7 @@ import ShowcaseEditor from './showcase-editor';
 import Trades from './trades';
 import BoostShop from './boost-shop';
 import { summonOdds } from '../game/boosts';
+import { economy } from '../game/config';
 import AuctionMarket from './auction-market';
 import AuctionListing from './auction-listing';
 import CollectorDialog from './collector-dialog';
@@ -55,6 +58,7 @@ import { getCardLegend } from '../game/card-legends';
 import ListedCards from './listed-cards';
 import NotificationInbox from './notification-inbox';
 import RecentDrops from './recent-drops';
+import { operationLabel, signedMunny } from '../game/operation-labels';
 import SessionKeeper from './session-keeper';
 import {
   restoreAction,
@@ -114,9 +118,9 @@ const nav = [
   ['collection', 'Ma collection', BookOpen],
   ['codex', 'Codex', Compass],
   ['upgrade', 'Progression', WandSparkles],
-  ['trade', 'Marché', ArrowLeftRight],
-  ['exchanges', 'Échanges directs', ArrowLeftRight],
-  ['worlds', 'Carnet des mondes', BookOpen],
+  ['trade', 'Marché', Gavel],
+  ['exchanges', 'Échanges directs', Handshake],
+  ['worlds', 'Carnet des mondes', MapIcon],
   ['shop', 'Boutique', ShoppingBag],
   ['missions', 'Missions', ScrollText],
   ['leaderboards', 'Classements', Trophy],
@@ -155,6 +159,7 @@ export default function Game({ section }: { section: string }) {
   const [favorites, setFavorites] = useState(false);
   const [sort, setSort] = useState('name');
   const [duplicatesOnly, setDuplicatesOnly] = useState(false);
+  const [moreFilters, setMoreFilters] = useState(false);
   const [minLevel, setMinLevel] = useState(1);
   const [minAwakening, setMinAwakening] = useState(0);
   const [groupCharacters, setGroupCharacters] = useState(false);
@@ -630,34 +635,23 @@ export default function Game({ section }: { section: string }) {
           reducedMotion={player?.reducedMotion}
         />
         <main id="main-content" tabIndex={-1}>
-          <div className="page-heading">
-            <div>
-              <div className="eyebrow">
-                COLLECTION /{' '}
-                {section === 'dashboard'
-                  ? 'ACCUEIL'
-                  : (active?.[1] ?? 'ADMINISTRATION')}
+          {!(section === 'dashboard' && player) && section !== 'summon' && (
+            <div className="page-heading">
+              <div>
+                <h1>
+                  {section === 'dashboard'
+                    ? 'Collection Kingdom Hearts'
+                    : (active?.[1] ?? 'Administration')}
+                </h1>
+                <p>
+                  {section === 'dashboard'
+                    ? 'Découvrez les cartes et commencez votre collection avec Discord.'
+                    : (pageDescriptions[section] ??
+                      'Gérez votre aventure dans le royaume.')}
+                </p>
               </div>
-              <h1>
-                {section === 'dashboard' ? (
-                  <>
-                    {player ? 'Votre collection.' : 'Collection Kingdom Hearts'}
-                  </>
-                ) : (
-                  (active?.[1] ?? 'Administration')
-                )}
-              </h1>
-              <p>
-                {section === 'dashboard'
-                  ? player
-                    ? 'Vos cartes, vos découvertes et les prochains boosters.'
-                    : 'Découvrez les cartes et commencez votre collection avec Discord.'
-                  : (pageDescriptions[section] ??
-                    'Gérez votre aventure dans le royaume.')}
-              </p>
             </div>
-            <span className="season">150 CARTES / ÉDITION 01</span>
-          </div>
+          )}
           {pendingAction &&
             pendingAction.playerId === data?.id &&
             !sending &&
@@ -714,8 +708,8 @@ export default function Game({ section }: { section: string }) {
                   aria-label="Votre prochaine aventure"
                 >
                   <div>
-                    <span className="eyebrow">BON RETOUR, {data?.name}</span>
-                    <h2>Prêt pour la prochaine découverte ?</h2>
+                    <span className="eyebrow">Bon retour, {data?.name}</span>
+                    <h1>Prêt pour la prochaine découverte ?</h1>
                     <p>
                       {discovered} modèles découverts sur 150 ·{' '}
                       {player.copies.length} exemplaires dans votre collection.
@@ -964,15 +958,6 @@ export default function Game({ section }: { section: string }) {
           )}
           {(section === 'collection' || section === 'upgrade') && (
             <section className="panel">
-              <div className="collection-toolbar-heading">
-                <div>
-                  <span className="eyebrow">VOTRE COLLECTION</span>
-                  <h2>Chaque rencontre compte.</h2>
-                </div>
-                <span className="collection-total">
-                  {player?.copies.length ?? 0} exemplaires
-                </span>
-              </div>
               {player && (
                 <div
                   className="collection-overview"
@@ -1059,76 +1044,86 @@ export default function Game({ section }: { section: string }) {
                   <option value="rarity">Rareté</option>
                 </select>
               </div>
-              <label className="collection-density">
-                <input
-                  type="checkbox"
-                  checked={collectionDetails}
-                  onChange={(event) => {
-                    setCollectionDetails(event.target.checked);
-                    try {
-                      localStorage.setItem(
-                        'sorarng.collection-details',
-                        String(event.target.checked),
-                      );
-                    } catch {}
-                  }}
-                />{' '}
-                Afficher les légendes dans la grille
-              </label>
-              <div className="advanced-collection-filters">
-                <label>
+              <details
+                className="collection-more"
+                open={moreFilters}
+                onToggle={(event) => setMoreFilters(event.currentTarget.open)}
+              >
+                <summary>Plus de filtres et d’options</summary>
+                <label className="collection-density">
                   <input
                     type="checkbox"
-                    checked={duplicatesOnly}
-                    onChange={(e) => setDuplicatesOnly(e.target.checked)}
+                    checked={collectionDetails}
+                    onChange={(event) => {
+                      setCollectionDetails(event.target.checked);
+                      try {
+                        localStorage.setItem(
+                          'sorarng.collection-details',
+                          String(event.target.checked),
+                        );
+                      } catch {}
+                    }}
                   />{' '}
-                  Doublons uniquement
+                  Afficher les légendes dans la grille
                 </label>
-                <label>
-                  Niveau minimum
-                  <input
-                    type="number"
-                    min="1"
-                    max="70"
-                    value={minLevel}
-                    onChange={(e) =>
-                      setMinLevel(
-                        Math.max(1, Math.min(70, Number(e.target.value) || 1)),
-                      )
-                    }
-                  />
-                </label>
-                <label>
-                  Éveil minimum
-                  <select
-                    value={minAwakening}
-                    onChange={(e) => setMinAwakening(Number(e.target.value))}
-                  >
-                    {[0, 1, 2, 3, 4, 5].map((n) => (
-                      <option key={n} value={n}>
-                        {n === 0 ? 'Tous les éveils' : `Éveil ${n} et plus`}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label>
-                  Affichage
-                  <select
-                    value={groupCharacters ? 'character' : 'grid'}
-                    onChange={(e) =>
-                      setGroupCharacters(e.target.value === 'character')
-                    }
-                  >
-                    <option value="grid">Grille de cartes</option>
-                    <option value="character">Par personnage ou nom</option>
-                  </select>
-                </label>
-              </div>
-              <p className="collection-filter-help">
-                Les doublons sont les modèles possédés plusieurs fois dans
-                l’inventaire disponible, toutes finitions confondues. Les
-                filtres s’appliquent aux exemplaires.
-              </p>
+                <div className="advanced-collection-filters">
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={duplicatesOnly}
+                      onChange={(e) => setDuplicatesOnly(e.target.checked)}
+                    />{' '}
+                    Doublons uniquement
+                  </label>
+                  <label>
+                    Niveau minimum
+                    <input
+                      type="number"
+                      min="1"
+                      max="70"
+                      value={minLevel}
+                      onChange={(e) =>
+                        setMinLevel(
+                          Math.max(
+                            1,
+                            Math.min(70, Number(e.target.value) || 1),
+                          ),
+                        )
+                      }
+                    />
+                  </label>
+                  <label>
+                    Éveil minimum
+                    <select
+                      value={minAwakening}
+                      onChange={(e) => setMinAwakening(Number(e.target.value))}
+                    >
+                      {[0, 1, 2, 3, 4, 5].map((n) => (
+                        <option key={n} value={n}>
+                          {n === 0 ? 'Tous les éveils' : `Éveil ${n} et plus`}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label>
+                    Affichage
+                    <select
+                      value={groupCharacters ? 'character' : 'grid'}
+                      onChange={(e) =>
+                        setGroupCharacters(e.target.value === 'character')
+                      }
+                    >
+                      <option value="grid">Grille de cartes</option>
+                      <option value="character">Par personnage ou nom</option>
+                    </select>
+                  </label>
+                </div>
+                <p className="collection-filter-help">
+                  Les doublons sont les modèles possédés plusieurs fois dans
+                  l’inventaire disponible, toutes finitions confondues. Les
+                  filtres s’appliquent aux exemplaires.
+                </p>
+              </details>
               <div className="collection-results">
                 <p role="status">
                   {filtered.length} modèle{filtered.length > 1 ? 's' : ''} ·{' '}
@@ -1203,24 +1198,30 @@ export default function Game({ section }: { section: string }) {
                 Aucun achat en argent réel. Les objets du catalogue restent des
                 cartes de collection.
               </p>
-              <div className="action-row">
+              <div className="shop-grid">
                 <button
                   className="purchase"
-                  disabled={!player || busy}
+                  disabled={!player || busy || player.munny < economy.summon}
                   onClick={() => void act('shop', { item: 'ticket' })}
                 >
                   <Sparkles />
                   <strong>Ticket d’invocation</strong>
-                  <small>1 000 Munny</small>
+                  <span>Ouvre un booster de cinq cartes.</span>
+                  <small>{economy.summon.toLocaleString('fr-FR')} Munny</small>
                 </button>
                 <button
                   className="purchase"
-                  disabled={!player || busy}
+                  disabled={
+                    !player || busy || player.munny < economy.fragmentPackCost
+                  }
                   onClick={() => void act('shop', { item: 'fragments' })}
                 >
                   <Gem />
-                  <strong>10 fragments</strong>
-                  <small>500 Munny</small>
+                  <strong>{economy.fragmentPack} fragments</strong>
+                  <span>Pour monter le niveau de vos exemplaires.</span>
+                  <small>
+                    {economy.fragmentPackCost.toLocaleString('fr-FR')} Munny
+                  </small>
                 </button>
               </div>
             </section>
@@ -1335,7 +1336,7 @@ export default function Game({ section }: { section: string }) {
               {data.history.length ? (
                 data.history.map((h, i) => (
                   <div key={i}>
-                    <span>{h.kind}</span>
+                    <span>{operationLabel(h.kind)}</span>
                     {h.kind === 'summon' && Array.isArray(h.result?.copies) && (
                       <button
                         className="text-link"
@@ -1351,10 +1352,7 @@ export default function Game({ section }: { section: string }) {
                       </button>
                     )}
                     <time>{new Date(h.createdAt).toLocaleString('fr-FR')}</time>
-                    <strong>
-                      {h.delta > 0 ? '+' : ''}
-                      {h.delta} Munny
-                    </strong>
+                    <strong>{h.delta ? signedMunny(h.delta) : '—'}</strong>
                   </div>
                 ))
               ) : (

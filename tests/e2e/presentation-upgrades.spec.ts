@@ -87,6 +87,7 @@ for (const width of [1280, 375]) {
     await expect(
       page.getByText('Exemplaire accompli', { exact: true }),
     ).toBeVisible();
+    await page.getByText('Plus de filtres et d’options').click();
     await page.getByRole('checkbox', { name: 'Doublons uniquement' }).check();
     await expect(page.locator('.cards-grid .game-card')).toHaveCount(2);
     await page.getByLabel('Niveau minimum', { exact: true }).fill('10');

@@ -9,7 +9,8 @@ export default function Leaderboards() {
     fetch('/api/leaderboards')
       .then(async (r) => {
         if (!r.ok) throw new Error('Classement indisponible');
-        setRows(await r.json());
+        const body = await r.json();
+        setRows(Array.isArray(body) ? body : []);
       })
       .catch((e) => setError(e.message));
   }, []);

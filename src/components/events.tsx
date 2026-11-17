@@ -14,7 +14,7 @@ export default function Events() {
       .then(async (r) => {
         const value = await r.json();
         if (!r.ok) throw new Error(value.error);
-        setEvents(value);
+        setEvents(Array.isArray(value) ? value : []);
         setNow(Date.now());
       })
       .catch((e) => setError(e.message))

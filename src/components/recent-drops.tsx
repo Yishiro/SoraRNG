@@ -39,7 +39,8 @@ export default function RecentDrops({
         });
         if (response.ok) {
           const body = await response.json();
-          if (!controller.signal.aborted) setDrops(body.drops);
+          if (!controller.signal.aborted && Array.isArray(body?.drops))
+            setDrops(body.drops);
         }
       } catch {
         /* Keep the last successful feed during a network interruption. */

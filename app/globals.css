@@ -65,6 +65,10 @@ button svg {
   display: flex;
   flex-direction: column;
   z-index: 30;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff1f transparent;
 }
 .brand {
   display: flex;
@@ -96,7 +100,7 @@ button svg {
   margin-top: 6px;
 }
 .nav-label {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 2px;
   color: #646464;
   margin: 0 14px 16px;
@@ -141,7 +145,7 @@ nav a.active svg {
   padding-top: 30px;
 }
 .world-status {
-  font-size: 10px;
+  font-size: 11px;
   color: #a3a3a3;
   display: flex;
   align-items: center;
@@ -162,7 +166,7 @@ nav a.active svg {
   color: #5f5f5f;
 }
 .sidebar-bottom p {
-  font-size: 9px;
+  font-size: 11px;
   color: #5f5f5f;
   line-height: 1.8;
   margin: 15px 0 0;
@@ -204,7 +208,7 @@ header {
 }
 .currency small {
   color: #7f7f7f;
-  font-size: 10px;
+  font-size: 11px;
 }
 .avatar {
   height: 33px;
@@ -227,13 +231,13 @@ main {
   gap: 18px;
 }
 .eyebrow {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 2.5px;
   color: #b49a6e;
 }
 h1 {
-  font-family: Georgia, serif;
+  font-family: inherit;
   font-weight: normal;
   font-size: 32px;
   letter-spacing: -0.5px;
@@ -251,7 +255,7 @@ em {
   line-height: 1.7;
 }
 .season {
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   color: #9d9d9d;
   display: flex;
@@ -271,7 +275,7 @@ em {
   border: 1px solid #76d7ff12;
   background: #76d7ff05;
   border-radius: 6px;
-  font-size: 10px;
+  font-size: 11px;
   color: #a2a2a2;
   margin-bottom: 20px;
 }
@@ -287,7 +291,7 @@ em {
   background: transparent;
   border: 0;
   color: #bacce3;
-  font-size: 10px;
+  font-size: 12px;
 }
 .hero {
   min-height: 365px;
@@ -319,7 +323,7 @@ em {
   align-items: center;
   gap: 6px;
   letter-spacing: 1.5px;
-  font-size: 8px;
+  font-size: 11px;
   color: #e0c58f;
   border: 1px solid #e6bc6830;
   border-radius: 4px;
@@ -355,7 +359,7 @@ em {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
 }
 .primary:hover {
@@ -366,13 +370,13 @@ em {
   border: 0;
   padding: 0;
   color: #b9b9b9;
-  font-size: 10px;
+  font-size: 12px;
   white-space: nowrap;
 }
 .hero-foot {
   display: flex;
   gap: 19px;
-  font-size: 8px;
+  font-size: 11px;
   color: #8a8a8a;
   margin-top: 26px;
 }
@@ -456,7 +460,7 @@ em {
 .s3 {
   top: 18%;
   left: 19%;
-  font-size: 9px;
+  font-size: 11px;
 }
 .portal-caption {
   position: absolute;
@@ -482,7 +486,7 @@ em {
   align-items: center;
   gap: 8px;
   color: #959595;
-  font-size: 10px;
+  font-size: 11px;
 }
 .stats-grid svg {
   color: #c9ae7d;
@@ -494,13 +498,13 @@ em {
   margin: 17px 0 10px;
 }
 .stats-grid strong small {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: normal;
   color: #7e7e7e;
   margin-left: 7px;
 }
 .stats-grid p {
-  font-size: 9px;
+  font-size: 11px;
   color: #6c6c6c;
   margin: 0;
 }
@@ -533,7 +537,7 @@ em {
   margin-bottom: 22px;
 }
 .panel h2 {
-  font-family: Georgia, serif;
+  font-family: inherit;
   font-size: 21px;
   font-weight: normal;
   margin: 0 0 15px;
@@ -563,7 +567,7 @@ em {
   color: var(--gold);
 }
 .section-title > a {
-  font-size: 9px;
+  font-size: 11px;
   color: #aeaeae;
 }
 .mission-row {
@@ -587,11 +591,11 @@ em {
   margin: 0 0 5px;
 }
 .mission-row p {
-  font-size: 9px;
+  font-size: 11px;
   margin: 0 0 7px;
 }
 .mission-row small {
-  font-size: 9px;
+  font-size: 11px;
   color: #d1b679;
 }
 .mission-row small span {
@@ -623,7 +627,7 @@ em {
   border-radius: 4px;
   color: #d4bf92;
   padding: 9px 14px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .outline:hover {
   background: #c4a36515;
@@ -647,14 +651,14 @@ em {
   margin: 16px 0 12px;
 }
 .codex-panel p {
-  font-size: 10px;
+  font-size: 11px;
   color: #999999;
 }
 .codex-panel > a {
   display: flex;
   gap: 15px;
   align-items: center;
-  font-size: 10px;
+  font-size: 11px;
   color: #d4bf92;
   margin-top: 21px;
 }
@@ -672,7 +676,7 @@ footer {
   padding: 25px 0;
   border-top: 1px solid var(--line);
   color: #666666;
-  font-size: 9px;
+  font-size: 11px;
   gap: 20px;
 }
 footer span {
@@ -681,7 +685,7 @@ footer span {
   gap: 9px;
 }
 footer small {
-  font-size: 9px;
+  font-size: 11px;
   color: #505050;
 }
 footer svg {
@@ -711,22 +715,62 @@ footer i {
   gap: 16px;
   margin: 24px 0;
 }
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
 .purchase {
-  background: #282828;
-  border: 1px solid #76d7ff25;
+  background: #222224;
+  border: 1px solid #ffffff14;
   border-radius: 8px;
-  padding: 25px;
-  min-width: 170px;
+  padding: 22px;
+  min-width: 0;
   display: flex;
-  gap: 14px;
+  gap: 10px;
   flex-direction: column;
+  align-items: flex-start;
   text-align: left;
+  color: var(--text);
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+button.purchase:hover:not(:disabled),
+.boost-tile:hover {
+  border-color: #ffffff2e;
+  background: #262628;
+}
+button.purchase:disabled {
+  opacity: 0.55;
 }
 .purchase svg {
   color: var(--gold);
+  margin-bottom: 4px;
+}
+.purchase strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+.purchase > span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
 }
 .purchase small {
-  color: var(--muted);
+  color: #d1d2d5;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: auto;
+  padding-top: 8px;
+}
+.boost-tile .outline {
+  margin-top: auto;
+  width: 100%;
+}
+.boost-tile.active {
+  border-color: #ffffff4d;
 }
 .warning {
   color: #e6bc68 !important;
@@ -751,7 +795,7 @@ footer i {
   margin: 10px 0;
 }
 .rates small {
-  font-size: 9px;
+  font-size: 11px;
   color: #7f7f7f;
 }
 .filter-row {
@@ -817,7 +861,7 @@ footer i {
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
-  font-size: 9px;
+  font-size: 10px;
   color: #d3bb88;
   letter-spacing: 1px;
 }
@@ -832,7 +876,7 @@ footer i {
   background: radial-gradient(ellipse, #4e76a525, transparent 70%);
 }
 .card-art span {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 2px;
 }
 .card-bottom {
@@ -840,7 +884,7 @@ footer i {
   padding-top: 12px;
 }
 .card-bottom small {
-  font-size: 8px;
+  font-size: 10px;
   color: #969696;
 }
 .card-bottom h3 {
@@ -850,7 +894,7 @@ footer i {
   margin: 8px 0;
 }
 .card-bottom > span {
-  font-size: 9px;
+  font-size: 10px;
   color: #bdaf94;
 }
 .holo:after {
@@ -877,7 +921,7 @@ footer i {
   gap: 15px;
   border-top: 1px solid var(--line);
   padding: 12px 0;
-  font-size: 10px;
+  font-size: 11px;
   color: var(--muted);
 }
 .history time {
@@ -1007,7 +1051,7 @@ footer i {
   }
   .hero-foot {
     gap: 10px;
-    font-size: 7px;
+    font-size: 11px;
   }
   .hero-actions {
     gap: 15px;
@@ -1084,19 +1128,19 @@ footer i {
     padding: 25px 17px 0;
   }
   .eyebrow {
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: 2px;
   }
   h1 {
     font-size: 29px;
   }
   .page-heading p {
-    font-size: 10px;
+    font-size: 11px;
   }
   .connect-banner {
     align-items: flex-start;
     flex-direction: column;
-    font-size: 9px;
+    font-size: 11px;
     padding: 12px;
     gap: 10px;
   }
@@ -1117,7 +1161,7 @@ footer i {
   }
   .hero-copy p {
     max-width: 245px;
-    font-size: 10px;
+    font-size: 11px;
   }
   .hero-actions {
     align-items: flex-start;
@@ -1170,21 +1214,21 @@ footer i {
     padding: 15px 12px;
   }
   .stats-grid > div > span {
-    font-size: 9px;
+    font-size: 11px;
     gap: 6px;
   }
   .stats-grid strong {
     font-size: 24px;
   }
   .stats-grid strong small {
-    font-size: 8px;
+    font-size: 11px;
     margin-left: 4px;
   }
   .stats-grid strong.ready {
     font-size: 12px;
   }
   .stats-grid p {
-    font-size: 8px;
+    font-size: 11px;
   }
   .panel {
     padding: 20px 16px;
@@ -1195,16 +1239,16 @@ footer i {
     gap: 7px;
   }
   .section-title > a {
-    font-size: 8px;
+    font-size: 11px;
   }
   .mission-row {
     gap: 10px;
   }
   .mission-row h3 {
-    font-size: 10px;
+    font-size: 11px;
   }
   .mission-row p {
-    font-size: 9px;
+    font-size: 11px;
   }
   .mission-icon {
     width: 32px;
@@ -1213,10 +1257,10 @@ footer i {
   }
   .outline {
     padding: 9px;
-    font-size: 9px;
+    font-size: 12px;
   }
   .mission-row small {
-    font-size: 8px;
+    font-size: 11px;
   }
   .mission-row small span {
     margin-left: 5px;
@@ -1236,19 +1280,13 @@ footer i {
     flex-direction: column;
     gap: 15px;
     padding: 25px 0;
-    font-size: 8px;
+    font-size: 11px;
   }
   .rates {
     grid-template-columns: repeat(2, 1fr);
   }
   .purchase {
-    min-width: 0;
-    flex: 1 0 42%;
     padding: 18px;
-    font-size: 11px;
-  }
-  .purchase small {
-    font-size: 10px;
   }
   .cards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1268,10 +1306,10 @@ footer i {
     padding: 28px 18px;
   }
   .history time {
-    font-size: 8px;
+    font-size: 11px;
   }
   .history strong {
-    font-size: 8px;
+    font-size: 11px;
     min-width: 65px;
   }
 }
@@ -1341,7 +1379,7 @@ footer i {
     serif;
 }
 .card-back small {
-  font-size: 9px;
+  font-size: 11px;
   color: #999999;
 }
 .reveal-help {
@@ -1448,7 +1486,7 @@ footer i {
   color: #969696;
 }
 .neutral-card-frame .missing-illustration {
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #747474;
 }
@@ -1460,7 +1498,7 @@ footer i {
   border: 1px solid #ffffff15;
   padding: 4px 8px;
   border-radius: 3px;
-  font-size: 8px;
+  font-size: 10px;
   color: #c6c6c6;
 }
 .illustrated-card .card-bottom {
@@ -1559,14 +1597,14 @@ footer i {
   padding: 0 3px 4px;
 }
 .card-actions .copy-details {
-  font-size: 8px;
+  font-size: 10px;
   color: #969696;
 }
 .card-actions:empty {
   display: none;
 }
 .illustrated-card .card-face .card-bottom > span {
-  font-size: 8px;
+  font-size: 10px;
 }
 .illustrated-card .card-face .card-bottom h3 {
   margin: 5px 0;
@@ -1580,17 +1618,17 @@ footer i {
     gap: 9px;
   }
   .illustrated-card .neutral-card-frame > small {
-    font-size: 8px;
+    font-size: 10px;
   }
   .illustrated-card .neutral-card-frame > svg {
     width: 30px;
   }
   .illustrated-card .neutral-card-frame .missing-illustration {
-    font-size: 7px;
+    font-size: 10px;
     letter-spacing: 0.4px;
   }
   .card-actions .outline {
-    font-size: 8px;
+    font-size: 11px;
     padding: 8px 6px;
   }
 }
@@ -1598,7 +1636,7 @@ footer i {
   position: absolute;
   right: 8px;
   top: 30px;
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #c4b88e;
   background: #121212bb;
@@ -1619,7 +1657,7 @@ footer i {
   padding: 18px;
 }
 .codex-totals small {
-  font-size: 10px;
+  font-size: 11px;
   color: #979797;
 }
 .codex-totals strong {
@@ -1657,7 +1695,7 @@ footer i {
   grid-template-columns: 1fr auto;
   gap: 8px;
   margin: 13px 0;
-  font-size: 10px;
+  font-size: 11px;
   color: #a3a3a3;
 }
 .codex-progress strong {
@@ -1691,12 +1729,12 @@ progress::-webkit-progress-value {
 .mission-reset {
   display: block;
   color: #888888;
-  font-size: 9px;
+  font-size: 11px;
   margin-top: 8px;
 }
 .codex-discovery-label {
   display: block;
-  font-size: 9px;
+  font-size: 11px;
   color: #a5a075;
   text-align: center;
   margin-top: 10px;
@@ -1717,7 +1755,7 @@ progress::-webkit-progress-value {
 .unknown-card .card-top {
   position: absolute;
   inset: 15px 12px auto;
-  font-size: 8px;
+  font-size: 10px;
   color: #7c7c7c;
 }
 .unknown-card h3 {
@@ -1732,7 +1770,7 @@ progress::-webkit-progress-value {
   margin: 0;
 }
 .unknown-card small {
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.7;
 }
 .codex-overview .section-title {
@@ -1746,13 +1784,13 @@ progress::-webkit-progress-value {
     padding: 11px 8px;
   }
   .codex-totals small {
-    font-size: 8px;
+    font-size: 11px;
   }
   .codex-totals strong {
     font-size: 25px;
   }
   .codex-totals strong span {
-    font-size: 10px;
+    font-size: 11px;
   }
   .codex-breakdown {
     grid-template-columns: 1fr;
@@ -1763,7 +1801,7 @@ progress::-webkit-progress-value {
   }
   .codex-controls .primary,
   .codex-controls .outline {
-    font-size: 9px;
+    font-size: 12px;
     padding: 9px;
   }
   .unknown-card h3 {
@@ -1892,7 +1930,7 @@ progress::-webkit-progress-value {
   right: 0;
   top: 25px;
   color: #939393;
-  font-size: 10px;
+  font-size: 11px;
 }
 .summon-counter span {
   display: flex;
@@ -1944,7 +1982,7 @@ progress::-webkit-progress-value {
   gap: 9px;
   letter-spacing: 0.8px;
   color: #939393;
-  font-size: 9px;
+  font-size: 11px;
 }
 .pack-halo {
   position: absolute;
@@ -1976,7 +2014,7 @@ progress::-webkit-progress-value {
   left: auto;
   bottom: 18%;
   right: 8%;
-  font-size: 9px;
+  font-size: 11px;
 }
 .pack-pedestal {
   position: absolute;
@@ -2281,12 +2319,12 @@ progress::-webkit-progress-value {
 }
 .pack-mode strong {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
 }
 .pack-mode small {
   display: block;
-  font-size: 8px;
+  font-size: 11px;
   margin-top: 6px;
   color: #989898;
 }
@@ -2318,7 +2356,7 @@ progress::-webkit-progress-value {
 }
 .pack-order-total > span {
   color: #989898;
-  font-size: 9px;
+  font-size: 11px;
   max-width: 140px;
   line-height: 1.6;
 }
@@ -2330,7 +2368,7 @@ progress::-webkit-progress-value {
   white-space: nowrap;
 }
 .pack-order-total small {
-  font: 10px sans-serif;
+  font: 11px sans-serif;
   color: #989898;
 }
 .pack-open-button {
@@ -2346,7 +2384,7 @@ progress::-webkit-progress-value {
   box-shadow: none;
 }
 .pack-availability {
-  font-size: 9px !important;
+  font-size: 11px !important;
   min-height: 32px;
   line-height: 1.8;
   display: flex;
@@ -2362,7 +2400,7 @@ progress::-webkit-progress-value {
   padding-top: 20px;
   margin-top: 22px;
   color: #858585;
-  font-size: 8px;
+  font-size: 11px;
 }
 .pack-order > .text-link {
   display: inline-flex;
@@ -2397,7 +2435,7 @@ progress::-webkit-progress-value {
   gap: 6px;
   align-items: center;
   color: #879d99;
-  font-size: 9px;
+  font-size: 11px;
 }
 .theatre-seal {
   position: relative;
@@ -2446,7 +2484,7 @@ progress::-webkit-progress-value {
   white-space: nowrap;
 }
 .theatre-progress > strong small {
-  font: 10px sans-serif;
+  font: 11px sans-serif;
   color: #8a8a8a;
 }
 .theatre-progress-track {
@@ -2642,7 +2680,7 @@ progress::-webkit-progress-value {
   align-items: center;
   gap: 8px;
   letter-spacing: 1px;
-  font-size: 7px;
+  font-size: 10px;
   color: #bdb89f;
 }
 .flip-card-front {
@@ -2711,7 +2749,7 @@ progress::-webkit-progress-value {
   display: none;
 }
 .flip-card-front .missing-illustration {
-  font-size: 8px;
+  font-size: 10px;
 }
 .flip-card-front .missing-reveal-card {
   height: 100%;
@@ -2728,7 +2766,7 @@ progress::-webkit-progress-value {
   min-height: 52px;
 }
 .theatre-rarity {
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 3px;
   color: var(--reveal-accent);
   text-transform: uppercase;
@@ -2741,7 +2779,7 @@ progress::-webkit-progress-value {
   color: #eae3d4;
 }
 .theatre-card-caption p > span {
-  font: 10px sans-serif;
+  font: 11px sans-serif;
   color: #8f8f8f;
 }
 .reveal-rayfield {
@@ -2818,7 +2856,7 @@ progress::-webkit-progress-value {
   display: flex;
   gap: 7px;
   align-items: center;
-  font-size: 9px;
+  font-size: 11px;
   margin: 0;
   max-width: 350px;
 }
@@ -2882,11 +2920,11 @@ progress::-webkit-progress-value {
     padding: 20px 16px;
   }
   .theatre-heading .eyebrow {
-    font-size: 7px;
+    font-size: 11px;
     letter-spacing: 1px;
   }
   .theatre-saved {
-    font-size: 7px;
+    font-size: 11px;
   }
   .theatre-progress {
     margin-top: 23px;
@@ -2900,7 +2938,7 @@ progress::-webkit-progress-value {
   }
   .theatre-progress > strong small {
     display: block;
-    font-size: 8px;
+    font-size: 11px;
   }
   .card-theatre {
     min-height: 430px;
@@ -2935,7 +2973,7 @@ progress::-webkit-progress-value {
     font-size: 11px;
   }
   .flip-back-prompt {
-    font-size: 6px;
+    font-size: 10px;
   }
   .theatre-card-caption {
     margin-top: 22px;
@@ -2948,7 +2986,7 @@ progress::-webkit-progress-value {
   }
   .theatre-navigation button {
     min-width: 0;
-    font-size: 9px;
+    font-size: 12px;
     padding: 11px;
   }
   .theatre-dots {
@@ -2960,7 +2998,7 @@ progress::-webkit-progress-value {
   }
   .theatre-footer > p {
     text-align: center;
-    font-size: 9px;
+    font-size: 11px;
   }
   .theatre-footer .action-row {
     width: 100%;
@@ -3016,7 +3054,7 @@ progress::-webkit-progress-value {
     font-size: 10px;
   }
   .flip-back-prompt {
-    font-size: 6px;
+    font-size: 10px;
   }
   .theatre-progress {
     margin-top: 17px;
@@ -3045,7 +3083,7 @@ progress::-webkit-progress-value {
   justify-content: center;
   gap: 40px;
   margin: 22px 0 30px;
-  font-size: 9px;
+  font-size: 11px;
   color: #949494;
 }
 .summon-steps b {
@@ -3285,7 +3323,7 @@ progress::-webkit-progress-value {
     gap: 8px;
   }
   .pack-mode strong {
-    font-size: 9px;
+    font-size: 11px;
   }
   .pack-mode-icon svg {
     width: 14px;
@@ -3293,7 +3331,7 @@ progress::-webkit-progress-value {
   .summon-steps {
     justify-content: space-between;
     gap: 12px;
-    font-size: 8px;
+    font-size: 11px;
   }
   .summon-steps span {
     max-width: 90px;
@@ -4210,7 +4248,7 @@ progress::-webkit-progress-value {
     flex: 1;
   }
   .theatre-saved {
-    font-size: 9px;
+    font-size: 11px;
   }
   .atelier-opening .atelier-card {
     --spread: calc((var(--i) - 2) * 24px) !important;
@@ -4420,7 +4458,7 @@ progress::-webkit-progress-value {
 .card-advance-hint {
   display: block;
   color: #a8a8a8;
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 6px;
 }
 /* Navigation and collection comfort. */
@@ -4501,7 +4539,7 @@ progress::-webkit-progress-value {
 }
 .journey-shortcuts small {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.6;
   color: #a2a2a2;
   margin-top: 6px;
@@ -4509,27 +4547,6 @@ progress::-webkit-progress-value {
 .journey-shortcuts > a > svg {
   color: #8f8f8f;
   flex-shrink: 0;
-}
-.collection-toolbar-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 22px;
-}
-.collection-toolbar-heading h2 {
-  margin: 8px 0 0;
-  font-size: 25px;
-  font-family: Georgia, serif;
-}
-.collection-total {
-  border: 1px solid #ffffff15;
-  background: #ffffff04;
-  border-radius: 20px;
-  padding: 8px 12px;
-  font-size: 11px;
-  color: #c5c5c5;
-  white-space: nowrap;
 }
 .collection-search {
   display: flex;
@@ -4597,7 +4614,7 @@ progress::-webkit-progress-value {
   align-items: center;
   gap: 7px;
   min-height: 32px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .empty > .outline {
   margin: 8px;
@@ -4647,7 +4664,7 @@ progress::-webkit-progress-value {
     border: 0;
     color: #999999;
     border-radius: 10px;
-    font-size: 10px;
+    font-size: 12px;
     padding: 5px 2px;
   }
   .mobile-dock > [aria-current='page'] {
@@ -4667,7 +4684,7 @@ progress::-webkit-progress-value {
     line-height: 1.6;
   }
   .connect-banner button {
-    font-size: 11px;
+    font-size: 12px;
     min-height: 35px;
   }
   .hero-copy p {
@@ -4675,7 +4692,7 @@ progress::-webkit-progress-value {
     line-height: 1.8;
   }
   .hero-foot {
-    font-size: 9px;
+    font-size: 11px;
   }
   .stats-grid > div > p {
     font-size: 11px;
@@ -4691,17 +4708,6 @@ progress::-webkit-progress-value {
   }
   .section-title a {
     font-size: 11px;
-  }
-  .collection-toolbar-heading {
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .collection-toolbar-heading h2 {
-    font-size: 22px;
-  }
-  .collection-total {
-    font-size: 10px;
-    padding: 7px 9px;
   }
   .filter-row {
     gap: 10px;
@@ -4793,7 +4799,7 @@ progress::-webkit-progress-value {
 .mission-completion-label {
   display: inline-block;
   color: #e3c78e;
-  font-size: 10px;
+  font-size: 11px;
   margin: 4px 0 3px;
 }
 .mission-completion-label.claimed {
@@ -4816,7 +4822,7 @@ progress::-webkit-progress-value {
 .card-legend-preview > span {
   display: block;
   color: #d1bd89;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 1.4px;
   text-transform: uppercase;
   margin-bottom: 6px;
@@ -5152,7 +5158,10 @@ progress::-webkit-progress-value {
   padding-top: 28px;
 }
 .card-club .nav-label {
-  font: 9px monospace;
+  font:
+    600 11px/1.4 Arial,
+    Helvetica,
+    sans-serif;
   letter-spacing: 1.5px;
 }
 .card-club .sidebar nav a {
@@ -5179,10 +5188,10 @@ progress::-webkit-progress-value {
   box-shadow: none;
 }
 .card-club .world-status {
-  font-size: 10px;
+  font-size: 11px;
 }
 .card-club .sidebar-bottom p {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.8;
 }
 .card-club .main-shell > header {
@@ -5202,7 +5211,10 @@ progress::-webkit-progress-value {
   margin-bottom: 26px;
 }
 .card-club .page-heading .eyebrow {
-  font: 9px monospace;
+  font:
+    600 11px/1.4 Arial,
+    Helvetica,
+    sans-serif;
   letter-spacing: 1px;
   color: #898990;
 }
@@ -5223,7 +5235,10 @@ progress::-webkit-progress-value {
   background: none;
   border-radius: 0;
   padding: 0;
-  font: 9px monospace;
+  font:
+    600 11px/1.4 Arial,
+    Helvetica,
+    sans-serif;
   letter-spacing: 1px;
   color: #8d8d94;
 }
@@ -5238,14 +5253,30 @@ progress::-webkit-progress-value {
 .card-club .connect-banner button {
   color: #d0d0d8;
 }
-.card-club .primary {
-  border-radius: 3px;
+.card-club .primary,
+.card-club .outline {
+  border-radius: 4px;
   box-shadow: none;
   min-height: 44px;
-  font-size: 12px;
+  padding: 0 18px;
+  font-size: 13px;
+  font-weight: 600;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
 }
-.card-club .outline {
-  border-radius: 3px;
+.card-club .primary:active:not(:disabled),
+.card-club .outline:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.card-club .text-link {
+  font-size: 13px;
+}
+.card-club .game-card .outline {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 12px;
 }
 .card-club .hero {
   display: grid;
@@ -5265,7 +5296,10 @@ progress::-webkit-progress-value {
   padding: 32px 35px 30px 0;
 }
 .collection-edition {
-  font: 10px monospace;
+  font:
+    600 11px/1.4 Arial,
+    Helvetica,
+    sans-serif;
   letter-spacing: 1.5px;
   color: #aaaab0;
 }
@@ -5292,7 +5326,10 @@ progress::-webkit-progress-value {
   border-top: 1px solid #ffffff13;
   margin-top: 30px;
   padding-top: 17px;
-  font: 10px monospace;
+  font:
+    600 11px/1.4 Arial,
+    Helvetica,
+    sans-serif;
   gap: 23px;
   color: #8c8c95;
   max-width: none;
@@ -5394,7 +5431,7 @@ progress::-webkit-progress-value {
   font-size: 13px;
 }
 .card-club .journey-shortcuts small {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.6;
   margin-top: 5px;
 }
@@ -5434,10 +5471,10 @@ progress::-webkit-progress-value {
   color: #d5d5de;
 }
 .card-club .stats-grid strong small {
-  font-size: 10px;
+  font-size: 11px;
 }
 .card-club .stats-grid p {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.7;
   color: #82828c;
 }
@@ -5474,7 +5511,7 @@ progress::-webkit-progress-value {
   border-radius: 0;
 }
 .card-club footer {
-  font-size: 10px;
+  font-size: 11px;
 }
 .card-club footer > span:first-child > svg {
   display: none;
@@ -5544,7 +5581,10 @@ progress::-webkit-progress-value {
   color: #96969f;
 }
 .card-club .pack-display-caption {
-  font: 9px monospace;
+  font:
+    600 11px/1.4 Arial,
+    Helvetica,
+    sans-serif;
   letter-spacing: 1px;
   bottom: 24px;
   color: #93939d;
@@ -5564,7 +5604,10 @@ progress::-webkit-progress-value {
   padding: 28px 0 24px 35px;
 }
 .card-club .pack-order-heading .eyebrow {
-  font: 9px monospace;
+  font:
+    600 11px/1.4 Arial,
+    Helvetica,
+    sans-serif;
   letter-spacing: 1px;
   color: #888891;
 }
@@ -5618,7 +5661,10 @@ progress::-webkit-progress-value {
   font-weight: 400;
 }
 .card-club .pack-mode small {
-  font: 9px monospace;
+  font:
+    600 11px/1.4 Arial,
+    Helvetica,
+    sans-serif;
   white-space: normal;
   max-width: 110px;
   text-align: right;
@@ -5632,7 +5678,7 @@ progress::-webkit-progress-value {
   border-bottom: 0;
 }
 .card-club .pack-order-total > span {
-  font-size: 10px;
+  font-size: 11px;
 }
 .card-club .pack-order-total > strong {
   font-family: Arial, sans-serif;
@@ -5650,7 +5696,7 @@ progress::-webkit-progress-value {
   gap: 7px;
 }
 .card-club .pack-promises > span {
-  font-size: 10px;
+  font-size: 11px;
   color: #909099;
 }
 .card-club .rates {
@@ -5844,7 +5890,7 @@ progress::-webkit-progress-value {
     padding: 14px 10px;
   }
   .card-club .pack-mode small {
-    font-size: 10px;
+    font-size: 11px;
   }
   .card-club .summon-counter {
     justify-content: flex-start;
@@ -5865,7 +5911,7 @@ progress::-webkit-progress-value {
   color: #1b1b1f;
 }
 .card-club .pack-mode small {
-  font-size: 10px;
+  font-size: 11px;
 }
 .card-club .feature-in-progress {
   min-height: 320px;
@@ -5953,7 +5999,7 @@ progress::-webkit-progress-value {
   color: #9999a3;
 }
 .finance-panel .section-title > span {
-  font-size: 10px;
+  font-size: 11px;
   color: #888892;
 }
 @media (max-width: 700px) {
@@ -5972,7 +6018,7 @@ progress::-webkit-progress-value {
     gap: 10px;
   }
   .finance-bonuses .outline {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
@@ -5986,7 +6032,7 @@ progress::-webkit-progress-value {
   border-bottom: 1px solid #ffffff18;
   margin-bottom: 24px;
 }
-.card-club .summon-edition-header h2 {
+.card-club .summon-edition-header h1 {
   font-size: clamp(30px, 3.8vw, 49px);
   line-height: 1.12;
   letter-spacing: -1.8px;
@@ -6062,14 +6108,14 @@ progress::-webkit-progress-value {
 .collection-overview {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 24px 0 30px;
+  margin: 0 0 20px;
   border-block: 1px solid #ffffff16;
 }
 .collection-overview > div {
-  padding: 22px 20px;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 4px;
   border-right: 1px solid #ffffff16;
 }
 .collection-overview > div:first-child {
@@ -6083,12 +6129,12 @@ progress::-webkit-progress-value {
   font-size: 11px;
 }
 .collection-overview strong {
-  font-size: 30px;
-  font-weight: 400;
+  font-size: 22px;
+  font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
 .collection-overview small {
-  font-size: 13px;
+  font-size: 12px;
   color: #777780;
 }
 .finance-bank-actions {
@@ -6131,7 +6177,7 @@ progress::-webkit-progress-value {
     gap: 20px;
     padding-bottom: 24px;
   }
-  .card-club .summon-edition-header h2 {
+  .card-club .summon-edition-header h1 {
     letter-spacing: -1px;
   }
   .edition-progress {
@@ -6153,20 +6199,11 @@ progress::-webkit-progress-value {
   .card-club .trial-booster-banner {
     padding: 16px;
   }
-  .collection-overview {
-    grid-template-columns: 1fr 1fr;
-  }
   .collection-overview > div {
-    padding: 18px 14px;
+    padding: 10px 8px;
   }
-  .collection-overview > div:nth-child(2) {
-    border-right: 0;
-  }
-  .collection-overview > div:nth-child(n + 3) {
-    border-top: 1px solid #ffffff16;
-  }
-  .collection-overview > div:nth-child(3) {
-    padding-left: 0;
+  .collection-overview strong {
+    font-size: 18px;
   }
   .bank-amount-field {
     flex: 1 1 100%;
@@ -6326,7 +6363,7 @@ progress::-webkit-progress-value {
   background: #303030;
   border-radius: 4px;
   padding: 2px 6px;
-  font-size: 10px;
+  font-size: 12px;
   color: #c7c7c3;
 }
 .market-toolbar {
@@ -6422,7 +6459,7 @@ progress::-webkit-progress-value {
   align-items: center;
   gap: 6px;
   padding: 14px 15px 0;
-  font-size: 10px;
+  font-size: 11px;
 }
 .lot-status {
   color: #b5b3ac;
@@ -6490,7 +6527,7 @@ progress::-webkit-progress-value {
 .detail-price small {
   display: block;
   color: #99958c;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   margin-bottom: 6px;
 }
@@ -6506,7 +6543,7 @@ progress::-webkit-progress-value {
   color: #a7a095;
 }
 .lot-finish {
-  font-size: 10px;
+  font-size: 11px;
   color: #b9b1a4;
   padding-bottom: 4px;
 }
@@ -6517,7 +6554,7 @@ progress::-webkit-progress-value {
   align-items: center;
   gap: 12px;
   padding: 15px 0;
-  font-size: 10px;
+  font-size: 11px;
 }
 .lot-seller > span {
   min-width: 0;
@@ -6529,7 +6566,7 @@ progress::-webkit-progress-value {
 .lot-seller button {
   flex-shrink: 0;
   color: #ddd6c8;
-  font-size: 11px;
+  font-size: 12px;
 }
 .market-empty {
   display: grid;
@@ -6670,7 +6707,7 @@ progress::-webkit-progress-value {
   gap: 10px;
 }
 .auction-bid-form > small {
-  font-size: 10px;
+  font-size: 11px;
   color: #aaa69d;
 }
 .auction-dialog-actions {
@@ -6697,7 +6734,7 @@ progress::-webkit-progress-value {
   display: block;
   overflow-wrap: anywhere;
   color: #939087;
-  font-size: 9px;
+  font-size: 11px;
 }
 .collection-detail-info .action-row {
   display: grid;
@@ -6706,7 +6743,7 @@ progress::-webkit-progress-value {
   margin-top: 20px;
 }
 .collection-detail-info .action-row button {
-  font-size: 10px;
+  font-size: 12px;
   padding: 10px;
   line-height: 1.5;
 }
@@ -6752,7 +6789,7 @@ progress::-webkit-progress-value {
     gap: 16px;
   }
   .market-tabs button {
-    font-size: 11px;
+    font-size: 12px;
     gap: 5px;
   }
   .market-toolbar {
@@ -6806,7 +6843,7 @@ progress::-webkit-progress-value {
   min-width: 0;
 }
 .sale-averages span {
-  font-size: 10px;
+  font-size: 11px;
   color: #b2ab9c;
 }
 .sale-averages strong {
@@ -6815,7 +6852,7 @@ progress::-webkit-progress-value {
 }
 .sale-averages small,
 .card-sales > p {
-  font-size: 10px;
+  font-size: 11px;
   color: #99958c;
   line-height: 1.6;
 }
@@ -6840,7 +6877,7 @@ progress::-webkit-progress-value {
 .card-sales table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 10px;
+  font-size: 11px;
 }
 .card-sales th,
 .card-sales td {
@@ -6859,7 +6896,7 @@ progress::-webkit-progress-value {
 .card-sales caption {
   text-align: left;
   color: #aaa297;
-  font-size: 9px;
+  font-size: 11px;
   margin-bottom: 6px;
 }
 /* Player guidance, grouped card actions and site inbox */
@@ -6945,7 +6982,7 @@ progress::-webkit-progress-value {
   padding-block: 10px;
 }
 .upcoming-nav a small {
-  font-size: 8px;
+  font-size: 11px;
   margin-left: auto;
   color: #817e75;
 }
@@ -6983,7 +7020,7 @@ progress::-webkit-progress-value {
   border-radius: 6px;
 }
 .copy-action-groups button {
-  font-size: 11px;
+  font-size: 12px;
 }
 .copy-danger summary,
 .copy-danger button {
@@ -7043,14 +7080,14 @@ progress::-webkit-progress-value {
   display: block;
   margin: 10px 0;
   color: #a49b8a;
-  font-size: 10px;
+  font-size: 11px;
 }
 .listed-card > a {
   font-size: 11px;
   width: 100%;
 }
 .listed-badge {
-  font-size: 10px;
+  font-size: 11px;
   border: 1px solid #625641;
   color: #d9c49f;
   padding: 5px 8px;
@@ -7069,7 +7106,7 @@ progress::-webkit-progress-value {
   color: #171717;
   border-radius: 20px;
   padding: 2px 5px;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
 }
 .notification-inbox h2 {
@@ -7094,7 +7131,7 @@ progress::-webkit-progress-value {
   color: #b6ad9b;
 }
 .inbox-toolbar button {
-  font-size: 11px;
+  font-size: 12px;
 }
 .notification-inbox ol {
   list-style: none;
@@ -7124,10 +7161,10 @@ progress::-webkit-progress-value {
 }
 .notification-inbox time {
   color: #958d7d;
-  font-size: 10px;
+  font-size: 11px;
 }
 .notification-inbox li button {
-  font-size: 10px;
+  font-size: 12px;
   align-self: center;
   background: none;
   border: 0;
@@ -7191,11 +7228,11 @@ progress::-webkit-progress-value {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 8px;
-  font-size: 9px;
+  font-size: 11px;
   color: #c7baa0;
 }
 .copy-progress strong {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
 }
 .copy-progress.is-mastered {
@@ -7226,7 +7263,7 @@ progress::-webkit-progress-value {
 .awakening-stars small {
   margin-left: auto;
   color: #a99e89;
-  font-size: 9px;
+  font-size: 11px;
 }
 .advanced-collection-filters {
   display: flex;
@@ -7262,9 +7299,37 @@ progress::-webkit-progress-value {
   font-size: 12px;
   color-scheme: dark;
 }
+.collection-more {
+  margin: 12px 0 4px;
+}
+.collection-more > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: #c9cace;
+  font-size: 13px;
+  cursor: pointer;
+  list-style: none;
+}
+.collection-more > summary::-webkit-details-marker {
+  display: none;
+}
+.collection-more > summary::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.collection-more[open] > summary::before {
+  transform: rotate(45deg);
+}
 .collection-filter-help {
   color: #948d80;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.7;
 }
 .character-groups {
@@ -7281,7 +7346,7 @@ progress::-webkit-progress-value {
   margin: 0 0 18px;
 }
 .character-groups h3 small {
-  font-size: 10px;
+  font-size: 11px;
   color: #a69c88;
   font-weight: 400;
 }
@@ -7311,7 +7376,7 @@ progress::-webkit-progress-value {
   color: #e7d8b5;
 }
 .opening-summary-stats span {
-  font-size: 10px;
+  font-size: 11px;
   color: #b6ac99;
 }
 .opening-summary summary {
@@ -7341,24 +7406,24 @@ progress::-webkit-progress-value {
   font-size: 13px;
 }
 .opening-summary li small {
-  font-size: 10px;
+  font-size: 11px;
   color: #bcb29f;
 }
 .opening-summary li span,
 .opening-summary li a {
-  font-size: 10px;
+  font-size: 11px;
   color: #e0c99c;
 }
 .opening-summary > p {
   color: #aaa08f;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.7;
   margin: 14px 0 0;
 }
 .price-reference {
   border-left: 2px solid #8fa17d;
   padding: 4px 7px;
-  font-size: 10px;
+  font-size: 11px;
 }
 .price-reference.limited {
   border-color: #c09b63;
@@ -7599,7 +7664,7 @@ progress::-webkit-progress-value {
   color: #bbb;
 }
 .drop-finish {
-  font-size: 10px;
+  font-size: 11px;
   color: #d8c89e;
   white-space: nowrap;
 }
@@ -7610,7 +7675,7 @@ progress::-webkit-progress-value {
   display: block;
   color: #a6a6a6;
   margin-top: 4px;
-  font-size: 10px;
+  font-size: 11px;
 }
 .drop-pause {
   flex-shrink: 0;
@@ -7763,9 +7828,11 @@ progress::-webkit-progress-value {
   padding: 12px 0 28px;
   border-bottom: 1px solid #363636;
 }
-.member-home h2 {
-  font-size: clamp(24px, 3vw, 34px);
+.member-home h1 {
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 500;
   line-height: 1.2;
+  letter-spacing: -0.8px;
   margin: 10px 0;
 }
 .member-home p {

@@ -25,7 +25,7 @@ export default function ListedCards({
           })
           .then((body) => {
             if (active) {
-              setRows(body);
+              setRows(Array.isArray(body) ? body : []);
               setError('');
             }
           })

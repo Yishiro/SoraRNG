@@ -1,28 +1,7 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { WalletLogs, WalletAmounts } from '../server/wallet-logs';
-const labels: Record<string, string> = {
-  baseline: 'État initial du journal',
-  'account.create': 'Création du compte',
-  unattributed: 'Modification sans attribution',
-  deposit: 'Dépôt en banque',
-  withdraw: 'Retrait bancaire',
-  bonus: 'Bonus Discord',
-  donate: 'Don',
-  double: 'Double ou rien',
-  roulette: 'Roulette',
-  summon: 'Ouverture de booster',
-  shop: 'Boutique',
-  mission: 'Récompense de quête',
-  upgrade: 'Amélioration',
-  awakening: 'Éveil',
-  'admin.adjust': 'Ajustement staff',
-  'resources.adjust': 'Ajustement staff',
-  'auction.bid': 'Mise / remboursement aux enchères',
-  'auction.settle': 'Fin d’enchère',
-  'auction.create': 'Mise en vente',
-  'challenge.answer': 'Défi remporté',
-};
+import { operationLabel } from '../game/operation-labels';
 const sources: Record<string, string> = {
   all: 'Toutes les origines',
   site: 'Site',
@@ -265,7 +244,7 @@ export default function WalletLogPanel({
                   </small>
                 </span>
                 <span>
-                  {labels[entry.kind] ?? entry.kind}
+                  {operationLabel(entry.kind)}
                   <small>{sources[entry.source] ?? entry.source}</small>
                 </span>
                 <strong
