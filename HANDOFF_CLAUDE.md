@@ -97,8 +97,8 @@ Les intégrations exigent un PostgreSQL de test et les permissions de création 
 - SSH `ubuntu@54.37.13.70`, dossier `/home/ubuntu/sorarng`. L'accès exige une clé autorisée fournie séparément. La clé du poste Windows n'est pas transférée par Git.
 - Secrets conservés sur le VPS dans `.env.production` et `.env.bot` avec permissions privées.
 - Compose web `compose.production.yaml`, Compose bot `compose.bot.production.yaml`. Projet Compose `sorarng`, base PostgreSQL 17 persistante, web derrière Nginx sur `127.0.0.1:3010`.
-- Derniers tags vérifiés le 5 novembre, web et maintenance `20261105-worlds02`, bot `20261105-worlds`. Vérifier les conteneurs et tags actuels avant action.
-- Dernière sauvegarde connue `backups/sorarng-20261105T213012Z.dump`. Créer et valider une nouvelle sauvegarde avec `deploy/backup-vps.sh` avant migration ou opération risquée.
+- Tags déployés le 17 novembre : web et maintenance `20261117-refonte01` (construits sur le VPS dans `releases/refonte01/`), bot inchangé `20261105-worlds`. Retour arrière possible vers `20261105-worlds02`. Vérifier les conteneurs et tags actuels avant action.
+- Sauvegarde automatique chaque jour à 4 h (Paris) par `sorarng-backup.timer`, rétention de deux jours. Lancer `sudo systemctl start sorarng-backup.service` avant une migration ou une opération risquée. Les dumps antérieurs au 17 novembre sont dans `backups/archive-avant-retention/`. Docker exige `sudo` pour l'utilisateur `ubuntu`.
 
 Le `Dockerfile` versionné permet les cibles `tools`, `production` et `discord-bot`. Construire des images portant un nouveau tag, puis mettre à jour uniquement `SORA_IMAGE_TAG` et `SORA_BOT_IMAGE_TAG` dans les fichiers privés existants. Préserver toutes les autres valeurs et garder les anciennes images pour retour arrière. Consulter `DEPLOYMENT.md` et `BOT_SETUP.md` pour les procédures détaillées.
 

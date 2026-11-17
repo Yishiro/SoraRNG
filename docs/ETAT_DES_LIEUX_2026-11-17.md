@@ -39,9 +39,22 @@ Branche de travail `refonte/etat-des-lieux`. Aucune donnée de joueur, règle é
 - `pnpm build` : build de production réussi.
 - Non vérifié : intégrations PostgreSQL (`pnpm test:integration`) et bot Discord.
 
+## Deuxième passe (même jour)
+
+- Sauvegarde quotidienne à 4 h (Paris) par `sorarng-backup.timer`. Rétention de deux jours, toujours au moins les deux derniers dumps. Les 33 dumps antérieurs sont déplacés dans `backups/archive-avant-retention/`.
+- Classement public : les joueurs suspendus en sont exclus.
+- CI GitHub (`.github/workflows/ci.yml`) : contrôles, build, intégrations PostgreSQL et Playwright. Elle ne tournera qu'une fois la branche poussée sur GitHub.
+- 196 règles CSS mortes supprimées (environ 1 000 lignes). Les captures des 28 écrans sont identiques avant et après, au pixel près, hors horodatages et animations.
+- `game.tsx` passe de 1 476 à environ 1 240 lignes. Six sections deviennent des composants.
+- Accueil : les cinq dernières cartes obtenues. Collection mobile : barre de filtres compacte et collée sous l'en-tête.
+- Constantes des boosters gratuits retirées. `minimatch` corrigé par une surcharge pnpm vers 11.0.4.
+- VPS : 22 scripts `update-*.py` et 9 archives `.tar.gz` rangés dans `archive/`, rien n'est supprimé.
+
 ## Points qui restent à décider par le propriétaire
 
 - Rotation des secrets Discord partagés dans un ancien chat.
 - Droits des illustrations encore non vérifiés dans `card-assets.json`.
-- `picomatch` et `minimatch` (outillage ESLint uniquement, pas de code exécuté en production) restent signalés par `pnpm audit` en attendant une mise à jour d'`eslint-config-next`.
-- Déploiement de cette branche sur le VPS : non fait, à demander explicitement.
+- `picomatch` reste signalé par `pnpm audit` : aucune version corrigée n'existe encore. Il ne sert qu'aux outils de développement (Vite, ESLint).
+- Next.js 16.4.6 : à adopter après le 23 novembre, quand elle aura deux semaines. La 16.4.5 couvre déjà les avis connus.
+- Copie externe des sauvegardes : elles restent sur le même VPS.
+- Anciennes images Docker SoraRNG (environ 8 Go) : conservées pour un retour arrière, à supprimer sur demande.
