@@ -4,7 +4,7 @@ export async function GET() {
     return Response.json(
       (
         await pool.query(
-          `SELECT id,name, jsonb_array_length(state->'copies') AS collection, (state->>'summons')::int AS summons FROM "Player" ORDER BY collection DESC, summons DESC, id LIMIT 50`,
+          `SELECT id,name, jsonb_array_length(state->'copies') AS collection, (state->>'summons')::int AS summons FROM "Player" WHERE COALESCE(state#>>'{moderation,suspended}','false')<>'true' ORDER BY collection DESC, summons DESC, id LIMIT 50`,
         )
       ).rows,
     );

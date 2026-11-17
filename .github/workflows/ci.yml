@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'refonte/**']
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Valeurs de test uniquement : aucune n'ouvre d'accès réel.
+  POSTGRES_USER: sora
+  POSTGRES_PASSWORD: sora-ci
+  POSTGRES_DB: sora_ci
+  DATABASE_URL: postgresql://sora:sora-ci@127.0.0.1:5432/sora_ci
+  AUTH_SECRET: ci-secret-de-test-uniquement-0123456789abcdef
+  NEXTAUTH_URL: http://127.0.0.1:3000
+  AUTH_DISCORD_ID: '100000000000000000'
+  AUTH_DISCORD_SECRET: ci-test
+  ADMIN_DISCORD_IDS: ''
+  MODERATOR_DISCORD_IDS: ''
+
+jobs:
+  checks:
+    name: Types, lint, tests unitaires et build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm db:generate
+      - run: pnpm check
+      - run: pnpm build
+
+  integration:
+    name: Intégrations PostgreSQL et navigateur
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: sora
+          POSTGRES_PASSWORD: sora-ci
+          POSTGRES_DB: sora_ci
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U sora -d sora_ci"
+          --health-interval 3s --health-timeout 3s --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # Les scripts d'intégration lisent .env : on y recopie les valeurs de test.
+      - run: env | grep -E '^(POSTGRES_|DATABASE_URL|AUTH_|NEXTAUTH_URL|ADMIN_DISCORD_IDS|MODERATOR_DISCORD_IDS)' > .env
+      - run: pnpm db:generate
+      - run: pnpm db:deploy
+      - run: pnpm catalog:import
+      - run: pnpm test:integration
+      - run: pnpm test:auth
+      - run: pnpm test:admin
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+        env:
+          CI: 'true'
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: test-results/
+          retention-days: 7

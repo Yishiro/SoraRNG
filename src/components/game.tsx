@@ -20,7 +20,6 @@ import {
   Wrench,
   Star,
   X,
-  VolumeX,
   Shield,
   Compass,
   Menu,
@@ -35,7 +34,6 @@ import {
 } from '../game/collection-tools';
 import Reveal from './reveal';
 import SummonLounge from './summon-lounge';
-import CollectionCover from './collection-cover';
 import FinancePanel from './finance-panel';
 import Wishlist from './wishlist';
 import WorldBook from './world-book';
@@ -43,11 +41,9 @@ import ShowcaseEditor from './showcase-editor';
 import Trades from './trades';
 import BoostShop from './boost-shop';
 import { summonOdds } from '../game/boosts';
-import { economy } from '../game/config';
 import AuctionMarket from './auction-market';
 import AuctionListing from './auction-listing';
 import CollectorDialog from './collector-dialog';
-import { bonusNext } from '../game/finance';
 import GameCard from './game-card';
 import Codex from './codex';
 import Missions from './missions';
@@ -58,7 +54,13 @@ import { getCardLegend } from '../game/card-legends';
 import ListedCards from './listed-cards';
 import NotificationInbox from './notification-inbox';
 import RecentDrops from './recent-drops';
-import { operationLabel, signedMunny } from '../game/operation-labels';
+import DashboardWelcome from './dashboard-welcome';
+import DashboardNext from './dashboard-next';
+import RecentCards from './recent-cards';
+import SummonRates from './summon-rates';
+import ShopCounter from './shop-counter';
+import SettingsPanel from './settings-panel';
+import AdventureLog, { type HistoryEntry } from './adventure-log';
 import SessionKeeper from './session-keeper';
 import {
   restoreAction,
@@ -67,7 +69,6 @@ import {
   sameAction,
   type PendingAction,
 } from '../game/reliable-action';
-import PrivacySettings from './privacy-settings';
 import type { MissionStatus } from '../game/missions';
 import { authMessage } from '../game/auth-messages';
 
@@ -134,12 +135,7 @@ type Snapshot = {
   cards: Card[];
   missions?: MissionStatus[];
   staffRole?: 'admin' | 'moderator' | 'player';
-  history: {
-    kind: string;
-    delta: number;
-    createdAt: string;
-    result: { copies?: Copy[] };
-  }[];
+  history: HistoryEntry[];
 };
 export default function Game({ section }: { section: string }) {
   const [data, setData] = useState<Snapshot | null>(null);
@@ -702,76 +698,11 @@ export default function Game({ section }: { section: string }) {
           )}
           {section === 'dashboard' && (
             <>
-              {player ? (
-                <section
-                  className="member-home"
-                  aria-label="Votre prochaine aventure"
-                >
-                  <div>
-                    <span className="eyebrow">Bon retour, {data?.name}</span>
-                    <h1>Prêt pour la prochaine découverte ?</h1>
-                    <p>
-                      {discovered} modèles découverts sur 150 ·{' '}
-                      {player.copies.length} exemplaires dans votre collection.
-                    </p>
-                  </div>
-                  <div className="member-home-actions">
-                    <Link href="/summon" className="primary">
-                      Ouvrir un booster <ChevronRight size={16} />
-                    </Link>
-                    <Link href="/collection" className="outline">
-                      Ma collection
-                    </Link>
-                    <Link href="/missions" className="text-link">
-                      Mes objectifs →
-                    </Link>
-                  </div>
-                </section>
-              ) : (
-                <section className="hero">
-                  <div className="hero-copy">
-                    <span className="collection-edition">
-                      01 / COLLECTION PERMANENTE
-                    </span>
-                    <h2>
-                      Kingdom
-                      <br />
-                      Hearts
-                    </h2>
-                    <p>
-                      150 cartes de personnages, de créatures et d’objets.
-                      Ouvrez des boosters, complétez le Codex et retrouvez vos
-                      doubles.
-                    </p>
-                    <div className="hero-actions">
-                      {player ? (
-                        <Link href="/summon" className="primary">
-                          Ouvrir un booster <ChevronRight size={16} />
-                        </Link>
-                      ) : (
-                        <Link href="/codex" className="primary">
-                          Découvrir les 150 cartes <ChevronRight size={16} />
-                        </Link>
-                      )}
-                      {player ? (
-                        <Link href="/codex" className="text-link">
-                          Voir les 150 cartes ↗
-                        </Link>
-                      ) : (
-                        <a href="#bien-demarrer" className="text-link">
-                          Comment commencer ↓
-                        </a>
-                      )}
-                    </div>
-                    <div className="hero-foot">
-                      <span>150 cartes</span>
-                      <span>6 raretés</span>
-                      <span>5 cartes / booster</span>
-                    </div>
-                  </div>
-                  <CollectionCover />
-                </section>
-              )}
+              <DashboardWelcome
+                player={player}
+                name={data?.name}
+                discovered={discovered}
+              />
               <GettingStarted
                 player={player}
                 now={now}
@@ -781,6 +712,9 @@ export default function Game({ section }: { section: string }) {
                 onClaim={() => void act('daily')}
               />
             </>
+          )}
+          {section === 'dashboard' && player && (
+            <RecentCards player={player} cards={cards} />
           )}
           {section === 'dashboard' && player && (
             <div id="wallet">
@@ -806,107 +740,15 @@ export default function Game({ section }: { section: string }) {
             />
           )}
           {section === 'summon' && (
-            <section className="panel">
-              <h2>Probabilités d’obtention</h2>
-              <p>
-                Les résultats sont enregistrés avant leur révélation. Aucune
-                rareté garantie, quel que soit le nombre de boosters.
-              </p>
-              {cards.length !== 150 && (
-                <p className="warning">
-                  Invocations indisponibles : le catalogue de référence n’a pas
-                  encore été fourni.
-                </p>
-              )}
-              <h3>
-                {openingOdds.active
-                  ? 'Probabilités avec le boost actif'
-                  : 'Probabilités · Standard v2'}
-              </h3>
-              <div className="rates">
-                {rarityNames.map((r, i) => (
-                  <span key={r}>
-                    {r}
-                    <b>
-                      {(openingOdds.rates[i] / 100).toLocaleString('fr-FR')} %
-                    </b>
-                    <small>
-                      {cards.filter((c) => c.rarity === r).length} cartes
-                      éligibles
-                    </small>
-                  </span>
-                ))}
-              </div>
-            </section>
+            <SummonRates cards={cards} odds={openingOdds} />
           )}
           {section === 'dashboard' && player && (
-            <div className="lower-grid">
-              <section className="panel">
-                <div className="section-title">
-                  <h2>
-                    <ScrollText size={19} /> Vos prochaines aventures
-                  </h2>
-                  <Link href="/missions">Toutes les missions →</Link>
-                </div>
-                <div className="mission-row">
-                  <div className="mission-icon">
-                    <Crown />
-                  </div>
-                  <div>
-                    <h3>Bonus quotidien</h3>
-                    <p>Récupérez votre bonus du jour.</p>
-                    <small>
-                      ✦ 5 000 Munny <span>+ 10 fragments</span>
-                    </small>
-                  </div>
-                  <button
-                    className="outline"
-                    disabled={
-                      !player || busy || bonusNext(player, 'daily') > now
-                    }
-                    onClick={() => void act('daily')}
-                  >
-                    Récupérer
-                  </button>
-                </div>
-                <div className="mission-row">
-                  <div className="mission-icon purple">
-                    <Sparkles />
-                  </div>
-                  <div>
-                    <h3>Première invocation</h3>
-                    <p>Effectuez votre première invocation.</p>
-                    <small>
-                      {Math.min(player?.summons ?? 0, 1)} / 1{' '}
-                      <span>+ 500 Munny</span>
-                    </small>
-                  </div>
-                  <Link href="/missions" className="icon-button">
-                    <ChevronRight />
-                  </Link>
-                </div>
-              </section>
-              <section className="panel codex-panel">
-                <span className="eyebrow">LE LIVRE DES MONDES</span>
-                <h2>
-                  Le Codex.
-                  <br />
-                  Votre progression.
-                </h2>
-                <p>
-                  Retrouvez les modèles découverts et les cartes encore à
-                  obtenir.
-                </p>
-                <Link href="/codex">
-                  Ouvrir le Codex <ChevronRight size={15} />
-                </Link>
-                <BookOpen
-                  className="codex-watermark"
-                  size={130}
-                  strokeWidth={0.6}
-                />
-              </section>
-            </div>
+            <DashboardNext
+              player={player}
+              busy={busy}
+              now={now}
+              onDaily={() => void act('daily')}
+            />
           )}
           {section === 'codex' && (
             <>
@@ -1192,39 +1034,11 @@ export default function Game({ section }: { section: string }) {
             </section>
           )}
           {section === 'shop' && (
-            <section className="panel">
-              <h2>Le comptoir des voyageurs</h2>
-              <p>
-                Aucun achat en argent réel. Les objets du catalogue restent des
-                cartes de collection.
-              </p>
-              <div className="shop-grid">
-                <button
-                  className="purchase"
-                  disabled={!player || busy || player.munny < economy.summon}
-                  onClick={() => void act('shop', { item: 'ticket' })}
-                >
-                  <Sparkles />
-                  <strong>Ticket d’invocation</strong>
-                  <span>Ouvre un booster de cinq cartes.</span>
-                  <small>{economy.summon.toLocaleString('fr-FR')} Munny</small>
-                </button>
-                <button
-                  className="purchase"
-                  disabled={
-                    !player || busy || player.munny < economy.fragmentPackCost
-                  }
-                  onClick={() => void act('shop', { item: 'fragments' })}
-                >
-                  <Gem />
-                  <strong>{economy.fragmentPack} fragments</strong>
-                  <span>Pour monter le niveau de vos exemplaires.</span>
-                  <small>
-                    {economy.fragmentPackCost.toLocaleString('fr-FR')} Munny
-                  </small>
-                </button>
-              </div>
-            </section>
+            <ShopCounter
+              player={player}
+              busy={busy}
+              onBuy={(item) => void act('shop', { item })}
+            />
           )}
           {section === 'shop' && (
             <BoostShop
@@ -1246,47 +1060,15 @@ export default function Game({ section }: { section: string }) {
             />
           )}
           {section === 'settings' && (
-            <section className="panel">
-              <h2>Votre façon de voyager</h2>
-              <PrivacySettings
-                player={player}
-                busy={busy}
-                onSaved={() => refresh(true)}
-              />
-              <div className="mission-row">
-                <VolumeX />
-                <div>
-                  <h3>Animation et confort visuel</h3>
-                  <p>
-                    Passez directement aux cartes et retournez-les à votre
-                    rythme. Le réglage système de réduction du mouvement est
-                    aussi respecté.
-                  </p>
-                </div>
-                <button
-                  className="outline"
-                  disabled={!player || busy}
-                  onClick={() =>
-                    void act('settings', {
-                      reducedMotion: !player?.reducedMotion,
-                    })
-                  }
-                >
-                  {player?.reducedMotion
-                    ? 'Animations réduites'
-                    : 'Réduire les animations'}
-                </button>
-              </div>
-              <p>
-                Les bruitages d’ouverture sont facultatifs et coupés par défaut.
-                Activez-les avec le bouton de son dans l’ouverture d’un booster.
-              </p>
-              {data && (
-                <button className="outline" onClick={() => void signOut()}>
-                  Se déconnecter
-                </button>
-              )}
-            </section>
+            <SettingsPanel
+              player={player}
+              busy={busy}
+              signedIn={Boolean(data)}
+              onSaved={() => refresh(true)}
+              onToggleMotion={() =>
+                void act('settings', { reducedMotion: !player?.reducedMotion })
+              }
+            />
           )}
           {section === 'trade' &&
             (player && data ? (
@@ -1331,34 +1113,14 @@ export default function Game({ section }: { section: string }) {
           )}
           {section === 'admin' && <Admin />}
           {data && section === 'dashboard' && (
-            <section className="panel history">
-              <h2>Journal de votre aventure</h2>
-              {data.history.length ? (
-                data.history.map((h, i) => (
-                  <div key={i}>
-                    <span>{operationLabel(h.kind)}</span>
-                    {h.kind === 'summon' && Array.isArray(h.result?.copies) && (
-                      <button
-                        className="text-link"
-                        onClick={() => {
-                          setRevealTone(
-                            h.result.copies!.length > 1 ? 'violet' : 'gold',
-                          );
-                          setDemoReveal(false);
-                          setReveal(h.result.copies!);
-                        }}
-                      >
-                        Revoir les cartes
-                      </button>
-                    )}
-                    <time>{new Date(h.createdAt).toLocaleString('fr-FR')}</time>
-                    <strong>{h.delta ? signedMunny(h.delta) : '—'}</strong>
-                  </div>
-                ))
-              ) : (
-                <p>Vos premières actions apparaîtront ici.</p>
-              )}
-            </section>
+            <AdventureLog
+              history={data.history}
+              onReplay={(copies) => {
+                setRevealTone(copies.length > 1 ? 'violet' : 'gold');
+                setDemoReveal(false);
+                setReveal(copies);
+              }}
+            />
           )}
           <footer>
             <span>

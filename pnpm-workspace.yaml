@@ -7,3 +7,6 @@ allowBuilds:
   esbuild: true
   sharp: true
   unrs-resolver: true
+overrides:
+  # Avis minimatch (déni de service par motifs) : version corrigée publiée depuis plus de deux semaines.
+  'minimatch@>=7.0.0 <11.0.1': 11.0.4

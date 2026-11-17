@@ -37,7 +37,15 @@ Relancer ensuite `docker compose ... up -d` avec les options de configuration ci
 
 ### Sauvegardes et mises à jour
 
-`deploy/backup-vps.sh`, copié sur le VPS, écrit des dumps privés dans `backups/`, vérifie leur structure puis les renomme. Les fichiers incomplets conservent le suffixe `.partial`. Ne pas utiliser `docker compose down -v`, qui supprimerait les volumes de cette installation. Les sauvegardes restent sur le même VPS : une copie externe et une politique de rétention sont encore à configurer.
+`deploy/backup-vps.sh`, copié sur le VPS, écrit des dumps privés dans `backups/`, vérifie leur structure puis les renomme. Les fichiers incomplets conservent le suffixe `.partial`. Ne pas utiliser `docker compose down -v`, qui supprimerait les volumes de cette installation. Depuis le 17 novembre 2026, `deploy/sorarng-backup.timer` lance ce script chaque jour à 4 h (heure de Paris), via `deploy/sorarng-backup.service`. Après validation du nouveau dump, le script supprime les dumps de plus de deux jours (`SORA_BACKUP_KEEP_DAYS`) et garde toujours les deux plus récents, même si des passages ont été manqués. Les 33 dumps antérieurs à cette mise en place ont été déplacés dans `backups/archive-avant-retention/`, que la rotation ne touche pas.
+
+```sh
+systemctl list-timers sorarng-backup.timer
+sudo journalctl -u sorarng-backup.service -n 20
+sudo systemctl start sorarng-backup.service   # sauvegarde immédiate
+```
+
+Installation ou mise à jour : copier `backup-vps.sh` dans `/home/ubuntu/sorarng`, puis les deux unités dans `/etc/systemd/system/`, puis `sudo systemctl daemon-reload && sudo systemctl enable --now sorarng-backup.timer`. Les sauvegardes restent sur le même VPS : une copie externe reste à configurer.
 
 Construire les deux images avec un nouveau tag de version, les transférer et les charger sur le VPS ; modifier ensuite uniquement `SORA_IMAGE_TAG` dans la configuration privée et exécuter `up -d`. Sauvegarder avant toute migration. Un retour arrière applicatif peut reprendre le tag précédent si son schéma reste compatible ; aucune annulation automatique des migrations n’est fournie.
 

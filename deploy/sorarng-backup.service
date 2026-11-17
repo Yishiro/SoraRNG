@@ -1,0 +1,13 @@
+[Unit]
+Description=Sauvegarde quotidienne de la base SoraRNG
+Wants=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/sorarng
+Environment=SORA_BACKUP_KEEP_DAYS=2
+ExecStart=/bin/sh /home/ubuntu/sorarng/backup-vps.sh
+Nice=10
+IOSchedulingClass=idle
