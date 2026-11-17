@@ -1,0 +1,12 @@
+.local
+.env
+.env.*
+!.env.example
+.git
+.next
+node_modules
+src/generated
+*.dump
+test-results
+playwright-report
+docs/assets/collection-*.png

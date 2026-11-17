@@ -1,0 +1,9 @@
+pnpm-lock.yaml
+.next
+node_modules
+src/generated
+playwright-report
+test-results
+next-env.d.ts
+data/kingdom_hearts_catalogue_150.json
+.local/

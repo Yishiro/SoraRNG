@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-30T10:34:55.264Z",
+  "method": "isolated HTTP server + temporary PostgreSQL schema + synthetic callbacks and encrypted test cookies",
+  "realDiscordLoginTested": false,
+  "realDiscordAccountsUsed": 0,
+  "checks": [
+    "synthetic OAuth callback creates one profile per Discord id; reconnect retains state",
+    "CSRF, state, minimal scope, callback URL, cookies, denial and external redirect protections",
+    "removed public preview returns HTTP 410",
+    "HTTP staff access denied for regular players, authorized admin calendar creation, private directory and drafts excluded from public API",
+    "encrypted HTTP sessions, two-player isolation, authenticated summon, concurrent replay, transfer and reconnect persistence (synthetic identities only)",
+    "authenticated free/trial openings rejected without state changes; anonymous summon remains protected",
+    "wishlist persisted through authenticated HTTP and visible on public collector profile; suspended profile returns 404",
+    "suspension enforced against existing HTTP sessions on game, mutations, trades and player directory; restored access after lifting",
+    "authenticated economy HTTP: shared wallet, same-origin rejection, concurrent claim replay, anonymous and suspended access denied",
+    "expired/tampered tokens, unauthenticated mutations and sign-out rejected by actual HTTP handlers"
+  ],
+  "productionPlayersModified": 0,
+  "gameplayRulesModified": false
+}

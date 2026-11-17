@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://www.khwiki.com/api.php?action=query&titles=File%3ASora+KH.png%7CFile%3ARiku+KH.png%7CFile%3AKairi+KH.png%7CFile%3ARoxas+KHII.png%7CFile%3AHayner+KHII.png%7CFile%3APence+KHII.png%7CFile%3AOlette+KHII.png%7CFile%3ADonald+Duck+%28Wizard+outfit%29+KH.png%7CFile%3AGoofy+%28Knight+outfit%29+KH.png%7CFile%3AShadow+KH.png%7CFile%3ASoldier+KH.png%7CFile%3ARed+Nocturne+KH.png%7CFile%3ABlue+Rhapsody+KH.png%7CFile%3AYellow+Opera+KH.png%7CFile%3ADusk+KHII.png&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cextmetadata&rvprop=content&rvslots=main&format=json",
+    "status": 200,
+    "checkedAt": "2026-10-28T21:58:26.483Z"
+  },
+  {
+    "url": "https://www.khwiki.com/api.php?action=query&titles=File%3ASamurai+KHII.png%7CFile%3AMeow+Wow+%28Spirit%29+KH3D.png%7CFile%3AKomory+Bat+%28Spirit%29+KH3D.png%7CFile%3AKairi+KHII.png%7CFile%3ARoxas+KHD.png%7CFile%3AAxel+KHD.png%7CFile%3AXion+KHD.png%7CFile%3AVentus+KHBBS.png%7CFile%3ATerra+KHBBS.png%7CFile%3AAqua+KHBBS.png%7CFile%3ANamin%C3%A9+KHII.png%7CFile%3AMickey+Mouse+KHII.png%7CFile%3ALeon+KHII.png%7CFile%3AYuffie+KHII.png%7CFile%3ACid+KHII.png&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cextmetadata&rvprop=content&rvslots=main&format=json",
+    "status": 200,
+    "checkedAt": "2026-10-28T21:58:26.570Z"
+  },
+  {
+    "url": "https://www.khwiki.com/api.php?action=query&titles=File%3AMerlin+KH.png%7CFile%3AMaleficent+KH.png%7CFile%3APete+KHII.png%7CFile%3ADefender+KH.png%7CFile%3ALarge+Body+KH.png%7CFile%3AWyvern+KH.png%7CFile%3ASorcerer+KHII.png%7CFile%3ABerserker+KHII.png%7CFile%3AMeowjesty+%28Spirit%29+KH3D.png%7CFile%3ATyranto+Rex+%28Nightmare%29+KH3D.png%7CFile%3ASora+KHII.png%7CFile%3ARiku+KHII.png%7CFile%3AKairi+KHIII.png%7CFile%3AAxel+%28Art%29.png%7CFile%3AVanitas+KHBBS.png&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cextmetadata&rvprop=content&rvslots=main&format=json",
+    "status": 200,
+    "checkedAt": "2026-10-28T21:58:26.654Z"
+  },
+  {
+    "url": "https://www.khwiki.com/api.php?action=query&titles=File%3AXigbar+KHII.png%7CFile%3AXaldin+KHII.png%7CFile%3AVexen+%28Art%29.png%7CFile%3ALexaeus+%28Art%29.png%7CFile%3AZexion+%28Art%29.png%7CFile%3ADemyx+KHII.png%7CFile%3ALuxord+KHII.png%7CFile%3AMarluxia+%28Art%29.png%7CFile%3ALarxene+%28Art%29.png%7CFile%3AAnsem+the+Wise+KHII.png%7CFile%3AMaster+Eraqus+KHBBS.png%7CFile%3AChirithy+%28Spirit%29+KHX.png%7CFile%3ASora+%28Valor+Form%29+KHII.png%7CFile%3ASora+%28Wisdom+Form%29+KHII.png%7CFile%3ASora+%28Master+Form%29+KHII.png&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cextmetadata&rvprop=content&rvslots=main&format=json",
+    "status": 200,
+    "checkedAt": "2026-10-28T21:58:26.738Z"
+  },
+  {
+    "url": "https://www.khwiki.com/api.php?action=query&titles=File%3ASora+%28Limit+Form%29+KHIIFM.png%7CFile%3ARiku+KHIII.png%7CFile%3ARoxas+%28Oathkeeper+and+Oblivion%29+KHII.png%7CFile%3AAqua+KH0.2.png%7CFile%3AKeyblade+Armor+%28Terra%29+KHBBS.png%7CFile%3AKeyblade+Armor+%28Ventus%29+KHBBS.png%7CFile%3AXemnas+KHII.png%7CFile%3AAnsem%2C+Seeker+of+Darkness+KH.png%7CFile%3ASa%C3%AFx+KHII.png%7CFile%3ARiku+%28Dark+Mode%29+KH.png%7CFile%3ALea+KHIII.png%7CFile%3AYoung+Xehanort+KH3D.png%7CFile%3ARoxas+KHIII.png%7CFile%3ASora+%28Final+Form%29+KHII.png%7CFile%3ASora+%28Rage+Form%29+KHIII.png&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cextmetadata&rvprop=content&rvslots=main&format=json",
+    "status": 200,
+    "checkedAt": "2026-10-28T21:58:26.838Z"
+  },
+  {
+    "url": "https://www.khwiki.com/api.php?action=query&titles=File%3ASora+%28Double+Form%29+KHIII.png%7CFile%3ARiku+KH3D.png%7CFile%3AAnti-Aqua+KHIII.png%7CFile%3ATerra-Xehanort+KHBBS.png%7CFile%3AMaster+Xehanort+KHIII.png%7CFile%3AVentus-Vanitas+KHBBS.png%7CFile%3AXemnas+%28Final+Form%29+KHII.png%7CFile%3AWorld+of+Chaos+KH.png%7CFile%3AMarluxia+%28Third+Form%29+KHRECOM.png%7CFile%3AYozora+KHIII.png%7CFile%3ASora+%28Ultimate+Form%29+KHIII.png%7CFile%3AYozora+KHIIIRM.png%7CFile%3ASelphie+KH.png%7CFile%3ATidus+KH.png%7CFile%3AWakka+KH.png&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cextmetadata&rvprop=content&rvslots=main&format=json",
+    "status": 200,
+    "checkedAt": "2026-10-28T21:58:26.922Z"
+  },
+  {
+    "url": "https://www.khwiki.com/api.php?action=query&titles=File%3AKairi%27s+Grandma+KH.png%7CFile%3AHuey+KH.png%7CFile%3ADewey+KH.png%7CFile%3ALouie+KH.png%7CFile%3APongo+KH.png%7CFile%3APerdita+KH.png%7CFile%3AMoogle+KH.png%7CFile%3AFlora+KHBBS.png%7CFile%3AFauna+KHBBS.png%7CFile%3AMerryweather+KHBBS.png%7CFile%3AGoofy+CotM+KH3D.png%7CFile%3ADonald+Duck+CotM+KH3D.png%7CFile%3AMickey+Mouse+CotM+KH3D.png%7CFile%3AScrooge+McDuck+KHII.png%7CFile%3AChip+KH.png&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cextmetadata&rvprop=content&rvslots=main&format=json",
+    "status": 200,
+    "checkedAt": "2026-10-28T21:58:27.004Z"
+  },
+  {
+    "url": "https://www.khwiki.com/api.php?action=query&titles=File%3ADale+KH.png%7CFile%3AKairi%27s+Letter+and+Bottle+KHII.png%7CFile%3APotion+KH.png%7CFile%3AEther+KH.png%7CFile%3ASea-Salt+Ice+Cream+%28Render%29+KHII.png%7CFile%3APaopu+Fruit.png%7CFile%3AHi-Potion+KH.png%7CFile%3AMega-Potion+KH.png%7CFile%3AMega-Ether+KH.png%7CFile%3AMythril+Gem+KHII.png%7CFile%3AMythril+Crystal+KHII.png%7CFile%3ASerenity+Crystal+KHII.png%7CFile%3AElixir+KH.png%7CFile%3AMegalixir+KH.png%7CFile%3AOrichalcum%2B+KHII.png&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cextmetadata&rvprop=content&rvslots=main&format=json",
+    "status": 200,
+    "checkedAt": "2026-10-28T21:58:27.088Z"
+  },
+  {
+    "url": "https://www.khwiki.com/api.php?action=query&titles=File%3AWayfinder+KHFM.png%7CFile%3AKingdom+Key+KH.png%7CFile%3AOathkeeper+KHII.png%7CFile%3AOblivion+KHII.png%7CFile%3AWhite+Mushroom+KH.png%7CFile%3ABlack+Fungus+KH.png%7CFile%3ARare+Truffle+KH.png%7CFile%3ASearch+Ghost+KH.png%7CFile%3AGargoyle+KH.png%7CFile%3APot+Spider+KH.png%7CFile%3ABarrel+Spider+KH.png%7CFile%3ANeoshadow+KHFM.png&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cextmetadata&rvprop=content&rvslots=main&format=json",
+    "status": 200,
+    "checkedAt": "2026-10-28T21:58:27.173Z"
+  }
+]

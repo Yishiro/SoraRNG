@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-28T22:19:53.450Z",
+  "localCards": 135,
+  "distinctSources": 134,
+  "distinctOptimizedImages": 134,
+  "duplicateGroups": [
+    [
+      {
+        "id": "KH-068",
+        "name": "Sora",
+        "version": "Forme Souvenance"
+      },
+      {
+        "id": "KH-078",
+        "name": "Sora",
+        "version": "Forme Limite"
+      }
+    ]
+  ],
+  "changedReferences": [
+    "KH-019",
+    "KH-020",
+    "KH-004",
+    "KH-024",
+    "KH-049",
+    "KH-050",
+    "KH-051",
+    "KH-077",
+    "KH-100",
+    "KH-098"
+  ]
+}

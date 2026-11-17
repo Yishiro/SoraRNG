@@ -1,0 +1,1941 @@
+{
+  "status": "active_user_approved",
+  "language": "fr",
+  "word_count": 100,
+  "question_count": 100,
+  "checked_on": "2026-10-30",
+  "notes": [
+    "Sources officielles et communautaires distinguées ; aucune garantie d’infaillibilité.",
+    "Questions et graphies françaises à relire avant activation. Spoilers possibles.",
+    "Nom de source présent ne remplace pas une vérification éditoriale indépendante.",
+    "Les mots peuvent être des noms propres ou expressions ; les masques ambigus devront accepter toutes les solutions valides de la banque."
+  ],
+  "words": [
+    {
+      "id": "KHW-001",
+      "word": "Sora",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Sora",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-002",
+      "word": "Riku",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Riku",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-003",
+      "word": "Kairi",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Kairi",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-004",
+      "word": "Roxas",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Roxas",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-005",
+      "word": "Axel",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Axel",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-006",
+      "word": "Xion",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Xion",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-007",
+      "word": "Naminé",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Namin%C3%A9",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-008",
+      "word": "Aqua",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Aqua",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-009",
+      "word": "Terra",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Terra",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-010",
+      "word": "Ventus",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Ventus",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-011",
+      "word": "Vanitas",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Vanitas",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-012",
+      "word": "Eraqus",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Eraqus",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-013",
+      "word": "Xehanort",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Xehanort",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-014",
+      "word": "Ansem",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Ansem",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-015",
+      "word": "Xemnas",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Xemnas",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-016",
+      "word": "Xigbar",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Xigbar",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-017",
+      "word": "Xaldin",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Xaldin",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-018",
+      "word": "Vexen",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Vexen",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-019",
+      "word": "Lexaeus",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Lexaeus",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-020",
+      "word": "Zexion",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Zexion",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-021",
+      "word": "Saïx",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Sa%C3%AFx",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-022",
+      "word": "Demyx",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Demyx",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-023",
+      "word": "Luxord",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Luxord",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-024",
+      "word": "Marluxia",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Marluxia",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-025",
+      "word": "Larxene",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Larxene",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-026",
+      "word": "Lea",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Lea",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-027",
+      "word": "Isa",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Isa",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-028",
+      "word": "Ienzo",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Ienzo",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-029",
+      "word": "Even",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Even",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-030",
+      "word": "Aeleus",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Aeleus",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-031",
+      "word": "Dilan",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Dilan",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-032",
+      "word": "Braig",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Braig",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-033",
+      "word": "Lauriam",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Lauriam",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-034",
+      "word": "Elrena",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Elrena",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-035",
+      "word": "Hayner",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Hayner",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-036",
+      "word": "Pence",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Pence",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-037",
+      "word": "Olette",
+      "category": "Personnages originaux",
+      "source_url": "https://www.khwiki.com/Olette",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-038",
+      "word": "Mickey",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Mickey_Mouse",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-039",
+      "word": "Donald",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Donald_Duck",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-040",
+      "word": "Dingo",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Goofy",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-041",
+      "word": "Minnie",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Minnie_Mouse",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-042",
+      "word": "Pluto",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Pluto",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-043",
+      "word": "Maléfique",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Maleficent",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-044",
+      "word": "Pat Hibulaire",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Pete",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-045",
+      "word": "Yen Sid",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Yen_Sid",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-046",
+      "word": "Jiminy",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Jiminy_Cricket",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-047",
+      "word": "Aladdin",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Aladdin",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-048",
+      "word": "Jasmine",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Jasmine",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-049",
+      "word": "Jafar",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Jafar",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-050",
+      "word": "Simba",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Simba",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-051",
+      "word": "Mulan",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Mulan",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-052",
+      "word": "Mushu",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Mushu",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-053",
+      "word": "Hercule",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Hercules",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-054",
+      "word": "Hadès",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Hades",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-055",
+      "word": "Auron",
+      "category": "Invité Final Fantasy",
+      "source_url": "https://www.khwiki.com/Auron",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-056",
+      "word": "Stitch",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Stitch",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-057",
+      "word": "Peter Pan",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Peter_Pan",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-058",
+      "word": "Clochette",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Tinker_Bell",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-059",
+      "word": "Alice",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Alice",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-060",
+      "word": "Pinocchio",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Pinocchio",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-061",
+      "word": "Geppetto",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Geppetto",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-062",
+      "word": "Jack Skellington",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Jack_Skellington",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-063",
+      "word": "Sally",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Sally",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-064",
+      "word": "Jack Sparrow",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Jack_Sparrow",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-065",
+      "word": "Barbossa",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Barbossa",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-066",
+      "word": "Ariel",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Ariel",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-067",
+      "word": "Ursula",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Ursula",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-068",
+      "word": "Woody",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Woody",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-069",
+      "word": "Buzz",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Buzz_Lightyear",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-070",
+      "word": "Elsa",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Elsa",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-071",
+      "word": "Anna",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Anna",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-072",
+      "word": "Olaf",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Olaf",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-073",
+      "word": "Baymax",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Baymax",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-074",
+      "word": "Tron",
+      "category": "Personnages Disney",
+      "source_url": "https://www.khwiki.com/Tron",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-075",
+      "word": "Agrabah",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Agrabah",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-076",
+      "word": "Atlantica",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Atlantica",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-077",
+      "word": "Illusiopolis",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/The_World_That_Never_Was",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-078",
+      "word": "Arendelle",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Arendelle",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-079",
+      "word": "Monstropolis",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Monstropolis",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-080",
+      "word": "San Fransokyo",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/San_Fransokyo",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-081",
+      "word": "Îles du Destin",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Destiny_Islands",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-082",
+      "word": "Ville de Traverse",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Traverse_Town",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-083",
+      "word": "Cité du Crépuscule",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Twilight_Town",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-084",
+      "word": "Jardin Radieux",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Radiant_Garden",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-085",
+      "word": "Forteresse Oubliée",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Hollow_Bastion",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-086",
+      "word": "Château Disney",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Disney_Castle",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-087",
+      "word": "Contrée du Départ",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Land_of_Departure",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-088",
+      "word": "Pays Imaginaire",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Neverland",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-089",
+      "word": "Jungle Profonde",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Deep_Jungle",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-090",
+      "word": "Monstro",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Monstro",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-091",
+      "word": "Port Royal",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Port_Royal",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-092",
+      "word": "Château de la Bête",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Beast%27s_Castle",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-093",
+      "word": "Ville d’Halloween",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/Halloween_Town",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-094",
+      "word": "Forêt des Rêves Bleus",
+      "category": "Mondes",
+      "source_url": "https://www.khwiki.com/100_Acre_Wood",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-095",
+      "word": "Keyblade",
+      "category": "Objets et termes",
+      "source_url": "https://www.khwiki.com/Keyblade",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-096",
+      "word": "Paopu",
+      "category": "Objets et termes",
+      "source_url": "https://www.khwiki.com/Paopu_Fruit",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-097",
+      "word": "Mog",
+      "category": "Objets et termes",
+      "source_url": "https://www.khwiki.com/Moogle",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-098",
+      "word": "Sans-cœur",
+      "category": "Objets et termes",
+      "source_url": "https://www.khwiki.com/Heartless",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-099",
+      "word": "Simili",
+      "category": "Objets et termes",
+      "source_url": "https://www.khwiki.com/Nobody",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    },
+    {
+      "id": "KHW-100",
+      "word": "Munny",
+      "category": "Objets et termes",
+      "source_url": "https://www.khwiki.com/Munny",
+      "source_kind": "communautaire",
+      "review_status": "user_approved"
+    }
+  ],
+  "questions": [
+    {
+      "id": "KHQ-001",
+      "category": "Personnages",
+      "question": "Quel héros principal voyage avec Donald et Dingo ?",
+      "answers": ["Sora"],
+      "scope": "Présentation générale de la série",
+      "source_url": "https://www.square-enix.com/kingdomhearts/about/fr/",
+      "source_kind": "officielle",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-002",
+      "category": "Personnages",
+      "question": "Quel compagnon de Sora est le magicien de la cour royale ?",
+      "answers": ["Donald", "Donald Duck"],
+      "scope": "Présentation générale de la série",
+      "source_url": "https://www.square-enix.com/kingdomhearts/about/fr/",
+      "source_kind": "officielle",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-003",
+      "category": "Personnages",
+      "question": "Quel compagnon de Sora combat avec un bouclier ?",
+      "answers": ["Dingo", "Goofy"],
+      "scope": "Présentation générale de la série",
+      "source_url": "https://www.square-enix.com/kingdomhearts/about/fr/",
+      "source_kind": "officielle",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-004",
+      "category": "Personnages",
+      "question": "Qui est le roi du Château Disney ?",
+      "answers": ["Mickey", "Roi Mickey", "Mickey Mouse"],
+      "scope": "Présentation générale de la série",
+      "source_url": "https://www.square-enix.com/kingdomhearts/about/fr/",
+      "source_kind": "officielle",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-005",
+      "category": "Personnages",
+      "question": "Comment s’appelle le type d’arme en forme de clé manié par Sora ?",
+      "answers": ["Keyblade"],
+      "scope": "Présentation générale de la série",
+      "source_url": "https://www.square-enix.com/kingdomhearts/about/fr/",
+      "source_kind": "officielle",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-006",
+      "category": "Personnages",
+      "question": "Quel personnage est surnommé « Ven » par ses amis ?",
+      "answers": ["Ventus"],
+      "scope": "Présentation générale de la série",
+      "source_url": "https://www.square-enix.com/kingdomhearts/about/fr/",
+      "source_kind": "officielle",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-007",
+      "category": "Personnages",
+      "question": "Quelle héroïne étudie auprès du même maître que Terra et Ventus ?",
+      "answers": ["Aqua"],
+      "scope": "Présentation générale de la série",
+      "source_url": "https://www.square-enix.com/kingdomhearts/about/fr/",
+      "source_kind": "officielle",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-008",
+      "category": "Personnages",
+      "question": "Quelle amie Sora et Riku recherchent-ils après sa disparition des îles du Destin ?",
+      "answers": ["Kairi"],
+      "scope": "Présentation générale de la série",
+      "source_url": "https://www.square-enix.com/kingdomhearts/about/fr/",
+      "source_kind": "officielle",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-009",
+      "category": "Personnages",
+      "question": "Quel maître entraîne Terra, Aqua et Ventus dans Birth by Sleep ?",
+      "answers": ["Eraqus", "Maître Eraqus"],
+      "scope": "Birth by Sleep",
+      "source_url": "https://www.kingdomhearts.com/kh25manual/kingdom_hearts_25_manual_us.pdf",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-010",
+      "category": "Personnages",
+      "question": "Quel épisode suit les trois protagonistes Terra, Aqua et Ventus ?",
+      "answers": ["Birth by Sleep", "Kingdom Hearts Birth by Sleep", "BBS"],
+      "scope": "Épisode original",
+      "source_url": "https://blog.playstation.com/archive/2010/05/17/kingdom-hearts-birth-by-sleep-coming-this-september/",
+      "source_kind": "officielle",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-011",
+      "category": "Personnages",
+      "question": "De quel personnage Roxas est-il le Simili ?",
+      "answers": ["Sora"],
+      "scope": "Identité de Roxas",
+      "source_url": "https://www.khwiki.com/Roxas",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-012",
+      "category": "Personnages",
+      "question": "Quel personnage contrôle-t-on dans le prologue de Kingdom Hearts II ?",
+      "answers": ["Roxas"],
+      "scope": "Kingdom Hearts II",
+      "source_url": "https://www.khwiki.com/Roxas",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-013",
+      "category": "Personnages",
+      "question": "Dans quelle ville Roxas, Axel et Xion mangent-ils des glaces sur une tour de l’horloge ?",
+      "answers": ["Cité du Crépuscule", "Twilight Town"],
+      "scope": "358/2 Days",
+      "source_url": "https://www.khwiki.com/Sea-salt_ice_cream",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-014",
+      "category": "Personnages",
+      "question": "À quel parfum sont les glaces emblématiques partagées par Roxas, Axel et Xion ?",
+      "answers": [
+        "Sel de mer",
+        "Au sel de mer",
+        "Glace au sel de mer",
+        "Sea salt"
+      ],
+      "scope": "358/2 Days",
+      "source_url": "https://www.khwiki.com/Sea-salt_ice_cream",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-015",
+      "category": "Personnages",
+      "question": "Quel est le prénom de l’être humain dont Axel est le Simili ?",
+      "answers": ["Lea"],
+      "scope": "Identité d’Axel",
+      "source_url": "https://www.khwiki.com/Axel",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-016",
+      "category": "Personnages",
+      "question": "Quel type d’armes Axel utilise-t-il au sein de l’Organisation XIII ?",
+      "answers": ["Chakrams", "Chakram"],
+      "scope": "Axel, et non sa version Lea porteur de Keyblade",
+      "source_url": "https://www.khwiki.com/Axel",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-017",
+      "category": "Personnages",
+      "question": "Quel élément Axel maîtrise-t-il ?",
+      "answers": ["Feu", "Le feu", "Flammes"],
+      "scope": "Organisation XIII",
+      "source_url": "https://www.khwiki.com/Axel",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-018",
+      "category": "Personnages",
+      "question": "Xion est-elle une réplique ou un Simili ordinaire ?",
+      "answers": ["Réplique", "Une réplique", "Replica"],
+      "scope": "Nature de Xion",
+      "source_url": "https://www.khwiki.com/Xion",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-019",
+      "category": "Personnages",
+      "question": "Dans quel jeu Xion fait-elle sa première apparition ?",
+      "answers": ["358/2 Days", "Kingdom Hearts 358/2 Days"],
+      "scope": "Première apparition publiée",
+      "source_url": "https://www.khwiki.com/Xion",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-020",
+      "category": "Personnages",
+      "question": "Quel numéro Xion reçoit-elle dans l’Organisation XIII ?",
+      "answers": ["14", "XIV", "Quatorze"],
+      "scope": "Membre supplémentaire présenté dans 358/2 Days",
+      "source_url": "https://www.khwiki.com/Xion",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-021",
+      "category": "Personnages",
+      "question": "De quel personnage Naminé est-elle le Simili ?",
+      "answers": ["Kairi"],
+      "scope": "Identité de Naminé",
+      "source_url": "https://www.khwiki.com/Namin%C3%A9",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-022",
+      "category": "Personnages",
+      "question": "Quel personnage blond peut manipuler les souvenirs de Sora dans Chain of Memories ?",
+      "answers": ["Naminé"],
+      "scope": "Chain of Memories",
+      "source_url": "https://www.khwiki.com/Namin%C3%A9",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-023",
+      "category": "Personnages",
+      "question": "Quel pseudonyme Ansem le Sage utilise-t-il lorsqu’il cache son identité ?",
+      "answers": ["DiZ"],
+      "scope": "Ansem le Sage, pas le Chercheur des Ténèbres",
+      "source_url": "https://www.khwiki.com/Ansem_the_Wise",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-024",
+      "category": "Personnages",
+      "question": "Quel est le nom complet du personnage surnommé Leon ?",
+      "answers": ["Squall Leonhart", "Squall"],
+      "scope": "Identité de Leon",
+      "source_url": "https://www.khwiki.com/Leon",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-025",
+      "category": "Personnages",
+      "question": "Quel petit compagnon tient le journal des aventures de Sora ?",
+      "answers": ["Jiminy", "Jiminy Grillon", "Jiminy Cricket"],
+      "scope": "Journal de Jiminy",
+      "source_url": "https://www.khwiki.com/Jiminy_Cricket",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-026",
+      "category": "Personnages",
+      "question": "Quel mécanicien de la Ville de Traverse aide Sora avec le vaisseau Gummi dans le premier jeu ?",
+      "answers": ["Cid"],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Cid",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-027",
+      "category": "Personnages",
+      "question": "Quelles petites créatures au pompon tiennent notamment des ateliers de synthèse ?",
+      "answers": ["Mogs", "Mog", "Moogles", "Moogle"],
+      "scope": "Ateliers de synthèse",
+      "source_url": "https://www.khwiki.com/Moogle",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-028",
+      "category": "Personnages",
+      "question": "Quel ancien maître du Roi Mickey vit dans la Tour Mystérieuse ?",
+      "answers": ["Yen Sid", "Yensid"],
+      "scope": "Mentor du Roi Mickey",
+      "source_url": "https://www.khwiki.com/Yen_Sid",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-029",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro I dans l’Organisation XIII d’origine ?",
+      "answers": ["Xemnas"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Xemnas",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-030",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro II dans l’Organisation XIII d’origine ?",
+      "answers": ["Xigbar"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Xigbar",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-031",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro III dans l’Organisation XIII d’origine ?",
+      "answers": ["Xaldin"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Xaldin",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-032",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro IV dans l’Organisation XIII d’origine ?",
+      "answers": ["Vexen"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Vexen",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-033",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro V dans l’Organisation XIII d’origine ?",
+      "answers": ["Lexaeus"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Lexaeus",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-034",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro VI dans l’Organisation XIII d’origine ?",
+      "answers": ["Zexion"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Zexion",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-035",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro VII dans l’Organisation XIII d’origine ?",
+      "answers": ["Saïx"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Sa%C3%AFx",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-036",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro VIII dans l’Organisation XIII d’origine ?",
+      "answers": ["Axel"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Axel",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-037",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro IX dans l’Organisation XIII d’origine ?",
+      "answers": ["Demyx"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Demyx",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-038",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro X dans l’Organisation XIII d’origine ?",
+      "answers": ["Luxord"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Luxord",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-039",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro XI dans l’Organisation XIII d’origine ?",
+      "answers": ["Marluxia"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Marluxia",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-040",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro XII dans l’Organisation XIII d’origine ?",
+      "answers": ["Larxene"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Larxene",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-041",
+      "category": "Organisation XIII",
+      "question": "Qui porte le numéro XIII dans l’Organisation XIII d’origine ?",
+      "answers": ["Roxas"],
+      "scope": "Organisation d’origine : pas la véritable Organisation de KH III",
+      "source_url": "https://www.khwiki.com/Roxas",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-042",
+      "category": "Armes",
+      "question": "Quel type d’arme Xaldin utilise-t-il dans l’Organisation XIII ?",
+      "answers": ["Lances", "Lance"],
+      "scope": "Arme du membre de l’Organisation d’origine",
+      "source_url": "https://www.khwiki.com/Xaldin",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-043",
+      "category": "Armes",
+      "question": "Quel type d’arme Vexen utilise-t-il dans l’Organisation XIII ?",
+      "answers": ["Bouclier", "Un bouclier"],
+      "scope": "Arme du membre de l’Organisation d’origine",
+      "source_url": "https://www.khwiki.com/Vexen",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-044",
+      "category": "Armes",
+      "question": "Quel type d’arme Zexion utilise-t-il dans l’Organisation XIII ?",
+      "answers": ["Livre", "Un livre", "Lexique", "Lexicon"],
+      "scope": "Arme du membre de l’Organisation d’origine",
+      "source_url": "https://www.khwiki.com/Zexion",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-045",
+      "category": "Armes",
+      "question": "Quel type d’arme Demyx utilise-t-il dans l’Organisation XIII ?",
+      "answers": ["Sitar", "Un sitar"],
+      "scope": "Arme du membre de l’Organisation d’origine",
+      "source_url": "https://www.khwiki.com/Demyx",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-046",
+      "category": "Armes",
+      "question": "Quel type d’arme Luxord utilise-t-il dans l’Organisation XIII ?",
+      "answers": ["Cartes", "Des cartes", "Cartes à jouer"],
+      "scope": "Arme du membre de l’Organisation d’origine",
+      "source_url": "https://www.khwiki.com/Luxord",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-047",
+      "category": "Armes",
+      "question": "Quel type d’arme Marluxia utilise-t-il dans l’Organisation XIII ?",
+      "answers": ["Faux", "Une faux"],
+      "scope": "Arme du membre de l’Organisation d’origine",
+      "source_url": "https://www.khwiki.com/Marluxia",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-048",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Pays des Merveilles » est-il issu ?",
+      "answers": ["Alice au pays des merveilles", "Alice in Wonderland"],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Wonderland",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-049",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Agrabah » est-il issu ?",
+      "answers": ["Aladdin"],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Agrabah",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-050",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Atlantica » est-il issu ?",
+      "answers": ["La Petite Sirène", "The Little Mermaid"],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Atlantica",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-051",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Ville d’Halloween » est-il issu ?",
+      "answers": [
+        "L’Étrange Noël de monsieur Jack",
+        "L’Étrange Noël de Mr Jack",
+        "The Nightmare Before Christmas"
+      ],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Halloween_Town",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-052",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Pays Imaginaire » est-il issu ?",
+      "answers": ["Peter Pan"],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Neverland",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-053",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Terre des Lions » est-il issu ?",
+      "answers": ["Le Roi Lion", "The Lion King"],
+      "scope": "Kingdom Hearts II ; Pride Lands en anglais",
+      "source_url": "https://www.khwiki.com/Pride_Lands",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-054",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Terre des Dragons » est-il issu ?",
+      "answers": ["Mulan"],
+      "scope": "Kingdom Hearts II",
+      "source_url": "https://www.khwiki.com/The_Land_of_Dragons",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-055",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Château de la Bête » est-il issu ?",
+      "answers": ["La Belle et la Bête", "Beauty and the Beast"],
+      "scope": "Kingdom Hearts II",
+      "source_url": "https://www.khwiki.com/Beast%27s_Castle",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-056",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Space Paranoids » est-il issu ?",
+      "answers": ["Tron"],
+      "scope": "Kingdom Hearts II ; nom anglais du monde indiqué pour éviter une confusion avec La Grille",
+      "source_url": "https://www.khwiki.com/Space_Paranoids",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-057",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Jungle Profonde » est-il issu ?",
+      "answers": ["Tarzan"],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Deep_Jungle",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-058",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Monstro » est-il issu ?",
+      "answers": ["Pinocchio"],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Monstro",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-059",
+      "category": "Mondes et films",
+      "question": "De quel film Disney le monde « Forêt des Rêves Bleus » est-il issu ?",
+      "answers": [
+        "Winnie l’ourson",
+        "Winnie the Pooh",
+        "Les Aventures de Winnie l’ourson"
+      ],
+      "scope": "Monde de Winnie",
+      "source_url": "https://www.khwiki.com/100_Acre_Wood",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-060",
+      "category": "Alliés",
+      "question": "Dans Kingdom Hearts I, quel allié peut rejoindre l’équipe de Sora à Agrabah ?",
+      "answers": ["Aladdin"],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Agrabah",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-061",
+      "category": "Alliés",
+      "question": "Dans Kingdom Hearts I, quel allié peut rejoindre l’équipe de Sora à Atlantica ?",
+      "answers": ["Ariel"],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Atlantica",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-062",
+      "category": "Alliés",
+      "question": "Dans Kingdom Hearts I, quel allié peut rejoindre l’équipe de Sora à Ville d’Halloween ?",
+      "answers": ["Jack Skellington", "Jack"],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Halloween_Town",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-063",
+      "category": "Alliés",
+      "question": "Dans Kingdom Hearts I, quel allié peut rejoindre l’équipe de Sora à Pays Imaginaire ?",
+      "answers": ["Peter Pan"],
+      "scope": "Kingdom Hearts I",
+      "source_url": "https://www.khwiki.com/Neverland",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-064",
+      "category": "Alliés",
+      "question": "Dans Kingdom Hearts II, quel allié peut rejoindre l’équipe de Sora à Terre des Lions ?",
+      "answers": ["Simba"],
+      "scope": "Kingdom Hearts II",
+      "source_url": "https://www.khwiki.com/Pride_Lands",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-065",
+      "category": "Alliés",
+      "question": "Dans Kingdom Hearts II, quel allié peut rejoindre l’équipe de Sora à Terre des Dragons, après avoir révélé sa véritable identité ?",
+      "answers": ["Mulan"],
+      "scope": "Kingdom Hearts II",
+      "source_url": "https://www.khwiki.com/The_Land_of_Dragons",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-066",
+      "category": "Alliés",
+      "question": "Dans Kingdom Hearts II, quel allié peut rejoindre l’équipe de Sora à Château de la Bête ?",
+      "answers": ["La Bête", "Bête", "Beast"],
+      "scope": "Kingdom Hearts II",
+      "source_url": "https://www.khwiki.com/Beast%27s_Castle",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-067",
+      "category": "Alliés",
+      "question": "Dans Kingdom Hearts II, quel allié peut rejoindre l’équipe de Sora à Space Paranoids ?",
+      "answers": ["Tron"],
+      "scope": "Kingdom Hearts II",
+      "source_url": "https://www.khwiki.com/Space_Paranoids",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-068",
+      "category": "Alliés",
+      "question": "Dans Kingdom Hearts II, quel allié peut rejoindre l’équipe de Sora à Colisée de l’Olympe, en tant que guerrier venu de Final Fantasy X ?",
+      "answers": ["Auron"],
+      "scope": "Kingdom Hearts II",
+      "source_url": "https://www.khwiki.com/Olympus_Coliseum",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-069",
+      "category": "Alliés",
+      "question": "Dans Kingdom Hearts II, quel allié peut rejoindre l’équipe de Sora à Port Royal ?",
+      "answers": ["Jack Sparrow", "Capitaine Jack Sparrow"],
+      "scope": "Kingdom Hearts II",
+      "source_url": "https://www.khwiki.com/Port_Royal",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-070",
+      "category": "Kingdom Hearts III",
+      "question": "De quel film Pixar le monde Toy Box s’inspire-t-il ?",
+      "answers": ["Toy Story"],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/Toy_Box",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-071",
+      "category": "Kingdom Hearts III",
+      "question": "De quel film Disney le monde Arendelle s’inspire-t-il ?",
+      "answers": ["La Reine des Neiges", "Frozen"],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/Arendelle",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-072",
+      "category": "Kingdom Hearts III",
+      "question": "De quel film Disney le Royaume de Corona s’inspire-t-il ?",
+      "answers": ["Raiponce", "Tangled"],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/Kingdom_of_Corona",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-073",
+      "category": "Kingdom Hearts III",
+      "question": "De quel film Pixar le monde Monstropolis s’inspire-t-il ?",
+      "answers": [
+        "Monstres et Cie",
+        "Monstres & Cie",
+        "Monsters Inc",
+        "Monsters, Inc."
+      ],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/Monstropolis",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-074",
+      "category": "Kingdom Hearts III",
+      "question": "De quel film Disney le monde San Fransokyo s’inspire-t-il ?",
+      "answers": ["Les Nouveaux Héros", "Big Hero 6"],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/San_Fransokyo",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-075",
+      "category": "Kingdom Hearts III",
+      "question": "Quel pirate accompagne Sora dans le monde des Caraïbes ?",
+      "answers": ["Jack Sparrow", "Capitaine Jack Sparrow"],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/The_Caribbean",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-076",
+      "category": "Kingdom Hearts III",
+      "question": "Quel jouet cowboy Sora rencontre-t-il à Toy Box ?",
+      "answers": ["Woody"],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/Toy_Box",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-077",
+      "category": "Kingdom Hearts III",
+      "question": "Quel ranger de l’espace accompagne Woody à Toy Box ?",
+      "answers": ["Buzz", "Buzz l’Éclair", "Buzz Lightyear"],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/Toy_Box",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-078",
+      "category": "Kingdom Hearts III",
+      "question": "Quel robot blanc est l’allié de Sora à San Fransokyo ?",
+      "answers": ["Baymax"],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/San_Fransokyo",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-079",
+      "category": "Kingdom Hearts III",
+      "question": "À Arendelle, comment s’appelle la sœur d’Elsa ?",
+      "answers": ["Anna"],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/Arendelle",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-080",
+      "category": "Kingdom Hearts III",
+      "question": "Quel monstre vert à un seul œil accompagne Sora à Monstropolis ?",
+      "answers": ["Bob", "Bob Razowski", "Mike", "Mike Wazowski"],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/Monstropolis",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-081",
+      "category": "Kingdom Hearts III",
+      "question": "Quel grand monstre bleu et poilu accompagne Sora à Monstropolis ?",
+      "answers": [
+        "Sulli",
+        "Sully",
+        "Sulley",
+        "Jacques Sullivan",
+        "James P. Sullivan"
+      ],
+      "scope": "Kingdom Hearts III",
+      "source_url": "https://www.khwiki.com/Monstropolis",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-082",
+      "category": "Objets et systèmes",
+      "question": "Comment s’appelle le fruit étoilé emblématique des îles du Destin ?",
+      "answers": ["Paopu", "Fruit Paopu", "Un Paopu"],
+      "scope": "Fruit des îles du Destin",
+      "source_url": "https://www.khwiki.com/Paopu_Fruit",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-083",
+      "category": "Objets et systèmes",
+      "question": "Qui fabrique les trois porte-bonheur pour Terra, Ventus et elle-même dans Birth by Sleep ?",
+      "answers": ["Aqua"],
+      "scope": "Birth by Sleep",
+      "source_url": "https://www.khwiki.com/Wayfinder",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-084",
+      "category": "Objets et systèmes",
+      "question": "Dans Kingdom Hearts II, quelle forme de fusion habille Sora en rouge ?",
+      "answers": ["Vaillance", "Forme Vaillance", "Valor", "Valor Form"],
+      "scope": "Formes de fusion de KH II",
+      "source_url": "https://www.khwiki.com/Drive_Form",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-085",
+      "category": "Objets et systèmes",
+      "question": "Dans Kingdom Hearts II, quelle forme de fusion habille Sora en bleu et utilise Donald ?",
+      "answers": ["Sagesse", "Forme Sagesse", "Wisdom", "Wisdom Form"],
+      "scope": "Formes de fusion de KH II",
+      "source_url": "https://www.khwiki.com/Drive_Form",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-086",
+      "category": "Objets et systèmes",
+      "question": "Dans Kingdom Hearts II, quelle forme de fusion habille Sora en jaune ?",
+      "answers": ["Maîtrise", "Forme Maîtrise", "Master", "Master Form"],
+      "scope": "Formes de fusion de KH II",
+      "source_url": "https://www.khwiki.com/Drive_Form",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-087",
+      "category": "Objets et systèmes",
+      "question": "Dans Kingdom Hearts II, quelle forme de fusion donne à Sora des vêtements argentés et deux Keyblades en lévitation ?",
+      "answers": ["Suprême", "Forme Suprême", "Final", "Final Form"],
+      "scope": "Formes de fusion de KH II",
+      "source_url": "https://www.khwiki.com/Drive_Form",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-088",
+      "category": "Objets et systèmes",
+      "question": "Combien de couleurs de marques Trio peut-on apprendre à activer dans le premier Kingdom Hearts ?",
+      "answers": ["5", "Cinq"],
+      "scope": "Marques Trio d’exploration, pas la compétence de combat",
+      "source_url": "https://www.khwiki.com/Trinity_Mark",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-089",
+      "category": "Objets et systèmes",
+      "question": "Quel est le nom anglais de la forme par défaut de la première Keyblade de Sora ?",
+      "answers": ["Kingdom Key"],
+      "scope": "Nom anglais demandé explicitement",
+      "source_url": "https://www.khwiki.com/Kingdom_Key",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-090",
+      "category": "Objets et systèmes",
+      "question": "Comment appelle-t-on les ennemis Heartless dans la version française ?",
+      "answers": ["Sans-cœur", "Sans-coeur", "Sans cœur", "Sans coeur"],
+      "scope": "Traduction française",
+      "source_url": "https://www.khwiki.com/Heartless",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-091",
+      "category": "Épisodes et musiques",
+      "question": "Sur quelle console le premier Kingdom Hearts est-il sorti à l’origine ?",
+      "answers": ["PlayStation 2", "PS2"],
+      "scope": "Versions et sorties originales explicitement distinguées des remasters",
+      "source_url": "https://www.khwiki.com/Kingdom_Hearts_(game)",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-092",
+      "category": "Épisodes et musiques",
+      "question": "En quelle année le premier Kingdom Hearts est-il sorti au Japon ?",
+      "answers": ["2002"],
+      "scope": "Versions et sorties originales explicitement distinguées des remasters",
+      "source_url": "https://www.khwiki.com/Kingdom_Hearts_(game)",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-093",
+      "category": "Épisodes et musiques",
+      "question": "Sur quelle console Kingdom Hearts II est-il sorti à l’origine ?",
+      "answers": ["PlayStation 2", "PS2"],
+      "scope": "Versions et sorties originales explicitement distinguées des remasters",
+      "source_url": "https://www.khwiki.com/Kingdom_Hearts_II",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-094",
+      "category": "Épisodes et musiques",
+      "question": "Sur quelle console Chain of Memories est-il sorti à l’origine, avant son remake Re:Chain of Memories ?",
+      "answers": ["Game Boy Advance", "GBA"],
+      "scope": "Versions et sorties originales explicitement distinguées des remasters",
+      "source_url": "https://www.khwiki.com/Kingdom_Hearts_Chain_of_Memories",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-095",
+      "category": "Épisodes et musiques",
+      "question": "Sur quelle console Kingdom Hearts 358/2 Days est-il sorti à l’origine ?",
+      "answers": ["Nintendo DS", "DS"],
+      "scope": "Versions et sorties originales explicitement distinguées des remasters",
+      "source_url": "https://www.khwiki.com/Kingdom_Hearts_358/2_Days",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-096",
+      "category": "Épisodes et musiques",
+      "question": "Sur quelle console Birth by Sleep est-il sorti à l’origine ?",
+      "answers": ["PSP", "PlayStation Portable"],
+      "scope": "Versions et sorties originales explicitement distinguées des remasters",
+      "source_url": "https://www.khwiki.com/Kingdom_Hearts_Birth_by_Sleep",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-097",
+      "category": "Épisodes et musiques",
+      "question": "Sur quelle console Dream Drop Distance est-il sorti à l’origine, avant sa version HD ?",
+      "answers": ["Nintendo 3DS", "3DS"],
+      "scope": "Versions et sorties originales explicitement distinguées des remasters",
+      "source_url": "https://www.khwiki.com/Kingdom_Hearts_3D:_Dream_Drop_Distance",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-098",
+      "category": "Épisodes et musiques",
+      "question": "Quel épisode Kingdom Hearts est un jeu de rythme centré sur les musiques de la série ?",
+      "answers": ["Melody of Memory", "Kingdom Hearts Melody of Memory"],
+      "scope": "Versions et sorties originales explicitement distinguées des remasters",
+      "source_url": "https://www.khwiki.com/Kingdom_Hearts_Melody_of_Memory",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-099",
+      "category": "Épisodes et musiques",
+      "question": "Quel est le titre anglais de la chanson principale du premier Kingdom Hearts ?",
+      "answers": ["Simple and Clean"],
+      "scope": "Versions et sorties originales explicitement distinguées des remasters",
+      "source_url": "https://www.khwiki.com/Kingdom_Hearts_(game)",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "KHQ-100",
+      "category": "Épisodes et musiques",
+      "question": "Quel est le titre anglais de la chanson principale de Kingdom Hearts II ?",
+      "answers": ["Sanctuary"],
+      "scope": "Versions et sorties originales explicitement distinguées des remasters",
+      "source_url": "https://www.khwiki.com/Kingdom_Hearts_II",
+      "source_kind": "communautaire",
+      "review_status": "user_approved",
+      "checked_on": "2026-10-30"
+    }
+  ]
+}

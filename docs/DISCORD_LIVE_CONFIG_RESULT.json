@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-29T08:08:17.645Z",
+  "url": "https://sorarng.54-37-13-70.sslip.io",
+  "discordProviderEnabled": true,
+  "oauthStartVerified": true,
+  "correctClientId": true,
+  "expectedCallback": "https://sorarng.54-37-13-70.sslip.io/api/auth/callback/discord",
+  "scope": "identify",
+  "secureStateCookie": true,
+  "realDiscordLoginTested": false,
+  "credentialsValidatedByDiscord": false,
+  "redirectRegistrationVerifiedInDiscord": false,
+  "secretsPrinted": false
+}

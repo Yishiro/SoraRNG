@@ -1,0 +1,212 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model ChatChallengeConfig {
+  guildId         String   @id
+  channelId       String
+  enabled         Boolean  @default(true)
+  intervalMinutes Int      @default(20)
+  nextAt          DateTime @db.Timestamptz
+  updatedBy       String
+}
+
+model ChatChallenge {
+  id               String    @id
+  guildId          String
+  channelId        String
+  content          Json
+  status           String
+  messageId        String?
+  createdAt        DateTime  @default(now()) @db.Timestamptz
+  publishedAt      DateTime? @db.Timestamptz
+  expiresAt        DateTime  @db.Timestamptz
+  winnerId         String?
+  winningMessageId String?
+  announced        Boolean   @default(false)
+
+  @@index([status, expiresAt], map: "ChatChallenge_pending")
+}
+
+model Player {
+  auctionNotifications AuctionNotification[]
+  id                   String                @id
+  name                 String
+  state                Json
+  createdAt            DateTime              @default(now()) @db.Timestamptz
+  auctionsSold         CardAuction[]         @relation("auctionSeller")
+  auctionsBid          CardAuction[]         @relation("auctionBidder")
+  auctionRequests      AuctionRequest[]
+  operations           Operation[]
+  economyOperations    EconomyOperation[]
+  createdEconomyGames  EconomyGame[]         @relation("economyAuthor")
+  receivedEconomyGames EconomyGame[]         @relation("economyOpponent")
+  sentTrades           Trade[]               @relation("sender")
+  receivedTrades       Trade[]               @relation("receiver")
+}
+
+model Catalogue {
+  id        String   @id
+  cards     Json
+  version   String
+  createdAt DateTime @default(now()) @db.Timestamptz
+}
+
+model Operation {
+  id        String   @id
+  playerId  String
+  player    Player   @relation(fields: [playerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  key       String
+  kind      String
+  delta     Int
+  result    Json
+  request   Json     @default("{}")
+  createdAt DateTime @default(now()) @db.Timestamptz
+
+  @@unique([playerId, key])
+  @@index([playerId, createdAt], map: "Operation_player_time")
+}
+
+model Trade {
+  id        String   @id
+  a         String
+  b         String
+  sender    Player   @relation("sender", fields: [a], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  receiver  Player   @relation("receiver", fields: [b], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  state     Json
+  expiresAt DateTime @default(dbgenerated("(now() + '00:30:00'::interval)")) @db.Timestamptz
+  createdAt DateTime @default(now()) @db.Timestamptz
+
+  @@index([a, b], map: "Trade_members")
+}
+
+model RequestLimit {
+  id       String   @id
+  count    Int
+  resetsAt DateTime @db.Timestamptz
+}
+
+model AdminAudit {
+  id        String   @id
+  actorId   String
+  key       String
+  action    String
+  targetId  String?
+  reason    String
+  request   Json
+  result    Json
+  createdAt DateTime @default(now()) @db.Timestamptz
+
+  @@unique([actorId, key])
+  @@index([createdAt], map: "AdminAudit_time")
+}
+
+model Event {
+  id          String   @id
+  title       String
+  description String
+  startsAt    DateTime @db.Timestamptz
+  endsAt      DateTime @db.Timestamptz
+  published   Boolean  @default(false)
+  revision    Int      @default(1)
+  updatedAt   DateTime @default(now()) @db.Timestamptz
+}
+
+model EconomyOperation {
+  id        String   @id
+  playerId  String
+  player    Player   @relation(fields: [playerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  key       String
+  kind      String
+  delta     BigInt
+  request   Json
+  result    Json
+  createdAt DateTime @default(now()) @db.Timestamptz
+
+  @@unique([playerId, key])
+  @@index([playerId, createdAt])
+}
+
+model EconomyGame {
+  id         String    @id
+  authorId   String
+  opponentId String?
+  author     Player    @relation("economyAuthor", fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  opponent   Player?   @relation("economyOpponent", fields: [opponentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  kind       String
+  status     String
+  state      Json
+  expiresAt  DateTime? @db.Timestamptz
+  createdAt  DateTime  @default(now()) @db.Timestamptz
+
+  @@index([status, expiresAt])
+  @@index([authorId, status])
+  @@index([opponentId, status])
+}
+
+model CardAuction {
+  notifications AuctionNotification[]
+  id            String                @id
+  sellerId      String
+  seller        Player                @relation("auctionSeller", fields: [sellerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  copy          Json
+  startPrice    Float                 @db.DoublePrecision
+  bid           Float                 @default(0) @db.DoublePrecision
+  bidderId      String?
+  bidder        Player?               @relation("auctionBidder", fields: [bidderId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  status        String                @default("open")
+  endsAt        DateTime              @db.Timestamptz
+  createdAt     DateTime              @default(now()) @db.Timestamptz
+
+  @@index([status, endsAt], map: "CardAuction_pending")
+}
+
+model AuctionRequest {
+  playerId  String
+  player    Player   @relation(fields: [playerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  key       String
+  request   Json
+  result    Json
+  createdAt DateTime @default(now()) @db.Timestamptz
+
+  @@id([playerId, key])
+}
+
+model AuctionNotification {
+  readAt      DateTime?   @db.Timestamptz
+  id          String      @id
+  playerId    String
+  player      Player      @relation(fields: [playerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  auctionId   String
+  auction     CardAuction @relation(fields: [auctionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  kind        String
+  payload     Json
+  status      String      @default("pending")
+  attempts    Int         @default(0)
+  nextAt      DateTime    @default(now()) @db.Timestamptz
+  createdAt   DateTime    @default(now()) @db.Timestamptz
+  deliveredAt DateTime?   @db.Timestamptz
+  messageId   String?
+
+  @@index([status, nextAt], map: "AuctionNotification_pending")
+}
+
+model WalletLedger {
+  id        BigInt   @id @default(autoincrement())
+  playerId  String
+  source    String
+  kind      String
+  actorId   String?
+  reference String?
+  before    Json?
+  after     Json
+  createdAt DateTime @default(dbgenerated("clock_timestamp()")) @db.Timestamptz
+
+  @@index([playerId, id(sort: Desc)], map: "WalletLedger_player_id")
+  @@index([source, id(sort: Desc)], map: "WalletLedger_source_id")
+}

@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-29T09:01:59.883Z",
+  "url": "https://sorarng.54-37-13-70.sslip.io/summon",
+  "release": "20261029-trial01",
+  "trialCards": 5,
+  "claimsPerDiscordAccount": 1,
+  "noMunnyRequired": true,
+  "noTicketRequired": true,
+  "usualCooldownPreserved": true,
+  "publicBannerVerified": true,
+  "mobileVerified": true,
+  "mandatoryFlipsPreserved": true,
+  "anonymousClaimStatus": 401,
+  "discordStillConfigured": true,
+  "liveTrialClaimsPerformed": 0,
+  "connectedUITestMethod": "browser-only intercepted responses; no production data written",
+  "isolatedPostgresAndHTTPTestsPassed": true,
+  "unitTests": 40,
+  "browserTests": 22
+}

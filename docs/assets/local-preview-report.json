@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-28T22:19:53.151Z",
+  "localPreviews": 135,
+  "missing": [
+    "KH-089",
+    "KH-095",
+    "KH-099",
+    "KH-121",
+    "KH-122",
+    "KH-123",
+    "KH-124",
+    "KH-125",
+    "KH-126",
+    "KH-129",
+    "KH-130",
+    "KH-131",
+    "KH-135",
+    "KH-136",
+    "KH-149"
+  ],
+  "failed": [],
+  "publicImagesAdded": 0,
+  "generatedAIImages": 0,
+  "storage": ".local/card-assets (ignored, outside public)",
+  "productionAccess": "404 regardless of stored files"
+}

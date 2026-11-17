@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-29T16:54:17.613Z",
+  "release": "20261029-legends01",
+  "url": "https://sorarng.54-37-13-70.sslip.io",
+  "distinctLegends": 150,
+  "publicCodexAssociationsVerified": 150,
+  "detailPagesVerified": ["KH-001", "KH-128", "KH-150"],
+  "publicDemoLegendsVerified": 5,
+  "legendHiddenBeforeFlip": true,
+  "catalogSha256": "30ccb92f802087a4f6f3513cea07f0e072789cc86f463610e2ffa490eed9991c",
+  "originalFlavourText": true,
+  "gameMutationRequests": 0,
+  "pageErrors": [],
+  "unitTests": 47,
+  "browserTests": 29
+}

@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-10-28T22:19:51.694Z",
+  "metadataRequest": "https://www.khwiki.com/api.php?action=query&titles=File%3ASora+%28KH%29+%28Art%29.png%7CFile%3ARiku+%28KH%29+%28Art%29.png%7CFile%3ARoxas+%28Art%29.png%7CFile%3AXion+2+KHD.png%7CFile%3AVentus+%28Battle%29+KHBBS.png%7CFile%3ATerra+%28Battle%29+KHBBS.png%7CFile%3AAqua+%28Battle%29+KHBBS.png%7CFile%3AMickey+Mouse+%28Battle%29+KHII.png%7CFile%3AVersus+Master+Xehanort+1+KHIII.png%7CFile%3ASora+and+Yozora+02+KHIIIRM.png&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json",
+  "changes": [
+    {
+      "id": "KH-019",
+      "file": "Sora (KH) (Art).png",
+      "evidence": "https://www.khwiki.com/Gallery:Sora",
+      "note": "Illustration officielle de Sora KH1, même tenue, pose distincte du rendu de KH-001."
+    },
+    {
+      "id": "KH-020",
+      "file": "Riku (KH) (Art).png",
+      "evidence": "https://www.khwiki.com/Gallery:Riku",
+      "note": "Illustration officielle de Riku KH1 dans sa tenue jaune et bleue. Arme non représentée. Le rendu Battle avec épée en bois a été écarté au contrôle visuel."
+    },
+    {
+      "id": "KH-004",
+      "file": "Roxas (Art).png",
+      "evidence": "https://www.khwiki.com/Gallery:Roxas",
+      "note": "Illustration de Roxas en tenue de Twilight Town, sans utiliser le manteau Organisation."
+    },
+    {
+      "id": "KH-024",
+      "file": "Xion 2 KHD.png",
+      "evidence": "https://www.khwiki.com/Gallery:Xion",
+      "note": "Xion humaine, sans capuche, autre pose ; aucune substitution par une forme de boss."
+    },
+    {
+      "id": "KH-049",
+      "file": "Ventus (Battle) KHBBS.png",
+      "evidence": "https://www.khwiki.com/Gallery:Ventus",
+      "note": "Rendu de combat BBS, même tenue et âge ; pas de changement de forme."
+    },
+    {
+      "id": "KH-050",
+      "file": "Terra (Battle) KHBBS.png",
+      "evidence": "https://www.khwiki.com/Gallery:Terra",
+      "note": "Rendu de combat BBS, aucune substitution par Terra-Xehanort."
+    },
+    {
+      "id": "KH-051",
+      "file": "Aqua (Battle) KHBBS.png",
+      "evidence": "https://www.khwiki.com/Gallery:Aqua",
+      "note": "Rendu de combat BBS, même tenue ; pas de changement vers Anti-Aqua."
+    },
+    {
+      "id": "KH-077",
+      "file": "Mickey Mouse (Battle) KHII.png",
+      "evidence": "https://www.khwiki.com/Gallery:Mickey_Mouse",
+      "note": "Rendu de combat KH2, même version."
+    },
+    {
+      "id": "KH-100",
+      "file": "Versus Master Xehanort 1 KHIII.png",
+      "evidence": "https://www.khwiki.com/Game:Master_Xehanort",
+      "note": "Capture du combat final KH3 avec χ-blade ; aucun remplacement par une incarnation plus jeune."
+    },
+    {
+      "id": "KH-098",
+      "file": "Sora and Yozora 02 KHIIIRM.png",
+      "evidence": "https://www.khwiki.com/Gallery:Yozora",
+      "note": "Capture Re Mind où Yozora se prépare au combat secret."
+    }
+  ],
+  "retained": [
+    {
+      "ids": ["KH-068", "KH-078"],
+      "reason": "Souvenance et Limite correspondent à Limit Form : pas de changement de monde ou de forme pour créer une différence artificielle.",
+      "source": "https://kingdomhearts.fandom.com/fr/wiki/Forme_Souvenance"
+    }
+  ]
+}

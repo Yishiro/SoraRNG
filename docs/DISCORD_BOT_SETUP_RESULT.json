@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-29T19:12:20.177412+00:00",
+  "release": "20261029-bot01",
+  "botName": "Sora's",
+  "applicationId": "1565274940100452383",
+  "discordRestAuthenticated": true,
+  "gatewayConnected": true,
+  "botContainerHealthy": true,
+  "registeredGlobalCommands": [
+    "play",
+    "profile",
+    "collection",
+    "leaderboard",
+    "help"
+  ],
+  "guildCount": 0,
+  "privateRepliesConfigured": true,
+  "readOnlyDatabaseVerified": true,
+  "writeDeniedVerified": true,
+  "profileIsolationTestedWithUnitFixtures": true,
+  "realHumanSlashInteractionsTested": false,
+  "remainingManualActions": [
+    "Installer le bot sur un serveur via le lien OAuth2",
+    "Essayer /help puis /play avec un vrai compte Discord",
+    "Tester /profile et /collection avec le compte lié au site"
+  ],
+  "webContainerUnchanged": "sorarng-app:20261029-construction01",
+  "siteStatus": 200,
+  "catalogueCards": 150,
+  "unitTestsPassed": 51,
+  "offlineBotImageCheckPassed": true,
+  "secretsLogged": false
+}

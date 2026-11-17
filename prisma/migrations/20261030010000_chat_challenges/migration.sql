@@ -1,0 +1,4 @@
+CREATE TABLE "ChatChallengeConfig" ("guildId" TEXT PRIMARY KEY,"channelId" TEXT NOT NULL,"enabled" BOOLEAN NOT NULL DEFAULT true,"intervalMinutes" INTEGER NOT NULL DEFAULT 20 CHECK ("intervalMinutes" BETWEEN 1 AND 1440),"nextAt" TIMESTAMPTZ NOT NULL,"updatedBy" TEXT NOT NULL);
+CREATE TABLE "ChatChallenge" (id TEXT PRIMARY KEY,"guildId" TEXT NOT NULL,"channelId" TEXT NOT NULL,content JSONB NOT NULL,status TEXT NOT NULL,"messageId" TEXT,"createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW(),"publishedAt" TIMESTAMPTZ,"expiresAt" TIMESTAMPTZ NOT NULL,"winnerId" TEXT,"winningMessageId" TEXT,announced BOOLEAN NOT NULL DEFAULT false);
+CREATE INDEX "ChatChallenge_pending" ON "ChatChallenge" (status,"expiresAt");
+CREATE UNIQUE INDEX "ChatChallenge_channel_active" ON "ChatChallenge" ("channelId") WHERE status IN ('draft','published');

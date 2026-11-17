@@ -1,0 +1,102 @@
+{
+  "url": "https://sorarng.54-37-13-70.sslip.io",
+  "checkedAt": "2026-10-29T08:00:41.116Z",
+  "deployment": "VPS, Docker standalone, nginx HTTPS",
+  "checks": [
+    {
+      "endpoint": "/",
+      "status": 200,
+      "https": true
+    },
+    {
+      "endpoint": "/codex",
+      "status": 200
+    },
+    {
+      "endpoint": "/summon",
+      "status": 200
+    },
+    {
+      "endpoint": "/api/catalog",
+      "status": 200,
+      "cards": 150
+    },
+    {
+      "endpoint": "/api/game",
+      "status": 401
+    },
+    {
+      "endpoint": "/api/admin",
+      "status": 401
+    },
+    {
+      "endpoint": "/api/trades",
+      "status": 401
+    },
+    {
+      "endpoint": "/api/local-card-assets",
+      "status": 404
+    },
+    {
+      "endpoint": "/api/local-card-assets/KH-001",
+      "status": 404
+    },
+    {
+      "endpoint": "/.env",
+      "status": 404
+    },
+    {
+      "endpoint": "/.local/card-assets/index.json",
+      "status": 404
+    }
+  ],
+  "cookieProtections": {
+    "status": 200,
+    "httpOnly": true,
+    "secure": true,
+    "sameSiteLax": true,
+    "cookieCount": 2
+  },
+  "crossOriginMutationStatus": 403,
+  "discordConfigured": false,
+  "realDiscordLoginTested": false,
+  "protectedImagesPublished": false,
+  "browser": {
+    "checkedAt": "2026-10-29T07:58:10.019Z",
+    "url": "https://sorarng.54-37-13-70.sslip.io",
+    "cards": 150,
+    "mobileWidth": 375,
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedStaticAssets": [],
+    "realLoginTested": false
+  },
+  "httpRedirect": {
+    "status": 301,
+    "location": "https://sorarng.54-37-13-70.sslip.io/"
+  },
+  "release": "20261029",
+  "archiveSha256": "9508cd8f99575ab13380b648401ee68b05cc57b265cafa5dfab3d644b6ff31f3",
+  "database": {
+    "isolated": true,
+    "migrationsApplied": 4,
+    "syntheticPlayersCreated": 0,
+    "persistentVolume": true
+  },
+  "backup": {
+    "created": true,
+    "restoreTested": true,
+    "restoredCatalogues": 1,
+    "restoredPlayers": 0,
+    "restoredMigrations": 4,
+    "testDatabaseRemoved": true,
+    "offsiteCopyConfigured": false
+  },
+  "applicationRestartTested": true,
+  "temporaryTunnelStopped": true,
+  "containerHealth": {
+    "application": "healthy",
+    "postgres": "healthy",
+    "initializeExitCode": 0
+  }
+}

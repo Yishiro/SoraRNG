@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-29T08:23:13.386Z",
+  "url": "https://sorarng.54-37-13-70.sslip.io/summon",
+  "release": "20261029-packs02",
+  "desktop": true,
+  "mobileWidth": 375,
+  "horizontalOverflow": false,
+  "packCountPreviewVerified": true,
+  "anonymousOpeningDisabled": true,
+  "discordStillConfigured": true,
+  "catalogueCards": 150,
+  "privateMediaStatus": 404,
+  "pageErrors": [],
+  "liveInvocationsPerformed": 0,
+  "localUnitTests": 38,
+  "localBrowserTests": 21,
+  "gameplayRulesChanged": false,
+  "aiImagesGenerated": false
+}

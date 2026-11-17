@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-29T09:57:50.413Z",
+  "url": "https://sorarng.54-37-13-70.sslip.io/summon",
+  "release": "20261029-demo01",
+  "publicDemoOpenings": 2,
+  "uniqueTemporaryCardIds": 10,
+  "realGameMutationRequests": 0,
+  "accountRequired": false,
+  "cost": 0,
+  "cooldown": false,
+  "claimedTrialsRestriction": false,
+  "reopenButtonStillEnabled": true,
+  "demoClearlyLabeled": true,
+  "mandatoryFlipsVerified": true,
+  "mobileVerified": true,
+  "serverIsolationVerifiedByTemporaryDatabaseHTTPTest": true,
+  "pageErrors": [],
+  "unitTests": 42,
+  "browserTests": 26
+}

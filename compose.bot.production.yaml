@@ -1,0 +1,42 @@
+name: sorarng
+services:
+  bot:
+    image: sorarng-bot:${SORA_BOT_IMAGE_TAG:-20261029-bot01}
+    init: true
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN:?Set bot token in private bot env}
+      DISCORD_APPLICATION_ID: ${DISCORD_APPLICATION_ID:?Set Discord application id}
+      DISCORD_GUILD_ID: ${DISCORD_GUILD_ID:-}
+      ADMIN_DISCORD_IDS: ${ADMIN_DISCORD_IDS:-}
+      DISCORD_SITE_URL: ${PUBLIC_ORIGIN:?Set public HTTPS origin}
+      DATABASE_URL: postgresql://sorarng:${POSTGRES_PASSWORD:?Set database password}@postgres:5432/sorarng
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "try{const t=Number(require('node:fs').readFileSync('/tmp/sorarng-bot-ready','utf8'));process.exit(Date.now()-t<45000?0:1)}catch{process.exit(1)}",
+        ]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    mem_limit: 384m
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+networks:
+  default:
+    external: true
+    name: sorarng_default

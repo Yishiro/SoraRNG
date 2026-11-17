@@ -1,0 +1,1986 @@
+[
+  {
+    "url": "https://kh.wiki.gallery/images/2/28/Sora_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:20.623Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/d/dc/Riku_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:20.763Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sora_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:20.835Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Riku_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:20.877Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/8/8e/Kairi_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:20.879Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/5/53/Roxas_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.013Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Kairi_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.015Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Roxas_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.133Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/4/49/Hayner_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.163Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/8/8d/Pence_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.310Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Pence_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.387Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Hayner_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.436Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/7f/Olette_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.529Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Olette_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.581Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/a/a2/Donald_Duck_%28Wizard_outfit%29_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.682Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Donald_Duck_(Wizard_outfit)_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.690Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/0/0d/Goofy_%28Knight_outfit%29_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.834Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Goofy_(Knight_outfit)_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.888Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/d/d2/Shadow_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:21.980Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Shadow_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.062Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/3/3a/Soldier_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.114Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Soldier_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.162Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Red_Nocturne_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.316Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Blue_Rhapsody_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.412Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/2/2c/Red_Nocturne_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.446Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/e/e7/Blue_Rhapsody_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.464Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/0/04/Yellow_Opera_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.584Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Dusk_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.716Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/b/ba/Dusk_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.721Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Yellow_Opera_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.841Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Samurai_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:22.969Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/d/df/Samurai_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.013Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/f/f0/Meow_Wow_%28Spirit%29_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.027Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/d/d8/Komory_Bat_%28Spirit%29_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.063Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Meow_Wow_(Spirit)_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.091Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/3/30/Kairi_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.243Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Kairi_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.315Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Komory_Bat_(Spirit)_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.406Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/78/Roxas_KHD.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.461Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Roxas_KHD.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.557Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/2/28/Axel_KHD.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.599Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Axel_KHD.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.660Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/c/c2/Xion_KHD.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.762Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Xion_KHD.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.809Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/4/43/Ventus_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.894Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Ventus_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:23.914Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/3/3c/Terra_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.056Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Terra_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.070Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Aqua_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.176Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/f/f7/Aqua_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.206Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Namin%C3%A9_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.346Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/b/b7/Mickey_Mouse_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.420Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Mickey_Mouse_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.541Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Leon_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.681Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/7c/Leon_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.701Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/2/2c/Namin%C3%A9_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.707Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/c/c6/Yuffie_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.841Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Yuffie_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.963Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Cid_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:24.993Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/c/c9/Merlin_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:25.143Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Merlin_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:25.247Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/a/af/Cid_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:25.345Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/c/c5/Maleficent_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:25.394Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Maleficent_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:25.437Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/2/23/Pete_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:25.532Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/2/23/Defender_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:25.690Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Defender_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:25.728Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Pete_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:25.776Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Large_Body_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:25.963Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Wyvern_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.092Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/0/08/Wyvern_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.112Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/b/b6/Large_Body_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.236Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/1/14/Sorcerer_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.264Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sorcerer_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.384Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/a/a1/Berserker_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.416Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Berserker_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.522Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/e/ec/Meowjesty_%28Spirit%29_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.572Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Meowjesty_(Spirit)_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.635Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/0/08/Tyranto_Rex_%28Nightmare%29_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.725Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Tyranto_Rex_(Nightmare)_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.821Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/0/07/Sora_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.865Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sora_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:26.909Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/b/be/Riku_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:27.001Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/5/5c/Kairi_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:27.139Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Kairi_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:27.161Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Riku_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:27.175Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/1/1a/Axel_%28Art%29.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:27.305Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Axel_(Art).png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:27.423Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/4/46/Vanitas_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:27.433Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Vanitas_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:27.537Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Xigbar_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:27.676Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Xaldin_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:27.792Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/4/47/Xaldin_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:27.820Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/5/55/Vexen_%28Art%29.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.016Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/3/3c/Xigbar_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.032Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Vexen_(Art).png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.086Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/9/95/Lexaeus_%28Art%29.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.186Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/2/2e/Zexion_%28Art%29.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.332Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Zexion_(Art).png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.370Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Lexaeus_(Art).png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.390Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/0/0a/Demyx_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.506Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/b/b2/Luxord_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.641Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Luxord_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.644Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Demyx_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.674Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/6/6b/Marluxia_%28Art%29.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.795Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Marluxia_(Art).png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.927Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/b/b7/Larxene_%28Art%29.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.943Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Larxene_(Art).png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:28.965Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Ansem_the_Wise_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:29.219Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Master_Eraqus_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:29.315Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/9/9c/Master_Eraqus_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:29.371Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/9/95/Chirithy_%28Spirit%29_KHX.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:29.511Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Chirithy_(Spirit)_KHX.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:29.603Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/9/9c/Ansem_the_Wise_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:29.628Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/6/69/Sora_%28Valor_Form%29_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:29.796Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sora_(Valor_Form)_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:29.803Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/9/91/Sora_%28Wisdom_Form%29_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:29.976Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sora_(Wisdom_Form)_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.012Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sora_(Master_Form)_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.072Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/9/90/Sora_%28Master_Form%29_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.136Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/c/ca/Sora_%28Limit_Form%29_KHIIFM.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.224Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sora_(Limit_Form)_KHIIFM.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.282Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/75/Riku_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.307Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Riku_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.406Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Roxas_(Oathkeeper_and_Oblivion)_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.553Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Aqua_KH0.2.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.695Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/9/98/Aqua_KH0.2.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.719Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/e/ea/Roxas_%28Oathkeeper_and_Oblivion%29_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.763Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Keyblade_Armor_(Terra)_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:30.982Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Keyblade_Armor_(Ventus)_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:31.051Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/8/86/Keyblade_Armor_%28Terra%29_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:31.103Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/6/62/Xemnas_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:31.260Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Xemnas_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:31.303Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/d/d8/Keyblade_Armor_%28Ventus%29_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:31.386Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/3/3e/Ansem%2C_Seeker_of_Darkness_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:31.453Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Ansem,_Seeker_of_Darkness_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:31.514Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Riku_(Dark_Mode)_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:31.774Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sa%C3%AFx_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:31.794Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/c/c4/Riku_%28Dark_Mode%29_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:31.826Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/e/e5/Lea_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:31.890Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/b/bf/Sa%C3%AFx_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:32.005Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Lea_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:32.048Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Young_Xehanort_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:32.329Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/9/9d/Roxas_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:32.469Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Roxas_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:32.483Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/5/5a/Young_Xehanort_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:32.491Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/70/Sora_%28Final_Form%29_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:32.633Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sora_(Rage_Form)_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:32.747Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sora_(Final_Form)_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:32.755Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/2/27/Sora_%28Rage_Form%29_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:32.785Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/7e/Sora_%28Double_Form%29_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:32.907Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sora_(Double_Form)_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.031Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Riku_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.047Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/3/3f/Anti-Aqua_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.191Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Anti-Aqua_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.303Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/c/ce/Riku_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.436Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Terra-Xehanort_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.443Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/9/9b/Terra-Xehanort_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.455Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/1/19/Master_Xehanort_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.578Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/5/5d/Ventus-Vanitas_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.656Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Master_Xehanort_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.698Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/77/Xemnas_%28Final_Form%29_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.850Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Ventus-Vanitas_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.862Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Xemnas_(Final_Form)_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:33.908Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/77/World_of_Chaos_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:34.014Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:World_of_Chaos_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:34.102Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Marluxia_(Third_Form)_KHRECOM.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:34.287Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/7e/Marluxia_%28Third_Form%29_KHRECOM.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:34.365Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Yozora_KHIIIRM.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:34.389Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sora_(Ultimate_Form)_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:34.735Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/79/Yozora_KHIIIRM.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:34.823Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/6/67/Sora_%28Ultimate_Form%29_KHIII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:34.825Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Selphie_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:34.987Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Tidus_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.077Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/6/63/Tidus_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.135Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/0/05/Wakka_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.263Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Wakka_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.327Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/2/20/Kairi%27s_Grandma_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.474Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Kairi%27s_Grandma_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.534Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/3/37/Selphie_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.636Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/4/47/Huey_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.680Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Huey_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.744Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/9/94/Dewey_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.826Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Dewey_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.928Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Louie_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:35.998Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/c/c3/Pongo_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:36.143Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Pongo_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:36.218Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/8/83/Louie_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:36.295Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/b/b1/Perdita_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:36.367Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Perdita_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:36.425Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/e/eb/Moogle_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:36.501Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/6/6e/Flora_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:36.543Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Moogle_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:36.546Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Flora_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:36.709Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Fauna_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:36.841Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Merryweather_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:36.993Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/5/5c/Merryweather_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:37.144Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/3/36/Fauna_KHBBS.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:37.155Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Goofy_CotM_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:37.245Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/0/0d/Goofy_CotM_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:37.275Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Donald_Duck_CotM_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:37.408Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/4/4c/Donald_Duck_CotM_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:37.514Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Mickey_Mouse_CotM_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:37.644Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/e/e9/Scrooge_McDuck_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:37.690Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Scrooge_McDuck_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:37.824Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/2/27/Mickey_Mouse_CotM_KH3D.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:38.040Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/e/ee/Chip_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:38.148Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Dale_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:38.312Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Kairi%27s_Letter_and_Bottle_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:38.597Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/3/32/Dale_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:38.671Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/d/da/Kairi%27s_Letter_and_Bottle_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:38.757Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/4/44/Sea-Salt_Ice_Cream_%28Render%29_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:38.899Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Sea-Salt_Ice_Cream_(Render)_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:38.923Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Chip_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:38.983Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/6/63/Paopu_Fruit.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.058Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Paopu_Fruit.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.153Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/2/24/Mythril_Gem_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.207Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Mythril_Gem_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.233Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Mythril_Crystal_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.425Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Serenity_Crystal_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.490Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/b/b9/Mythril_Crystal_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.548Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/4/44/Orichalcum%2B_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.694Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/7f/Serenity_Crystal_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.722Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Orichalcum%2B_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.744Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Wayfinder_KHFM.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.946Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/3/30/Kingdom_Key_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:39.982Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Kingdom_Key_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:40.014Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/6/66/Oathkeeper_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:40.149Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Oathkeeper_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:40.235Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/b/b2/Wayfinder_KHFM.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:40.381Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/5/5f/Oblivion_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:40.391Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Oblivion_KHII.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:40.425Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/4/4a/White_Mushroom_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:40.543Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:White_Mushroom_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:40.635Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Black_Fungus_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:40.713Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/1/10/Rare_Truffle_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:40.857Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/5/50/Black_Fungus_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:40.927Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Rare_Truffle_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:41.013Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/c/c3/Search_Ghost_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:41.088Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Search_Ghost_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:41.143Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/c/c1/Gargoyle_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:41.240Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Gargoyle_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:41.265Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/b/b8/Pot_Spider_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:41.385Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Pot_Spider_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:41.438Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/73/Barrel_Spider_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:41.522Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Barrel_Spider_KH.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:41.540Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://www.khwiki.com/File:Neoshadow_KHFM.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:41.694Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  },
+  {
+    "url": "https://kh.wiki.gallery/images/7/7c/Neoshadow_KHFM.png",
+    "status": 200,
+    "ok": true,
+    "checkedAt": "2026-10-28T21:59:41.906Z",
+    "method": "HEAD",
+    "bytesDownloaded": 0
+  }
+]

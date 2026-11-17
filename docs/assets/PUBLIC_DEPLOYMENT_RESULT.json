@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-29T09:22:26.337Z",
+  "url": "https://sorarng.54-37-13-70.sslip.io/codex",
+  "release": "20261029-art01",
+  "illustratedCards": 135,
+  "missingCards": 15,
+  "verifiedRights": 0,
+  "awaitingPermission": 135,
+  "publicationDecision": "explicit owner request; rights not verified",
+  "verifiedStaticFiles": 270,
+  "sha256Matches": true,
+  "desktopAndMobile": true,
+  "cardDetailImageVerified": true,
+  "pageErrors": [],
+  "privatePreviewApiStatus": 404,
+  "discordStillConfigured": true,
+  "aiImagesGenerated": false,
+  "unitTests": 41,
+  "browserTests": 22
+}

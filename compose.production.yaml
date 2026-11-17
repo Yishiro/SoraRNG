@@ -1,0 +1,71 @@
+name: sorarng
+x-runtime: &runtime
+  DATABASE_URL: postgresql://sorarng:${POSTGRES_PASSWORD:?Set production password}@postgres:5432/sorarng
+  AUTH_SECRET: ${AUTH_SECRET:?Set production session secret}
+  NEXTAUTH_URL: ${PUBLIC_ORIGIN:?Set public HTTPS origin}
+  NEXTAUTH_URL_INTERNAL: http://app:3000
+  AUTH_DISCORD_ID: ${AUTH_DISCORD_ID:-}
+  AUTH_DISCORD_SECRET: ${AUTH_DISCORD_SECRET:-}
+  ADMIN_DISCORD_IDS: ${ADMIN_DISCORD_IDS:-}
+  MODERATOR_DISCORD_IDS: ${MODERATOR_DISCORD_IDS:-}
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sorarng
+      POSTGRES_DB: sorarng
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set production password}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U sorarng -d sorarng']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    mem_limit: 512m
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+  initialize:
+    image: sorarng-tools:${SORA_IMAGE_TAG:-latest}
+    environment: *runtime
+    command: ['sh', '-c', 'pnpm db:deploy && pnpm catalog:import']
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: 'no'
+    mem_limit: 512m
+    logging: *logging
+  app:
+    image: sorarng-app:${SORA_IMAGE_TAG:-latest}
+    init: true
+    restart: unless-stopped
+    environment: *runtime
+    ports:
+      - '127.0.0.1:${APP_PORT:-3010}:3000'
+    depends_on:
+      initialize:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "fetch('http://127.0.0.1:3000/api/catalog',{signal:AbortSignal.timeout(4000)}).then(async r=>{await r.arrayBuffer();process.exit(r.ok?0:1)}).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 768m
+    logging: *logging
+volumes:
+  postgres_data:

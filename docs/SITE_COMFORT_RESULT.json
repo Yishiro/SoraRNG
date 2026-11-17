@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-29T16:33:13.367Z",
+  "release": "20261029-comfort01",
+  "url": "https://sorarng.54-37-13-70.sslip.io",
+  "mobileNavigation": true,
+  "drawerFocusAndEscape": true,
+  "dashboardShortcuts": 3,
+  "collectionReset": true,
+  "combinedCopyFilters": "verified with isolated browser fixture",
+  "responsiveWidths": [320, 375, 768, 1440],
+  "publicDemoFullOpening": true,
+  "gameMutations": 0,
+  "pageErrors": [],
+  "unitTests": 43,
+  "browserTests": 28
+}

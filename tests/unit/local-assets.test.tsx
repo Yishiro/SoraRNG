@@ -1,0 +1,61 @@
+// @vitest-environment node
+import { expect, test } from 'vitest';
+import { allowLocalAssets } from '../../src/server/local-assets';
+test('aperçus réservés au développement sur loopback', () => {
+  expect(
+    allowLocalAssets(
+      'development',
+      'http://localhost:3000/api',
+      'localhost:3000',
+      false,
+    ),
+  ).toBe(true);
+  expect(
+    allowLocalAssets(
+      'development',
+      'http://127.0.0.1:3000/api',
+      '127.0.0.1:3000',
+      false,
+    ),
+  ).toBe(true);
+  expect(
+    allowLocalAssets(
+      'production',
+      'http://localhost:3000/api',
+      'localhost:3000',
+      false,
+    ),
+  ).toBe(false);
+  expect(
+    allowLocalAssets(
+      'test',
+      'http://localhost:3000/api',
+      'localhost:3000',
+      false,
+    ),
+  ).toBe(false);
+  expect(
+    allowLocalAssets(
+      'development',
+      'https://example.com/api',
+      'example.com',
+      false,
+    ),
+  ).toBe(false);
+  expect(
+    allowLocalAssets(
+      'development',
+      'http://localhost:3000/api',
+      'example.com',
+      false,
+    ),
+  ).toBe(false);
+  expect(
+    allowLocalAssets(
+      'development',
+      'http://localhost:3000/api',
+      'localhost:3000',
+      true,
+    ),
+  ).toBe(false);
+});

@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-29T17:28:46.865Z",
+  "release": "20261029-cardclub01",
+  "url": "https://sorarng.54-37-13-70.sslip.io",
+  "mobileNavigation": true,
+  "drawerFocusAndEscape": true,
+  "dashboardShortcuts": 3,
+  "realCataloguePortraitsVerified": 3,
+  "noDecorativePortalsOrPackRings": true,
+  "collectionReset": true,
+  "combinedCopyFilters": "verified with isolated browser fixture",
+  "responsiveWidths": [320, 375, 768, 1440],
+  "publicDemoFullOpening": true,
+  "gameMutations": 0,
+  "pageErrors": [],
+  "unitTests": 47,
+  "browserTests": 29
+}
