@@ -17,7 +17,6 @@ import {
   Settings,
   ChevronRight,
   Gem,
-  Wrench,
   Star,
   X,
   Shield,
@@ -57,6 +56,13 @@ import RecentDrops from './recent-drops';
 import DashboardWelcome from './dashboard-welcome';
 import DashboardNext from './dashboard-next';
 import RecentCards from './recent-cards';
+import CopyFusion from './copy-fusion';
+import Leaderboards from './leaderboards';
+import Events from './events';
+import ActivityFeed from './activity-feed';
+import Quests from './quests';
+import Achievements from './achievements';
+import type { QuestStatus } from '../game/quests';
 import SummonRates from './summon-rates';
 import ShopCounter from './shop-counter';
 import SettingsPanel from './settings-panel';
@@ -88,8 +94,8 @@ const pageDescriptions: Record<string, string> = {
     'Vendez vos cartes et enchérissez sur celles des autres collectionneurs.',
   missions: 'Consultez vos objectifs et récupérez les récompenses disponibles.',
   shop: 'Échangez vos Munny contre des tickets et des fragments.',
-  leaderboards: 'Cette rubrique est en construction.',
-  events: 'Cette rubrique est en construction.',
+  leaderboards: 'La saison du mois, son podium et les meilleures collections.',
+  events: 'Les rendez-vous de l’équipe et l’actualité des collectionneurs.',
   settings: 'Adaptez les animations et gérez votre connexion.',
 };
 const mobileDestinations = [
@@ -134,6 +140,7 @@ type Snapshot = {
   state: Player;
   cards: Card[];
   missions?: MissionStatus[];
+  quests?: QuestStatus[];
   staffRole?: 'admin' | 'moderator' | 'player';
   history: HistoryEntry[];
 };
@@ -520,43 +527,21 @@ export default function Game({ section }: { section: string }) {
         </Link>
         <div className="nav-label">NAVIGATION</div>
         <nav>
-          {nav
-            .filter(([url]) => !['leaderboards', 'events'].includes(url))
-            .map(([url, label, Icon]) => (
-              <Link
-                onClick={() => setMobile(false)}
-                className={section === url ? 'active' : ''}
-                href={`/${url}`}
-                aria-current={section === url ? 'page' : undefined}
-                key={url}
-              >
-                <Icon size={19} aria-hidden="true" />
-                {label}
-                {section === url && (
-                  <span className="active-dot" aria-hidden="true" />
-                )}
-              </Link>
-            ))}
-          <details
-            className="upcoming-nav"
-            open={['leaderboards', 'events'].includes(section)}
-          >
-            <summary>Prochainement</summary>
-            {nav
-              .filter(([url]) => ['leaderboards', 'events'].includes(url))
-              .map(([url, label, Icon]) => (
-                <Link
-                  key={url}
-                  href={`/${url}`}
-                  onClick={() => setMobile(false)}
-                  aria-current={section === url ? 'page' : undefined}
-                >
-                  <Icon size={17} />
-                  {label}
-                  <small>En construction</small>
-                </Link>
-              ))}
-          </details>
+          {nav.map(([url, label, Icon]) => (
+            <Link
+              onClick={() => setMobile(false)}
+              className={section === url ? 'active' : ''}
+              href={`/${url}`}
+              aria-current={section === url ? 'page' : undefined}
+              key={url}
+            >
+              <Icon size={19} aria-hidden="true" />
+              {label}
+              {section === url && (
+                <span className="active-dot" aria-hidden="true" />
+              )}
+            </Link>
+          ))}
           {data?.staffRole && data.staffRole !== 'player' && (
             <Link
               onClick={() => setMobile(false)}
@@ -714,9 +699,6 @@ export default function Game({ section }: { section: string }) {
             </>
           )}
           {section === 'dashboard' && player && (
-            <RecentCards player={player} cards={cards} />
-          )}
-          {section === 'dashboard' && player && (
             <div id="wallet">
               <FinancePanel
                 player={player}
@@ -725,6 +707,9 @@ export default function Game({ section }: { section: string }) {
                 onAction={(kind, payload) => void financeAction(kind, payload)}
               />
             </div>
+          )}
+          {section === 'dashboard' && player && (
+            <RecentCards player={player} cards={cards} />
           )}
           {section === 'summon' && (
             <SummonLounge
@@ -1048,6 +1033,16 @@ export default function Game({ section }: { section: string }) {
               onBuy={(kind) => void act('shop', { item: `boost-${kind}` })}
             />
           )}
+          {section === 'missions' && player && (
+            <Quests
+              quests={data?.quests ?? []}
+              busy={busy}
+              now={now}
+              onClaim={(quest) =>
+                void act('quest', { quest: quest.id, cycle: quest.cycle })
+              }
+            />
+          )}
           {section === 'missions' && (
             <Missions
               player={player}
@@ -1058,6 +1053,9 @@ export default function Game({ section }: { section: string }) {
               now={now}
               onClaim={(id) => void act('mission', { mission: id })}
             />
+          )}
+          {section === 'missions' && player && (
+            <Achievements player={player} cards={cards} />
           )}
           {section === 'settings' && (
             <SettingsPanel
@@ -1095,21 +1093,12 @@ export default function Game({ section }: { section: string }) {
                 </button>
               </section>
             ))}
-          {['leaderboards', 'events'].includes(section) && (
-            <section
-              className="panel feature-in-progress"
-              aria-labelledby="construction-title"
-            >
-              <Wrench size={30} strokeWidth={1.2} aria-hidden="true" />
-              <h2 id="construction-title">En construction</h2>
-              <p>
-                La rubrique {active?.[1]?.toLocaleLowerCase('fr')} sera
-                disponible prochainement.
-              </p>
-              <Link href="/dashboard" className="outline">
-                Retour à l’Accueil <ChevronRight size={15} />
-              </Link>
-            </section>
+          {section === 'leaderboards' && <Leaderboards playerId={data?.id} />}
+          {section === 'events' && (
+            <>
+              <Events />
+              <ActivityFeed cards={cards} />
+            </>
           )}
           {section === 'admin' && <Admin />}
           {data && section === 'dashboard' && (
@@ -1202,6 +1191,21 @@ export default function Game({ section }: { section: string }) {
                 busy={busy}
                 onAction={(kind, payload) => void act(kind, payload)}
               />
+              {player && cards.find((c) => c.id === selectedCopy.cardId) && (
+                <CopyFusion
+                  card={cards.find((c) => c.id === selectedCopy.cardId)!}
+                  copy={selectedCopy}
+                  copies={player.copies}
+                  munny={player.munny}
+                  busy={busy}
+                  onFuse={(duplicateId) =>
+                    void act('fuse', { copyId: selectedCopy.id, duplicateId })
+                  }
+                  onAllocate={(stat) =>
+                    void act('allocate', { copyId: selectedCopy.id, stat })
+                  }
+                />
+              )}
               {section === 'collection' && !pendingAction && (
                 <AuctionListing
                   key={selectedCopy.id}

@@ -92,31 +92,52 @@ test('staff UI submits reasoned adjustments and moderator cannot see finance act
     page.getByRole('button', { name: 'Suspendre le compte' }),
   ).toBeVisible();
 });
-test('rankings and events show construction screens without loading feature APIs', async ({
-  page,
-}) => {
-  const calls: string[] = [];
-  page.on('request', (request) => {
-    if (
-      /^\/api\/(trades|leaderboards|events)(?:[/?]|$)/.test(
-        new URL(request.url()).pathname,
-      )
-    )
-      calls.push(request.url());
-  });
-  for (const section of ['leaderboards', 'events']) {
-    await page.goto(`/${section}`);
-    await expect(
-      page.getByRole('heading', { name: 'En construction', exact: true }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole('link', { name: 'Retour à l’Accueil' }),
-    ).toHaveAttribute('href', '/dashboard');
-    await expect(
-      page.getByRole('button', { name: 'Accepter', exact: true }),
-    ).toHaveCount(0);
-  }
-  expect(calls).toEqual([]);
+test('rankings and events pages load their data', async ({ page }) => {
+  await page.route('**/api/leaderboards', (route) =>
+    route.fulfill({
+      json: {
+        season: {
+          id: '2026-11',
+          label: 'novembre 2026',
+          endsAt: '2026-12-01T00:00:00.000Z',
+          rewards: [30000, 20000, 10000],
+          standings: [{ id: '1', name: 'Kairi', points: 120 }],
+        },
+        previous: null,
+        collection: [{ id: '1', name: 'Kairi', value: 40 }],
+        holos: [],
+        codex: [],
+      },
+    }),
+  );
+  await page.route('**/api/events', (route) => route.fulfill({ json: [] }));
+  await page.route('**/api/activity', (route) =>
+    route.fulfill({
+      json: {
+        items: [
+          {
+            id: 'sale:1',
+            at: '2026-11-17T10:00:00.000Z',
+            kind: 'sale',
+            text: 'Riku a acheté Sora à Kairi pour 2 000 Munny.',
+          },
+        ],
+      },
+    }),
+  );
+  await page.goto('/leaderboards');
+  await expect(
+    page.getByRole('heading', { name: /Le podium du mois/ }),
+  ).toBeVisible();
+  await expect(page.getByText('30 000 Munny', { exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Kairi' })).toBeVisible();
+  await page.getByRole('tab', { name: 'Collection' }).click();
+  await expect(page.getByText('40 exemplaires')).toBeVisible();
+  await page.goto('/events');
+  await expect(
+    page.getByRole('heading', { name: 'Fil d’activité du royaume' }),
+  ).toBeVisible();
+  await expect(page.getByText(/Riku a acheté Sora/)).toBeVisible();
   await page.setViewportSize({ width: 375, height: 812 });
   expect(
     await page.evaluate(

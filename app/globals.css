@@ -6919,3 +6919,356 @@ progress::-webkit-progress-value {
   gap: 4px;
   white-space: nowrap;
 }
+
+/* Quêtes, succès, fusion, saisons et fil d'activité. */
+.quest-tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid #ffffff14;
+  border-radius: 8px;
+  background: #ffffff05;
+}
+.quest-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #a9aab0;
+  font-size: 13px;
+  font-weight: 600;
+}
+.quest-tabs button.active {
+  background: #ffffff12;
+  color: #f0f0f1;
+}
+.quest-badge {
+  min-width: 20px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: #e8e8ea;
+  color: #1b1b1e;
+  font-size: 11px;
+}
+.quest-summary {
+  color: #9b9ba3;
+  font-size: 13px;
+}
+.quest-ready {
+  color: #dcdcdf;
+  font-size: 13px;
+}
+.quest-list,
+.achievement-grid,
+.ranking,
+.activity-feed ul {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.quest-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #ffffff0d;
+}
+.quest-list li.done {
+  opacity: 0.55;
+}
+.quest-list h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.quest-progress,
+.stat-track {
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  background: #ffffff12;
+  overflow: hidden;
+}
+.quest-progress i,
+.stat-track i {
+  display: block;
+  height: 100%;
+  background: #d3d4d7;
+  border-radius: inherit;
+  transition: width 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.quest-list li.ready .quest-progress i {
+  background: #f0f0f1;
+}
+.quest-list small {
+  display: block;
+  margin-top: 6px;
+  color: #8f8f97;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.quest-list strong {
+  font-size: 13px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.quest-list button {
+  min-width: 110px;
+}
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+.achievement-grid li {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #ffffff10;
+  border-radius: 8px;
+  color: #7d7d85;
+}
+.achievement-grid li.done {
+  border-color: #ffffff2e;
+  color: #e6e6e8;
+}
+.achievement-grid div {
+  display: grid;
+  gap: 4px;
+}
+.achievement-grid strong {
+  font-size: 14px;
+}
+.achievement-grid span,
+.achievement-grid small {
+  font-size: 12px;
+  color: #9b9ba3;
+}
+.copy-fusion {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #ffffff14;
+}
+.copy-fusion-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.copy-fusion h3 {
+  margin: 0;
+  font-size: 15px;
+}
+.fusion-rank {
+  font-size: 12px;
+  color: #b9bac0;
+  font-variant-numeric: tabular-nums;
+}
+.stat-bars {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0;
+}
+.stat-bars > div {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+.stat-bars dt {
+  font-size: 12px;
+  color: #a2a2a8;
+}
+.stat-bars dd {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 40px auto auto;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+.stat-bars strong {
+  text-align: right;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.stat-bars small {
+  font-size: 11px;
+  color: #8f8f97;
+}
+.stat-add {
+  width: 28px;
+  height: 28px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ffffff2a !important;
+  border-radius: 6px;
+}
+.fusion-points {
+  font-size: 13px;
+  color: #e6e6e8;
+}
+.fusion-form {
+  display: grid;
+  gap: 10px;
+}
+.fusion-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  color: #a2a2a8;
+}
+.fusion-form select {
+  min-height: 40px;
+  border-radius: 6px;
+  background: #1c1c1e;
+  color: #e8e8ea;
+  border: 1px solid #ffffff1f;
+  padding: 0 10px;
+  color-scheme: dark;
+}
+.fusion-note {
+  font-size: 12px;
+  color: #8f8f97;
+  line-height: 1.6;
+}
+.season-hero h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.season-rewards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+.season-rewards li {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid #ffffff14;
+  border-radius: 8px;
+}
+.season-rewards li:first-child {
+  border-color: #ffffff3a;
+}
+.season-rewards span {
+  font-size: 12px;
+  color: #9b9ba3;
+}
+.season-rewards span::after {
+  content: 'e place';
+}
+.season-rewards li:first-child span::after {
+  content: 're place';
+}
+.season-rewards strong {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+.season-previous {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #b9bac0;
+}
+.ranking li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  border-bottom: 1px solid #ffffff0d;
+}
+.ranking li.me {
+  background: #ffffff08;
+}
+.ranking-place {
+  text-align: center;
+  font-size: 13px;
+  color: #9b9ba3;
+  font-variant-numeric: tabular-nums;
+}
+.ranking li:nth-child(-n + 3) .ranking-place {
+  color: #f0f0f1;
+  font-weight: 700;
+}
+.ranking a {
+  color: #e6e6e8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ranking small {
+  font-size: 12px;
+  color: #b9bac0;
+}
+.ranking strong {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.activity-feed li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ffffff0d;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.activity-feed svg {
+  margin-top: 2px;
+  color: #b9bac0;
+}
+.activity-feed time {
+  font-size: 12px;
+  color: #8f8f97;
+  white-space: nowrap;
+}
+.compare-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 16px 0;
+}
+.compare-columns h3 {
+  font-size: 14px;
+}
+@media (max-width: 700px) {
+  .quest-list li {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .quest-list li > button {
+    grid-column: 1 / -1;
+  }
+  .season-rewards,
+  .compare-columns {
+    grid-template-columns: 1fr;
+  }
+  .ranking li {
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+  }
+  .ranking small {
+    display: none;
+  }
+  .activity-feed li {
+    grid-template-columns: 18px minmax(0, 1fr);
+  }
+  .activity-feed time {
+    grid-column: 2;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quest-progress i,
+  .stat-track i {
+    transition: none;
+  }
+}

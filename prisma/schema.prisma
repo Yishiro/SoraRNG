@@ -210,3 +210,9 @@ model WalletLedger {
   @@index([playerId, id(sort: Desc)], map: "WalletLedger_player_id")
   @@index([source, id(sort: Desc)], map: "WalletLedger_source_id")
 }
+
+model SeasonSettlement {
+  id        String   @id
+  standings Json
+  createdAt DateTime @default(now()) @db.Timestamptz
+}

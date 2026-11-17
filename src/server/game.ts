@@ -14,6 +14,17 @@ import { economy } from '../game/config';
 import { boosts, boostDuration, summonOdds } from '../game/boosts';
 import { showcaseLimit } from '../game/showcase';
 import { playerMissions } from './missions';
+import { playerQuests } from './quests';
+import { pruneQuestClaims } from '../game/quests';
+import {
+  fusion,
+  fusionCost,
+  fusionFodder,
+  fusionRank,
+  statKeys,
+  unspentPoints,
+  type StatKey,
+} from '../game/stats';
 import { walletAuditContext } from './wallet-audit';
 import {
   caps,
@@ -59,6 +70,9 @@ export async function snapshot(id: string) {
     cards: await catalog(),
     history: history.map((row) => ({ ...row, delta: Number(row.delta) })),
     missions: player ? await playerMissions(pool, id, player.state) : [],
+    quests: player
+      ? await playerQuests(pool, id, player.state, await catalog())
+      : [],
   };
 }
 export async function mutate(
@@ -216,6 +230,47 @@ export async function mutate(
       if (payload.wanted) wanted.add(payload.cardId);
       else wanted.delete(payload.cardId);
       p.wishlist = [...wanted];
+    } else if (kind === 'quest') {
+      const cycle = payload.cycle;
+      if (cycle !== 'daily' && cycle !== 'weekly')
+        throw new Error('Quête invalide');
+      const quest = (await playerQuests(db, id, p, cards, new Date(now))).find(
+        (q) => q.id === payload.quest && q.cycle === cycle,
+      );
+      if (!quest?.claimable) throw new Error('Quête non disponible');
+      p.claimed = [
+        ...pruneQuestClaims(p.claimed, new Date(now)),
+        quest.claimKey,
+      ];
+      p.munny += quest.munny;
+      result = { success: true, questId: quest.id, munny: quest.munny };
+    } else if (kind === 'fuse') {
+      const target = p.copies.find((c) => c.id === payload.copyId);
+      const fodder = p.copies.find((c) => c.id === payload.duplicateId);
+      if (!target || !fodder) throw new Error('Exemplaire introuvable');
+      if (fusionRank(target) >= fusion.maxRank)
+        throw new Error('Fusion maximale atteinte');
+      if (!fusionFodder(fodder, target))
+        throw new Error(
+          'Le doublon doit être un exemplaire standard du même modèle, ni verrouillé, ni favori.',
+        );
+      requireFunds(p, fusionCost(target));
+      p.copies = p.copies.filter((c) => c.id !== fodder.id);
+      if (p.showcase) p.showcase = p.showcase.filter((c) => c !== fodder.id);
+      target.fusion = fusionRank(target) + 1;
+      result = { success: true, copyId: target.id, fusion: target.fusion };
+    } else if (kind === 'allocate') {
+      const target = p.copies.find((c) => c.id === payload.copyId);
+      const stat = payload.stat;
+      if (!target) throw new Error('Exemplaire introuvable');
+      if (!statKeys.includes(stat as StatKey))
+        throw new Error('Statistique invalide');
+      if (unspentPoints(target) < 1) throw new Error('Aucun point à répartir');
+      target.bonus = {
+        ...target.bonus,
+        [stat as StatKey]: (target.bonus?.[stat as StatKey] ?? 0) + 1,
+      };
+      result = { success: true, copyId: target.id, stat };
     } else if (kind === 'settings') {
       if (
         Object.keys(payload).length !== 1 ||

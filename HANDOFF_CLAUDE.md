@@ -43,8 +43,15 @@ Les références sont `src/game/config.ts`, `src/game/finance.ts` et `src/game/b
 | Boost Rare                     | 1 500 Munny, Rare à 6,6 %, Commun à 89 %        |
 | Boost holographique            | 1 000 Munny, holographique à 0,45 %             |
 | Durée des boosts               | 30 minutes dès l'achat, un seul actif à la fois |
+| Quêtes journalières            | 10 par jour (UTC), 250 à 1 000 Munny chacune    |
+| Quêtes hebdomadaires           | 50 par semaine (lundi UTC), 500 à 2 000 Munny   |
+| Saison mensuelle (UTC)         | Top 3 : 30 000 / 20 000 / 10 000 Munny          |
+| Fusion                         | 1 doublon standard + 500 Munny × rang visé      |
+| Rang de fusion                 | 10 maximum, 3 points de stats par rang          |
 
 Les intérêts restent dans l'épargne. Les mises `all` utilisent le disponible et excluent l'épargne et les fonds réservés. Le catalogue JSON d'origine conserve ses métadonnées historiques, le serveur applique la configuration actuelle.
+
+Ajouts du 17 novembre : quêtes (`src/game/quests.ts`), saisons et versement automatique du top 3 au premier accès du mois suivant (`src/server/seasons.ts`, table `SeasonSettlement`, première saison novembre 2026), fusion et statistiques PV, Attaque, Défense, Vitesse pour le futur PvP (`src/game/stats.ts`), succès sans récompense (`src/game/achievements.ts`), alertes de liste de souhaits sur le site lors d'une mise en vente, comparateur de collections sur les profils, pages Classements et Événements ouvertes avec un fil d'activité.
 
 ## Carte du code
 

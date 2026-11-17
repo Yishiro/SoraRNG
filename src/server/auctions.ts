@@ -288,6 +288,21 @@ export class AuctionService {
             new Date(this.now() + 86400000),
           ],
         );
+        // Alerte de liste de souhaits, visible sur le site uniquement (statut
+        // « ignored » : le bot Discord ne l'envoie pas en message privé).
+        await db.query(
+          `INSERT INTO "AuctionNotification" (id,"playerId",kind,"auctionId",payload,status)
+           SELECT md5($1 || ':' || p.id),p.id,'wishlist',$1,$2,'ignored' FROM "Player" p
+            WHERE p.id<>$3 AND COALESCE(p.state->'wishlist','[]'::jsonb) ? $4
+              AND COALESCE(p.state#>>'{moderation,suspended}','false')<>'true'
+           ON CONFLICT (id) DO NOTHING`,
+          [
+            result.id,
+            JSON.stringify({ copy, amount: input.amount }),
+            actor,
+            copy.cardId,
+          ],
+        );
         await this.save(db, players);
       } else {
         const auction: Auction | undefined = (

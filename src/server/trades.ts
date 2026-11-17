@@ -127,7 +127,8 @@ export async function tradeAction(
                 current.cardId !== offered.cardId ||
                 current.level !== offered.level ||
                 current.awakening !== offered.awakening ||
-                current.holo !== offered.holo
+                current.holo !== offered.holo ||
+                (current.fusion ?? 0) !== (offered.fusion ?? 0)
               )
                 throw new Error(
                   'Une carte proposée a changé ou n’est plus disponible',

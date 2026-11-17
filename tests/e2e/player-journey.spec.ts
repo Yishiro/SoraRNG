@@ -160,11 +160,8 @@ for (const width of [1280, 375]) {
     await page.keyboard.press('Escape');
     if (width === 375)
       await page.getByRole('button', { name: 'Tous les menus' }).click();
-    await expect(
-      page.getByRole('link', { name: 'Classements', exact: false }),
-    ).toHaveCount(0);
-    await page.getByText('Prochainement', { exact: true }).click();
     await expect(page.getByRole('link', { name: /Classements/ })).toBeVisible();
+    await expect(page.getByRole('link', { name: /Événements/ })).toBeVisible();
     if (width === 375) await page.keyboard.press('Escape');
     expect(
       await page.evaluate(

@@ -4,7 +4,10 @@ import {
   identity,
   mutate,
   snapshot,
+  pool,
+  catalog,
 } from '../../../src/server/game';
+import { settleSeasons } from '../../../src/server/seasons';
 import { rateLimit } from '../../../src/server/limits';
 import { ForbiddenAccess } from '../../../src/server/permissions';
 import {
@@ -25,6 +28,11 @@ export async function GET() {
         { error: 'Trop de requêtes. Réessayez dans une minute.' },
         { status: 429 },
       );
+    try {
+      await settleSeasons(pool, await catalog());
+    } catch {
+      /* Le règlement de saison sera retenté à la prochaine lecture. */
+    }
     return Response.json(await snapshot(user.id), {
       headers: privateAuthHeaders,
     });
@@ -56,6 +64,9 @@ const actionSchema = z.object({
     'recycle',
     'upgrade',
     'awaken',
+    'quest',
+    'fuse',
+    'allocate',
   ]),
   payload: z.record(z.string(), z.unknown()).default({}),
 });

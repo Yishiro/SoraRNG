@@ -21,6 +21,7 @@ const titles: Record<string, string> = {
   won: 'Vous avez remporté une carte',
   sold: 'Votre carte a été vendue',
   unsold: 'Votre carte est revenue dans votre collection',
+  wishlist: 'Une carte de votre liste est en vente',
 };
 export default function NotificationInbox({ cards }: { cards: Card[] }) {
   const [feed, setFeed] = useState<Feed>({ unread: 0, items: [] }),
@@ -152,7 +153,9 @@ export default function NotificationInbox({ cards }: { cards: Card[] }) {
                               ? `${amount} Munny reçus.`
                               : item.kind === 'won'
                                 ? `Carte ajoutée à votre collection pour ${amount} Munny.`
-                                : 'Aucune offre reçue ; votre exemplaire est de nouveau disponible.'}
+                                : item.kind === 'wishlist'
+                                  ? `Mise de départ : ${amount} Munny.`
+                                  : 'Aucune offre reçue ; votre exemplaire est de nouveau disponible.'}
                         </p>
                         <time dateTime={item.createdAt}>
                           {new Date(item.createdAt).toLocaleString('fr-FR')}

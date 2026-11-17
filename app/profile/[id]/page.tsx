@@ -5,6 +5,10 @@ import GameCard from '../../../src/components/game-card';
 import type { Player } from '../../../src/game/core';
 import { showcaseCopies } from '../../../src/game/showcase';
 import { worlds } from '../../../src/game/worlds';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../../../src/server/auth';
+import { rarities } from '../../../src/game/config';
+import Achievements from '../../../src/components/achievements';
 export const dynamic = 'force-dynamic';
 export default async function ProfilePage({
   params,
@@ -31,6 +35,35 @@ export default async function ProfilePage({
     world.cards.every((id) => discoveries.has(id)),
   );
   const wished = cards.filter((card) => p.wishlist?.includes(card.id));
+  // Comparateur : seulement pour un visiteur connecté qui regarde un autre profil.
+  const viewerId = (
+    (await getServerSession(authOptions))?.user as { id?: string } | undefined
+  )?.id;
+  const viewer: Player | undefined =
+    viewerId && viewerId !== id
+      ? (await pool.query('SELECT state FROM "Player" WHERE id=$1', [viewerId]))
+          .rows[0]?.state
+      : undefined;
+  const byRarity = (a: (typeof cards)[number], b: (typeof cards)[number]) =>
+    rarities.indexOf(b.rarity) - rarities.indexOf(a.rarity) ||
+    a.name.localeCompare(b.name, 'fr');
+  const viewerOwned = new Set(viewer?.copies.map((copy) => copy.cardId));
+  const count = (state: Player, cardId: string) =>
+    state.copies.filter((copy) => copy.cardId === cardId).length;
+  const theyOffer = viewer
+    ? cards
+        .filter((card) => owned.has(card.id) && !viewerOwned.has(card.id))
+        .sort(byRarity)
+    : [];
+  const youOffer = viewer
+    ? cards
+        .filter((card) => viewerOwned.has(card.id) && !owned.has(card.id))
+        .sort(
+          (a, b) =>
+            Number(p.wishlist?.includes(b.id)) -
+              Number(p.wishlist?.includes(a.id)) || byRarity(a, b),
+        )
+    : [];
   return (
     <main
       className="card-club collector-profile"
@@ -121,6 +154,66 @@ export default async function ProfilePage({
           })}
         </div>
       </section>
+      {viewer && (
+        <section className="panel profile-compare" aria-labelledby="compare">
+          <span className="eyebrow">Comparer nos collections</span>
+          <h2 id="compare">Ce que vous pourriez échanger</h2>
+          <div className="compare-columns">
+            <div>
+              <h3>
+                {row.name} possède, pas vous ({theyOffer.length})
+              </h3>
+              <ul className="wishlist-list">
+                {theyOffer.slice(0, 24).map((card) => (
+                  <li key={card.id}>
+                    <span>
+                      <Link href={`/cards/${card.id}`}>{card.name}</Link>
+                      <small>
+                        {card.version} · {card.rarity}
+                      </small>
+                    </span>
+                    <span>
+                      {count(p, card.id) > 1
+                        ? `${count(p, card.id)} exemplaires`
+                        : '1 exemplaire'}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3>
+                Vous possédez, pas {row.name} ({youOffer.length})
+              </h3>
+              <ul className="wishlist-list">
+                {youOffer.slice(0, 24).map((card) => (
+                  <li key={card.id}>
+                    <span>
+                      <Link href={`/cards/${card.id}`}>{card.name}</Link>
+                      <small>
+                        {card.version} · {card.rarity}
+                      </small>
+                    </span>
+                    <span>
+                      {p.wishlist?.includes(card.id)
+                        ? 'Dans sa liste'
+                        : `${count(viewer, card.id)} chez vous`}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <Link className="outline" href="/exchanges">
+            Proposer un échange direct
+          </Link>
+        </section>
+      )}
+      <Achievements
+        player={p}
+        cards={cards}
+        title="Succès de ce collectionneur"
+      />
       <section className="panel wishlist-panel">
         <span className="eyebrow">LES PROCHAINES RENCONTRES</span>
         <h2>Wishlist</h2>

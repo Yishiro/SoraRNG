@@ -24,6 +24,9 @@ export type Copy = {
   awakening: number;
   locked: boolean;
   favorite: boolean;
+  // Fusion : rang (0 à 10) et points de statistiques répartis par le joueur.
+  fusion?: number;
+  bonus?: Partial<import('./stats').Stats>;
 };
 export type Player = {
   auctionNotifications?: boolean;
