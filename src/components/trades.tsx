@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { Trade } from '../server/trades';
 import type { Card, Copy } from '../game/core';
 import TradeSelection from './trade-selection';
+import GameCard from './game-card';
 import { tradeStacks } from '../game/trade-stacks';
 export default function Trades({
   userId,
@@ -198,6 +199,36 @@ export default function Trades({
               {t.state.confirmed.includes(owner) ? ' · confirmée' : ''}
             </p>
           ))}
+          <div className="trade-offers">
+            {Object.entries(t.state.offers).map(([owner, offered]) => (
+              <div key={owner}>
+                <h4>{owner === userId ? 'Vous donnez' : 'Vous recevez'}</h4>
+                <div className="trade-offer-cards">
+                  {tradeStacks(offered).map((stack) => {
+                    const card = cards.find((m) => m.id === stack.cardId);
+                    return card ? (
+                      <div key={stack.key} className="trade-offer-card">
+                        <GameCard
+                          card={card}
+                          copy={stack.copies[0]}
+                          quantity={stack.copies.length}
+                          showDetails={false}
+                        />
+                        {stack.copies.length > 1 && (
+                          <span className="trade-tile-badge">
+                            ×{stack.copies.length}
+                          </span>
+                        )}
+                      </div>
+                    ) : null;
+                  })}
+                  {!offered.length && (
+                    <p className="trade-empty">Aucune carte pour l’instant.</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
           {!['completed', 'cancelled'].includes(t.state.status) &&
             new Date(t.expiresAt).getTime() > now && (
               <div className="action-row">

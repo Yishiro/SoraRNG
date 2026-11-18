@@ -8,6 +8,7 @@ export function tradeStacks(copies: Copy[]) {
       holo: boolean;
       level: number;
       awakening: number;
+      fusion: number;
       favorite: boolean;
       copies: Copy[];
     }
@@ -18,6 +19,7 @@ export function tradeStacks(copies: Copy[]) {
       copy.holo,
       copy.level,
       copy.awakening,
+      copy.fusion ?? 0,
       copy.favorite,
     ].join(':');
     const group = groups.get(key) ?? {
@@ -26,6 +28,7 @@ export function tradeStacks(copies: Copy[]) {
       holo: copy.holo,
       level: copy.level,
       awakening: copy.awakening,
+      fusion: copy.fusion ?? 0,
       favorite: copy.favorite,
       copies: [],
     };
