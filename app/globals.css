@@ -4918,30 +4918,6 @@ progress::-webkit-progress-value {
 .card-club .pack-mode small {
   font-size: 11px;
 }
-.card-club .feature-in-progress {
-  min-height: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 16px;
-  border-bottom: 1px solid #ffffff16;
-  padding: 36px 0;
-}
-.card-club .feature-in-progress > svg {
-  color: #90909a;
-}
-.card-club .feature-in-progress h2 {
-  font-size: 30px;
-  letter-spacing: -0.7px;
-  margin: 0;
-}
-.card-club .feature-in-progress p {
-  font-size: 13px;
-  color: #a2a2ad;
-  margin: 0 0 8px;
-  line-height: 1.7;
-}
 .finance-balances {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -5960,67 +5936,6 @@ progress::-webkit-progress-value {
 }
 .step-wait {
   color: #a6a095;
-}
-.upcoming-nav {
-  margin: 10px 0;
-  border-top: 1px solid #333;
-  padding-top: 10px;
-}
-.upcoming-nav summary {
-  color: #929088;
-  font-size: 11px;
-  padding: 12px 13px;
-  cursor: pointer;
-}
-.card-club .sidebar .upcoming-nav a {
-  font-size: 11px;
-  flex-wrap: wrap;
-  padding-block: 10px;
-}
-.upcoming-nav a small {
-  font-size: 11px;
-  margin-left: auto;
-  color: #817e75;
-}
-.copy-quick-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 20px 0;
-}
-.copy-action-groups details {
-  border-top: 1px solid #454139;
-  padding: 16px 0;
-}
-.copy-action-groups summary {
-  cursor: pointer;
-  font-size: 13px;
-  color: #ded6c5;
-}
-.copy-action-groups p {
-  font-size: 11px;
-  line-height: 1.8;
-  color: #aaa59a;
-}
-.copy-action-groups h3 {
-  font-size: 13px;
-  margin: 15px 0 6px;
-}
-.copy-improvements {
-  display: grid;
-  gap: 16px;
-}
-.copy-improvements > div {
-  padding: 12px;
-  border: 1px solid #444037;
-  border-radius: 6px;
-}
-.copy-action-groups button {
-  font-size: 12px;
-}
-.copy-danger summary,
-.copy-danger button {
-  color: #e0ada5;
 }
 .sale-history-details summary {
   cursor: pointer;
@@ -7269,6 +7184,376 @@ progress::-webkit-progress-value {
 @media (prefers-reduced-motion: reduce) {
   .quest-progress i,
   .stat-track i {
+    transition: none;
+  }
+}
+
+/* Atelier de l'exemplaire : niveau, éveil, fusion, recyclage. */
+.workshop {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+.workshop-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.workshop-wallet {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+  color: #b9bac0;
+  font-variant-numeric: tabular-nums;
+}
+.workshop-wallet span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.workshop-toggles {
+  display: flex;
+  gap: 8px;
+}
+.workshop-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid #ffffff1f;
+  border-radius: 999px;
+  background: transparent;
+  color: #c9cace;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+.workshop-toggle:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.workshop-toggle[aria-pressed='true'] {
+  background: #f0f0f1;
+  border-color: #f0f0f1;
+  color: #1b1b1e;
+}
+.workshop-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid #ffffff14;
+  border-radius: 10px;
+  background: #ffffff05;
+}
+.workshop-tabs button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 38px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #a2a2a8;
+  font-size: 13px;
+  font-weight: 600;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+.workshop-tabs button.active {
+  background: #ffffff14;
+  color: #f0f0f1;
+}
+.workshop-panel {
+  display: grid;
+  gap: 14px;
+  min-height: 220px;
+  align-content: start;
+}
+.workshop-panel > p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #c9cace;
+}
+.workshop-meter {
+  display: grid;
+  gap: 10px;
+}
+.workshop-meter > div {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.workshop-meter strong {
+  font-size: 22px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.workshop-meter span {
+  font-size: 13px;
+  color: #8f8f97;
+}
+.meter-track {
+  position: relative;
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  background: #ffffff12;
+  overflow: hidden;
+}
+.meter-track i,
+.meter-track b {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: inherit;
+}
+.meter-track i {
+  left: 0;
+  background: #d3d4d7;
+}
+.meter-track b {
+  background: #d3d4d759;
+  transition:
+    width 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+    left 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.workshop-stepper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  color: #a2a2a8;
+}
+.workshop-stepper > div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.workshop-stepper .icon-button {
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ffffff24;
+  border-radius: 8px;
+  color: #e6e6e8;
+}
+.workshop-stepper .icon-button:disabled {
+  opacity: 0.35;
+}
+.workshop-stepper output {
+  min-width: 36px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f0f0f1;
+  font-variant-numeric: tabular-nums;
+}
+.workshop-chip {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid #ffffff1f;
+  border-radius: 999px;
+  background: transparent;
+  color: #c9cace;
+  font-size: 12px;
+}
+.workshop-chip:disabled {
+  opacity: 0.4;
+}
+.workshop-cost {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+.workshop-cost > div {
+  padding: 12px 14px;
+  border: 1px solid #ffffff12;
+  border-radius: 8px;
+}
+.workshop-cost dt {
+  font-size: 12px;
+  color: #8f8f97;
+}
+.workshop-cost dd {
+  margin: 4px 0 0;
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+.workshop-cost .short {
+  border-color: #e0786a66;
+}
+.workshop-cost .short dd {
+  color: #f0a397;
+}
+.workshop-go {
+  width: 100%;
+}
+.workshop-note {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #8f8f97;
+}
+.workshop-note.warn {
+  color: #f0a397;
+}
+.workshop-stars {
+  display: flex;
+  gap: 10px;
+  font-size: 22px;
+  color: #ffffff26;
+}
+.workshop-stars .lit {
+  color: #e9d29b;
+}
+.workshop-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.workshop-options > div {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: 14px;
+  border: 1px solid #ffffff14;
+  border-radius: 8px;
+}
+.workshop-options h3 {
+  margin: 0;
+  font-size: 14px;
+}
+.workshop-options p {
+  margin: 0;
+  font-size: 13px;
+  color: #d1d2d5;
+}
+.workshop-options small {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #8f8f97;
+}
+.workshop-panel .copy-fusion {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+button.danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid #e0786a;
+  border-radius: 4px;
+  background: #e0786a;
+  color: #1b1b1e;
+  font-size: 13px;
+  font-weight: 700;
+}
+.recycle-workshop {
+  margin: 0 0 20px;
+  border: 1px solid #ffffff14;
+  border-radius: 10px;
+  padding: 0 16px;
+}
+.recycle-workshop > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.recycle-workshop > summary::-webkit-details-marker {
+  display: none;
+}
+.recycle-workshop > p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #a2a2a8;
+}
+.recycle-workshop ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 320px;
+  overflow-y: auto;
+  border-block: 1px solid #ffffff0d;
+}
+.recycle-workshop li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  border-bottom: 1px solid #ffffff0a;
+}
+.recycle-workshop label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.recycle-workshop input {
+  width: 16px;
+  height: 16px;
+  accent-color: #e6e6e8;
+}
+.recycle-workshop label span {
+  display: grid;
+}
+.recycle-workshop strong {
+  font-size: 13px;
+}
+.recycle-workshop small,
+.recycle-count {
+  font-size: 12px;
+  color: #8f8f97;
+  font-variant-numeric: tabular-nums;
+}
+.recycle-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0 16px;
+  font-size: 13px;
+}
+@media (max-width: 700px) {
+  .workshop-tabs button {
+    flex-direction: column;
+    gap: 3px;
+    min-height: 50px;
+    font-size: 12px;
+  }
+  .workshop-options {
+    grid-template-columns: 1fr;
+  }
+  .recycle-footer button {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .meter-track b,
+  .workshop-toggle {
     transition: none;
   }
 }

@@ -62,6 +62,7 @@ const actionSchema = z.object({
     'wishlist',
     'showcase',
     'recycle',
+    'recycle-many',
     'upgrade',
     'awaken',
     'quest',

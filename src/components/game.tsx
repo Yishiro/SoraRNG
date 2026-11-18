@@ -48,7 +48,6 @@ import Codex from './codex';
 import Missions from './missions';
 import Admin from './admin';
 import GettingStarted from './getting-started';
-import CopyActions from './copy-actions';
 import { getCardLegend } from '../game/card-legends';
 import ListedCards from './listed-cards';
 import NotificationInbox from './notification-inbox';
@@ -56,7 +55,8 @@ import RecentDrops from './recent-drops';
 import DashboardWelcome from './dashboard-welcome';
 import DashboardNext from './dashboard-next';
 import RecentCards from './recent-cards';
-import CopyFusion from './copy-fusion';
+import CopyWorkshop from './copy-workshop';
+import RecycleWorkshop from './recycle-workshop';
 import Leaderboards from './leaderboards';
 import Events from './events';
 import ActivityFeed from './activity-feed';
@@ -818,6 +818,14 @@ export default function Game({ section }: { section: string }) {
                   </div>
                 </div>
               )}
+              {player && section === 'collection' && (
+                <RecycleWorkshop
+                  player={player}
+                  cards={cards}
+                  busy={busy}
+                  onRecycle={(copyIds) => void act('recycle-many', { copyIds })}
+                />
+              )}
               <div className="filter-row">
                 <div className="collection-search">
                   <Search size={17} aria-hidden="true" />
@@ -1182,28 +1190,14 @@ export default function Game({ section }: { section: string }) {
                   {getCardLegend(selectedCopy.cardId)}
                 </p>
               )}
-              <CopyActions
-                copy={selectedCopy}
-                maxLevel={
-                  cards.find((c) => c.id === selectedCopy.cardId)?.maxLevel ??
-                  selectedCopy.level
-                }
-                busy={busy}
-                onAction={(kind, payload) => void act(kind, payload)}
-              />
               {player && cards.find((c) => c.id === selectedCopy.cardId) && (
-                <CopyFusion
+                <CopyWorkshop
+                  key={selectedCopy.id}
                   card={cards.find((c) => c.id === selectedCopy.cardId)!}
                   copy={selectedCopy}
-                  copies={player.copies}
-                  munny={player.munny}
+                  player={player}
                   busy={busy}
-                  onFuse={(duplicateId) =>
-                    void act('fuse', { copyId: selectedCopy.id, duplicateId })
-                  }
-                  onAllocate={(stat) =>
-                    void act('allocate', { copyId: selectedCopy.id, stat })
-                  }
+                  onAction={(kind, payload) => void act(kind, payload)}
                 />
               )}
               {section === 'collection' && !pendingAction && (

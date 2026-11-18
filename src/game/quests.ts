@@ -283,9 +283,14 @@ export function activityFrom(rows: ActivityRow[], cards: Card[]): Activity {
         if (rank >= 2) a.epicPlus++;
         if (rank >= 3) a.legendPlus++;
       }
-    } else if (kind === 'upgrade') a.upgrades++;
+    } else if (kind === 'upgrade')
+      a.upgrades += Number(row.request?.levels) || 1;
     else if (kind === 'awaken') a.awakenings++;
     else if (kind === 'recycle') a.recycles++;
+    else if (kind === 'recycle-many')
+      a.recycles += Array.isArray(row.request?.copyIds)
+        ? row.request.copyIds.length
+        : 0;
     else if (kind === 'fuse') a.fusions++;
     else if (kind === 'allocate') a.statPoints++;
     else if (kind === 'shop') a.shop++;

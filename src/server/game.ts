@@ -17,6 +17,14 @@ import { playerMissions } from './missions';
 import { playerQuests } from './quests';
 import { pruneQuestClaims } from '../game/quests';
 import {
+  awakeningFodder,
+  awakeningNeed,
+  levelCap,
+  recyclable,
+  recycleBatchLimit,
+  upgradeCost,
+} from '../game/workshop';
+import {
   fusion,
   fusionCost,
   fusionFodder,
@@ -26,14 +34,7 @@ import {
   type StatKey,
 } from '../game/stats';
 import { walletAuditContext } from './wallet-audit';
-import {
-  caps,
-  draw,
-  rarities,
-  requireFunds,
-  type Card,
-  type Player,
-} from '../game/core';
+import { draw, requireFunds, type Card, type Player } from '../game/core';
 
 export async function identity() {
   const session = await getServerSession(authOptions);
@@ -271,6 +272,31 @@ export async function mutate(
         [stat as StatKey]: (target.bonus?.[stat as StatKey] ?? 0) + 1,
       };
       result = { success: true, copyId: target.id, stat };
+    } else if (kind === 'recycle-many') {
+      const ids = payload.copyIds;
+      if (
+        !Array.isArray(ids) ||
+        !ids.length ||
+        ids.length > recycleBatchLimit ||
+        new Set(ids).size !== ids.length ||
+        ids.some((id) => typeof id !== 'string')
+      )
+        throw new Error('Sélection de recyclage invalide');
+      const chosen = new Set(ids as string[]);
+      const copies = p.copies.filter((c) => chosen.has(c.id));
+      if (copies.length !== chosen.size)
+        throw new Error('Un exemplaire sélectionné est introuvable');
+      if (copies.some((c) => !recyclable(c, p)))
+        throw new Error(
+          'La sélection contient un exemplaire verrouillé, favori ou en vitrine.',
+        );
+      p.copies = p.copies.filter((c) => !chosen.has(c.id));
+      p.fragments += copies.length * economy.recycleFragments;
+      result = {
+        success: true,
+        recycled: copies.length,
+        fragments: copies.length * economy.recycleFragments,
+      };
     } else if (kind === 'settings') {
       if (
         Object.keys(payload).length !== 1 ||
@@ -287,46 +313,48 @@ export async function mutate(
       if (kind === 'lock') copy.locked = !copy.locked;
       else if (kind === 'favorite') copy.favorite = !copy.favorite;
       else {
-        if (copy.locked) throw new Error('Carte verrouillée');
+        // Le verrou protège l'exemplaire lui-même : il empêche sa destruction,
+        // pas son amélioration.
         if (kind === 'recycle') {
+          if (!recyclable(copy, p))
+            throw new Error(
+              'Exemplaire protégé : retirez le verrou, le favori ou la vitrine.',
+            );
           p.copies = p.copies.filter((c) => c.id !== copy.id);
           p.fragments += economy.recycleFragments;
         } else if (kind === 'upgrade') {
           const card = cards.find((c) => c.id === copy.cardId);
-          if (!card || copy.level >= caps[rarities.indexOf(card.rarity)])
+          const levels = payload.levels ?? 1;
+          if (!Number.isInteger(levels) || (levels as number) < 1)
+            throw new Error('Nombre de niveaux invalide');
+          if (!card || copy.level + (levels as number) > levelCap(card))
             throw new Error('Niveau maximum atteint');
-          if (p.fragments < economy.levelFragments)
+          const cost = upgradeCost(copy.level, levels as number);
+          if (p.fragments < cost.fragments)
             throw new Error('Fragments insuffisants');
-          requireFunds(p, copy.level * economy.levelCost);
-          p.fragments -= economy.levelFragments;
-          copy.level++;
+          requireFunds(p, cost.munny);
+          p.fragments -= cost.fragments;
+          copy.level += levels as number;
+          result = { success: true, copyId: copy.id, level: copy.level };
         } else if (kind === 'awaken') {
           if (copy.awakening >= 5) throw new Error('Éveil maximum atteint');
-          const needed = economy.awakeningDuplicates[copy.awakening];
-          const duplicates = p.copies
-            .filter(
-              (c) =>
-                c.id !== copy.id &&
-                c.cardId === copy.cardId &&
-                !c.locked &&
-                !c.favorite &&
-                c.level === 1 &&
-                c.awakening === 0 &&
-                !c.holo,
-            )
-            .slice(0, needed);
+          const { needed, munny, fragments } = awakeningNeed(copy);
           if (payload.alternative === true) {
-            if (p.fragments < needed * economy.alternativeFragments)
+            if (p.fragments < fragments)
               throw new Error('Fragments insuffisants');
-            p.fragments -= needed * economy.alternativeFragments;
+            p.fragments -= fragments;
           } else {
+            const duplicates = p.copies
+              .filter((c) => awakeningFodder(c, copy))
+              .slice(0, needed);
             if (duplicates.length !== needed)
               throw new Error('Doublons standards disponibles insuffisants');
-            p.copies = p.copies.filter(
-              (c) => !duplicates.some((d) => d.id === c.id),
-            );
+            const used = new Set(duplicates.map((d) => d.id));
+            p.copies = p.copies.filter((c) => !used.has(c.id));
+            if (p.showcase)
+              p.showcase = p.showcase.filter((id) => !used.has(id));
           }
-          requireFunds(p, needed * economy.awakeningMunny);
+          requireFunds(p, munny);
           copy.awakening++;
         } else throw new Error('Action inconnue');
       }

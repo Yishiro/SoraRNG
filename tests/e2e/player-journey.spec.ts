@@ -151,9 +151,12 @@ for (const width of [1280, 375]) {
     await expect(
       dialog.getByRole('button', { name: 'Recycler cet exemplaire' }),
     ).toHaveCount(0);
-    await dialog.getByText('Améliorer cet exemplaire', { exact: true }).click();
+    await expect(dialog.getByRole('tab', { name: /Niveau/ })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
     await expect(
-      dialog.getByRole('button', { name: 'Passer au niveau suivant' }),
+      dialog.getByRole('button', { name: 'Monter au niveau 2' }),
     ).toBeVisible();
     await expect(dialog.getByText(/ne modifient ni la rareté/)).toBeVisible();
     await page.screenshot({ path: `.local/clear-card-${width}.png` });
