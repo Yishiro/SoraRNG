@@ -1,4 +1,8 @@
 import { test, expect } from '@playwright/test';
+import { holoRate, rates } from '../../src/game/config';
+
+const percent = (value: number, digits = 2) =>
+  `${value.toLocaleString('fr-FR', { maximumFractionDigits: digits })} %`;
 test('game sanctuary responds', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
@@ -9,7 +13,14 @@ test('game sanctuary responds', async ({ page }) => {
 test('Discord stays disabled until configured', async ({ request }) => {
   const response = await request.get('/api/auth/providers');
   expect(response.ok()).toBeTruthy();
-  expect(await response.json()).toEqual({});
+  // Le fournisseur n'apparaît que si des identifiants Discord sont configurés
+  // (la CI en définit des factices ; un poste vierge n'en a pas).
+  const configured = Boolean(
+    process.env.AUTH_DISCORD_ID && process.env.AUTH_DISCORD_SECRET,
+  );
+  const providers = await response.json();
+  if (configured) expect(Object.keys(providers)).toEqual(['discord']);
+  else expect(providers).toEqual({});
 });
 test('landing page fits a mobile viewport', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
@@ -30,7 +41,12 @@ test('summon requires login and rates are transparent', async ({ page }) => {
   await expect(
     page.getByRole('button', { name: 'Ouvrir mes 10 boosters' }),
   ).toBeDisabled();
-  await expect(page.getByText('0,2 %', { exact: true })).toBeVisible();
+  // Taux affichés = configuration actuelle (finition holographique incluse).
+  await expect(
+    page.getByText(`${percent(holoRate / 100)} de finition holographique`, {
+      exact: false,
+    }),
+  ).toBeVisible();
   await expect(page.getByText(/catalogue de référence/)).toHaveCount(0);
   await expect(page.getByText('38 cartes éligibles')).toBeVisible();
 });
@@ -87,5 +103,10 @@ test('real catalogue and card details are available', async ({
   ).toBeVisible();
   await expect(
     page.getByText(/Probabilité individuelle standard/),
-  ).toContainText('1,315789');
+  ).toContainText(
+    // Sora est Commun : taux Commun réparti sur les 38 cartes communes.
+    (rates[0] / 100 / 38).toLocaleString('fr-FR', {
+      maximumFractionDigits: 6,
+    }),
+  );
 });

@@ -10,7 +10,9 @@ test('mobile quick navigation and drawer keep focus and restore scrolling', asyn
   await expect(
     dock.getByRole('link', { name: 'Accueil', exact: true }),
   ).toHaveAttribute('aria-current', 'page');
-  await expect(page.getByLabel('Raccourcis du Sanctuaire')).toBeVisible();
+  await expect(
+    page.getByLabel('Aperçu de la collection : Riku, Sora et Kairi'),
+  ).toBeVisible();
   await expect(page.locator('.portal-scene')).toHaveCount(0);
   for (const [name, id] of [
     ['Riku', 'KH-002'],
