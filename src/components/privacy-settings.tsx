@@ -40,22 +40,23 @@ export default function PrivacySettings({
   }
   return (
     <>
-      <div className="mission-row">
+      <div className="setting-row">
         <div>
-          <h3>Messages privés du bot Discord</h3>
+          <h3>Bloquer les messages privés du bot</h3>
           <p>
             Les notifications sur le site restent disponibles, même si les MP
             sont bloqués.
           </p>
         </div>
-        <label className="notification-block">
+        <label className="switch">
           <input
             type="checkbox"
             checked={optimistic ?? player?.auctionNotifications === false}
             disabled={!player || busy || pending}
             onChange={(e) => void update(e.target.checked)}
           />
-          Bloquer les messages privés Discord
+          <span aria-hidden="true" />
+          <span className="sr-only">Bloquer les messages privés Discord</span>
         </label>
       </div>
       {pending && <p role="status">Enregistrement du réglage…</p>}

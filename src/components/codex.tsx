@@ -69,21 +69,25 @@ export default function Codex({
           </div>
         </div>
         <div className="codex-controls">
-          <button
-            className={!holo ? 'primary' : 'outline'}
-            onClick={() => setHolo(false)}
-          >
-            Toutes finitions
-          </button>
-          <button
-            className={holo ? 'primary' : 'outline'}
-            onClick={() => setHolo(true)}
-          >
-            <Sparkles size={14} /> Holographiques
-          </button>
+          <div className="quest-tabs" role="group" aria-label="Finition">
+            <button
+              aria-pressed={!holo}
+              className={!holo ? 'active' : ''}
+              onClick={() => setHolo(false)}
+            >
+              Toutes finitions
+            </button>
+            <button
+              aria-pressed={holo}
+              className={holo ? 'active' : ''}
+              onClick={() => setHolo(true)}
+            >
+              <Sparkles size={14} /> Holographiques
+            </button>
+          </div>
           {player && (
             <button
-              className="outline"
+              className="workshop-chip"
               aria-pressed={catalogue}
               onClick={() => setCatalogue(!catalogue)}
             >

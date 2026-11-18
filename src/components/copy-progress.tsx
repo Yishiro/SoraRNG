@@ -1,4 +1,7 @@
 import type { Card, Copy } from '../game/core';
+import { fusionRank } from '../game/stats';
+
+// Une seule ligne fine sous la carte : niveau, éveil et fusion.
 export default function CopyProgress({
   card,
   copy,
@@ -6,25 +9,14 @@ export default function CopyProgress({
   card: Card;
   copy: Copy;
 }) {
-  if (copy.level <= 1 && copy.awakening === 0) return null;
+  const fusion = fusionRank(copy);
+  if (copy.level <= 1 && copy.awakening === 0 && fusion === 0) return null;
   const mastered = copy.level >= card.maxLevel && copy.awakening >= 5;
   return (
     <div
       className={`copy-progress ${mastered ? 'is-mastered' : ''}`}
       aria-label="Progression de cet exemplaire"
     >
-      <div>
-        <span>
-          {mastered
-            ? 'Exemplaire accompli'
-            : copy.level >= card.maxLevel
-              ? 'Niveau maximum'
-              : 'Exemplaire développé'}
-        </span>
-        <strong>
-          Niv. {copy.level} / {card.maxLevel}
-        </strong>
-      </div>
       <div
         className="copy-level-track"
         role="progressbar"
@@ -39,20 +31,30 @@ export default function CopyProgress({
           }}
         />
       </div>
-      <div
-        className="awakening-stars"
-        aria-label={`Éveil ${copy.awakening} sur 5`}
-      >
-        {[1, 2, 3, 4, 5].map((n) => (
-          <span
-            key={n}
-            className={n <= copy.awakening ? 'filled' : ''}
-            aria-hidden="true"
-          >
-            ✦
-          </span>
-        ))}
-        <small>Éveil {copy.awakening}/5</small>
+      <div className="copy-progress-line">
+        {mastered ? (
+          <strong>Exemplaire accompli</strong>
+        ) : (
+          <strong>
+            Niv. {copy.level}
+            <small>/{card.maxLevel}</small>
+          </strong>
+        )}
+        <span
+          className="awakening-stars"
+          aria-label={`Éveil ${copy.awakening} sur 5`}
+        >
+          {[1, 2, 3, 4, 5].map((n) => (
+            <span
+              key={n}
+              className={n <= copy.awakening ? 'filled' : ''}
+              aria-hidden="true"
+            >
+              ✦
+            </span>
+          ))}
+        </span>
+        {fusion > 0 && <span className="copy-fusion-rank">F{fusion}</span>}
       </div>
     </div>
   );

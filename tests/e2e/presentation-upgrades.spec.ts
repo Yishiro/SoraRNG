@@ -254,7 +254,7 @@ test('admin contrast, preview, retry idempotence and local event dates', async (
       .locator('option')
       .first()
       .evaluate((el) => getComputedStyle(el).color),
-  ).toBe('rgb(238, 234, 225)');
+  ).toBe('rgb(237, 238, 242)');
   await page.screenshot({ path: '.local/admin-contrast-preview.png' });
   page.once('dialog', (d) => d.accept());
   await dialog.getByRole('button', { name: 'Appliquer l’ajustement' }).click();

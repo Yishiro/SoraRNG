@@ -96,7 +96,7 @@ for (const [name, width, height] of [
           ),
       )
       .toBe(true);
-    await expect(page.getByText(/×2 · Éveil 0/)).toBeVisible();
+    await expect(page.getByText(/×2 exemplaires/)).toBeVisible();
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,

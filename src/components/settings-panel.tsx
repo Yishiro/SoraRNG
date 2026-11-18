@@ -17,36 +17,49 @@ export default function SettingsPanel({
   onToggleMotion: () => void;
 }) {
   return (
-    <section className="panel">
-      <h2>Votre façon de voyager</h2>
+    <section className="panel settings-list" aria-labelledby="settings-title">
+      <h2 id="settings-title">Votre façon de voyager</h2>
       <PrivacySettings player={player} busy={busy} onSaved={() => onSaved()} />
-      <div className="mission-row">
-        <VolumeX />
+      <div className="setting-row">
         <div>
-          <h3>Animation et confort visuel</h3>
+          <h3>Réduire les animations</h3>
           <p>
             Passez directement aux cartes et retournez-les à votre rythme. Le
             réglage système de réduction du mouvement est aussi respecté.
           </p>
         </div>
-        <button
-          className="outline"
-          disabled={!player || busy}
-          onClick={onToggleMotion}
-        >
-          {player?.reducedMotion
-            ? 'Animations réduites'
-            : 'Réduire les animations'}
-        </button>
+        <label className="switch">
+          <input
+            type="checkbox"
+            checked={Boolean(player?.reducedMotion)}
+            disabled={!player || busy}
+            onChange={onToggleMotion}
+          />
+          <span aria-hidden="true" />
+          <span className="sr-only">Réduire les animations</span>
+        </label>
       </div>
-      <p>
-        Les bruitages d’ouverture sont facultatifs et coupés par défaut.
-        Activez-les avec le bouton de son dans l’ouverture d’un booster.
-      </p>
+      <div className="setting-row">
+        <div>
+          <h3>
+            <VolumeX size={15} aria-hidden="true" /> Bruitages d’ouverture
+          </h3>
+          <p>
+            Facultatifs et coupés par défaut. Activez-les avec le bouton de son
+            pendant l’ouverture d’un booster.
+          </p>
+        </div>
+      </div>
       {signedIn && (
-        <button className="outline" onClick={() => void signOut()}>
-          Se déconnecter
-        </button>
+        <div className="setting-row">
+          <div>
+            <h3>Compte Discord</h3>
+            <p>Votre collection reste liée à votre compte Discord.</p>
+          </div>
+          <button className="outline" onClick={() => void signOut()}>
+            Se déconnecter
+          </button>
+        </div>
       )}
     </section>
   );

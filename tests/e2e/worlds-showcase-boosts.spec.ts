@@ -62,7 +62,9 @@ test('carnet, vitrine ordonnée et boost holographique sur mobile', async ({
   );
   await page.goto('/worlds');
   await expect(
-    page.getByText(/Îles du Destin · 7\/7 · Insigne obtenu/),
+    page
+      .locator('.world-tile', { hasText: 'Îles du Destin' })
+      .getByText(/7\/7 cartes · Insigne obtenu/),
   ).toBeVisible();
   await page.goto('/collection');
   await page.getByText('Personnaliser ma vitrine', { exact: true }).click();

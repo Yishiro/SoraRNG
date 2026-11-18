@@ -24,7 +24,7 @@ for (const status of [401, 403])
               history: [],
               missions: [],
               state: {
-                munny: 1234,
+                munny: 0,
                 tickets: 0,
                 fragments: 0,
                 freeAt: 0,
@@ -40,7 +40,10 @@ for (const status of [401, 403])
           }),
     );
     await page.goto('/dashboard');
-    const claim = page.getByRole('button', { name: 'Récupérer', exact: true });
+    const claim = page.getByRole('button', {
+      name: 'Réclamer mon bonus quotidien',
+      exact: true,
+    });
     await expect(claim).toBeEnabled();
     await claim.click();
     await expect(page.getByRole('status')).toContainText(
@@ -48,7 +51,8 @@ for (const status of [401, 403])
         ? 'Ce compte est suspendu.'
         : 'Votre session est absente ou a expiré',
     );
-    await expect(claim).toHaveCount(0);
+    // Sans session, le bouton reste visible mais inactif.
+    await expect(claim).toBeDisabled();
     await expect(
       page.getByRole('button', { name: 'Connexion Discord', exact: true }),
     ).toBeVisible();

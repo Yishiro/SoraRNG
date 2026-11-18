@@ -218,6 +218,7 @@ for (const width of [1280, 375]) {
     await expect(bidDialog).toHaveCount(0);
     expect(last).toMatchObject({ action: 'bid', amount: 1400 });
     await page.locator('.market-card-button').first().click();
+    await expect(page.getByRole('dialog')).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog')).toHaveCount(0);
     await page.goto(

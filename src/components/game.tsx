@@ -148,6 +148,12 @@ export default function Game({ section }: { section: string }) {
   const [data, setData] = useState<Snapshot | null>(null);
   const [publicCards, setPublicCards] = useState<Card[]>([]);
   const [message, setMessage] = useState('');
+  // Les confirmations s'affichent en bas de l'écran et disparaissent seules.
+  useEffect(() => {
+    if (!message) return;
+    const timer = setTimeout(() => setMessage(''), 7000);
+    return () => clearTimeout(timer);
+  }, [message]);
   const [sending, setBusy] = useState(false);
   const [pendingAction, setPendingAction] = useState<PendingAction | null>(
     null,
@@ -518,7 +524,7 @@ export default function Game({ section }: { section: string }) {
       >
         <Link href="/" className="brand">
           <span className="brand-mark" aria-hidden="true">
-            SR
+            S
           </span>
           <span>
             SORA<span className="brand-light">RNG</span>
@@ -537,9 +543,6 @@ export default function Game({ section }: { section: string }) {
             >
               <Icon size={19} aria-hidden="true" />
               {label}
-              {section === url && (
-                <span className="active-dot" aria-hidden="true" />
-              )}
             </Link>
           ))}
           {data?.staffRole && data.staffRole !== 'player' && (
@@ -583,8 +586,8 @@ export default function Game({ section }: { section: string }) {
             >
               <Menu />
             </button>
-            <span>SoraRNG</span>
-            <ChevronRight size={14} />
+            <span className="crumb-root">SoraRNG</span>
+            <ChevronRight size={14} className="crumb-root" />
             <strong>{active?.[1] ?? 'Administration'}</strong>
           </div>
           <div className="header-right">
@@ -631,6 +634,11 @@ export default function Game({ section }: { section: string }) {
                       'Gérez votre aventure dans le royaume.')}
                 </p>
               </div>
+              {section === 'codex' && data && (
+                <Link className="workshop-chip" href={`/profile/${data.id}`}>
+                  Voir mon profil collectionneur
+                </Link>
+              )}
             </div>
           )}
           {pendingAction &&
@@ -655,8 +663,8 @@ export default function Game({ section }: { section: string }) {
               </div>
             )}
           {message && (
-            <div className="notice" role="status">
-              {message}
+            <div className="notice toast" role="status">
+              <span>{message}</span>
               <button
                 className="icon-button"
                 onClick={() => setMessage('')}
@@ -709,6 +717,15 @@ export default function Game({ section }: { section: string }) {
             </div>
           )}
           {section === 'dashboard' && player && (
+            <DashboardNext
+              quests={data?.quests ?? []}
+              busy={busy}
+              onClaim={(quest) =>
+                void act('quest', { quest: quest.id, cycle: quest.cycle })
+              }
+            />
+          )}
+          {section === 'dashboard' && player && (
             <RecentCards player={player} cards={cards} />
           )}
           {section === 'summon' && (
@@ -727,21 +744,10 @@ export default function Game({ section }: { section: string }) {
           {section === 'summon' && (
             <SummonRates cards={cards} odds={openingOdds} />
           )}
-          {section === 'dashboard' && player && (
-            <DashboardNext
-              player={player}
-              busy={busy}
-              now={now}
-              onDaily={() => void act('daily')}
-            />
-          )}
           {section === 'codex' && (
             <>
               {player && (
                 <>
-                  <Link className="text-link" href={`/profile/${data?.id}`}>
-                    Voir mon profil collectionneur ↗
-                  </Link>
                   <Wishlist
                     cards={cards}
                     player={player}

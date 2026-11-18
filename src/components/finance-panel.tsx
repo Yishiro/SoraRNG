@@ -31,8 +31,39 @@ export default function FinancePanel({
   return (
     <section className="panel finance-panel" aria-labelledby="finance-title">
       <div className="section-title">
-        <h2 id="finance-title">Munny & banque</h2>
+        <h2 id="finance-title">Bonus et banque</h2>
         <span>Compte commun · Site et Discord</span>
+      </div>
+      <div className="finance-bonuses">
+        {(Object.keys(labels) as Bonus[]).map((type) => {
+          const bonus = view.bonuses[type];
+          return (
+            <div key={type} className={bonus.available ? 'ready' : ''}>
+              <span>{labels[type]}</span>
+              <strong>{bonus.amount.toLocaleString('fr-FR')} Munny</strong>
+              {bonus.available ? (
+                <button
+                  className="primary"
+                  disabled={busy}
+                  onClick={() => onAction('bonus', { type })}
+                >
+                  Réclamer {labels[type].toLowerCase()}
+                </button>
+              ) : (
+                <>
+                  <small>Dans {remainingTime(bonus.nextAt - now)}</small>
+                  <div className="bonus-progress" aria-hidden="true">
+                    <span
+                      style={{
+                        width: `${Math.max(0, Math.min(100, 100 * (1 - (bonus.nextAt - now) / bonus.delay)))}%`,
+                      }}
+                    />
+                  </div>
+                </>
+              )}
+            </div>
+          );
+        })}
       </div>
       <div className="finance-balances">
         <div>
@@ -54,12 +85,6 @@ export default function FinancePanel({
           </strong>
         </div>
       </div>
-      <p>
-        L’épargne et ses intérêts restent à la banque. Les intérêts sont
-        composés automatiquement selon la durée du dépôt. Dépôt et retrait sans
-        frais ; l’épargne n’est pas utilisable pour les achats ou les paris
-        avant retrait.
-      </p>
       <div className="finance-bank-actions">
         <label className="bank-amount-field">
           <span>Montant du transfert</span>
@@ -93,36 +118,15 @@ export default function FinancePanel({
           Retirer
         </button>
       </div>
-      <div className="finance-bonuses">
-        {(Object.keys(labels) as Bonus[]).map((type) => {
-          const bonus = view.bonuses[type];
-          return (
-            <div key={type}>
-              <span>{labels[type]}</span>
-              <strong>{bonus.amount.toLocaleString('fr-FR')} Munny</strong>
-              <small>
-                {bonus.available
-                  ? 'Disponible'
-                  : `Dans ${remainingTime(bonus.nextAt - now)}`}
-              </small>
-              <div className="bonus-progress" aria-hidden="true">
-                <span
-                  style={{
-                    width: `${bonus.available ? 100 : Math.max(0, Math.min(100, 100 * (1 - (bonus.nextAt - now) / bonus.delay)))}%`,
-                  }}
-                />
-              </div>
-              <button
-                className="outline"
-                disabled={busy || !bonus.available}
-                onClick={() => onAction('bonus', { type })}
-              >
-                Réclamer {labels[type].toLowerCase()}
-              </button>
-            </div>
-          );
-        })}
-      </div>
+      <details className="finance-help">
+        <summary>Comment fonctionne l’épargne</summary>
+        <p>
+          L’épargne et ses intérêts restent à la banque. Les intérêts sont
+          composés automatiquement selon la durée du dépôt. Dépôt et retrait
+          sans frais ; l’épargne n’est pas utilisable pour les achats ou les
+          paris avant retrait.
+        </p>
+      </details>
     </section>
   );
 }

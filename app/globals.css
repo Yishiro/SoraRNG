@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 :root {
+  --font-ui:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   --bg: #121212;
   --surface: #1d1d1d;
   --line: #ffffff0d;
@@ -15,7 +18,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-ui);
   font-size: 14px;
 }
 a {
@@ -76,7 +79,7 @@ button svg {
   gap: 12px;
   padding: 0 8px;
   margin-bottom: 52px;
-  font-family: Georgia, serif;
+  font-family: var(--font-ui);
   font-weight: bold;
   font-size: 25px;
   letter-spacing: 3px;
@@ -92,16 +95,14 @@ button svg {
 }
 .brand small {
   display: block;
-  font:
-    8px Arial,
-    sans-serif;
+  font: 8px var(--font-ui);
   letter-spacing: 2.7px;
   color: #a7a7a7;
   margin-top: 6px;
 }
 .nav-label {
   font-size: 11px;
-  letter-spacing: 2px;
+  letter-spacing: 0.6px;
   color: #646464;
   margin: 0 14px 16px;
 }
@@ -125,20 +126,12 @@ nav a:hover {
   color: white;
 }
 nav a.active {
-  background: linear-gradient(100deg, #c49b4520, #c49b4505);
-  border-color: #c49b4525;
-  color: #e6c98f;
+  background: linear-gradient(100deg, #9fa0a420, #9fa0a405);
+  border-color: #9fa0a425;
+  color: #cdced2;
 }
 nav a.active svg {
   color: var(--gold);
-}
-.active-dot {
-  height: 5px;
-  width: 5px;
-  border-radius: 50%;
-  background: var(--gold);
-  margin-left: auto;
-  box-shadow: 0 0 12px #e6bc6870;
 }
 .sidebar-bottom {
   margin-top: auto;
@@ -203,7 +196,7 @@ header {
   gap: 8px;
   align-items: center;
   font-size: 12px;
-  color: #e5c580;
+  color: #c9cace;
 }
 .currency small {
   color: #7f7f7f;
@@ -212,7 +205,7 @@ header {
 .avatar {
   height: 33px;
   width: 33px;
-  border: 1px solid #e6bc6850;
+  border: 1px solid #c1c2c650;
   background: linear-gradient(140deg, #383838, #1d1d1d);
   border-radius: 50%;
   color: var(--gold);
@@ -232,8 +225,8 @@ main {
 .eyebrow {
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 2.5px;
-  color: #b49a6e;
+  letter-spacing: 0.6px;
+  color: #9d9ea2;
 }
 h1 {
   font-family: inherit;
@@ -245,7 +238,7 @@ h1 {
 em {
   font-weight: normal;
   font-style: normal;
-  color: #e6c88f;
+  color: #cccdd1;
 }
 .page-heading p {
   color: var(--muted);
@@ -284,7 +277,7 @@ em {
   min-height: 365px;
   position: relative;
   overflow: hidden;
-  border: 1px solid #af915d30;
+  border: 1px solid #95969a30;
   border-radius: 10px;
   background:
     radial-gradient(ellipse at 75% 70%, #2b438850, transparent 50%),
@@ -295,7 +288,7 @@ em {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(#e6bc6877 0.7px, transparent 0.8px);
+  background-image: radial-gradient(#c1c2c677 0.7px, transparent 0.8px);
   background-size: 73px 61px;
   opacity: 0.25;
 }
@@ -306,9 +299,7 @@ em {
   max-width: 60%;
 }
 .hero h2 {
-  font:
-    normal 43px/1.12 Georgia,
-    serif;
+  font: normal 43px/1.12 var(--font-ui);
   letter-spacing: -1px;
   margin: 20px 0 17px;
 }
@@ -324,10 +315,10 @@ em {
   margin-top: 24px;
 }
 .primary {
-  background: linear-gradient(110deg, #efce8c, #d6ad5e);
-  box-shadow: 0 4px 20px #e6bc6815;
-  border: 1px solid #f1d79e;
-  color: #292314;
+  background: linear-gradient(110deg, #d2d3d7, #b2b3b7);
+  box-shadow: 0 4px 20px #c1c2c615;
+  border: 1px solid #dbdce0;
+  color: #222327;
   padding: 12px 18px;
   border-radius: 5px;
   display: inline-flex;
@@ -354,11 +345,6 @@ em {
   font-size: 11px;
   color: #8a8a8a;
   margin-top: 26px;
-}
-.lower-grid {
-  display: grid;
-  grid-template-columns: 1.65fr 1fr;
-  gap: 20px;
 }
 .panel {
   border: 1px solid var(--line);
@@ -389,9 +375,7 @@ em {
   display: flex;
   gap: 10px;
   align-items: center;
-  font:
-    13px Arial,
-    sans-serif;
+  font: 13px var(--font-ui);
   margin: 0;
 }
 .section-title h2 svg {
@@ -412,10 +396,6 @@ em {
   border: 0;
   padding-bottom: 0;
 }
-.mission-row > div:not(.mission-icon) {
-  flex: 1;
-  min-width: 0;
-}
 .mission-row h3 {
   font-size: 11px;
   font-weight: 500;
@@ -427,41 +407,26 @@ em {
 }
 .mission-row small {
   font-size: 11px;
-  color: #d1b679;
+  color: #b9babe;
 }
 .mission-row small span {
   color: #7d7d7d;
   margin-left: 10px;
-}
-.mission-icon {
-  height: 41px;
-  width: 41px;
-  border: 1px solid #b49a6e25;
-  background: #b49a6e08;
-  border-radius: 8px;
-  display: grid;
-  place-items: center;
-  color: #e6bc68;
-}
-.mission-icon.purple {
-  color: #a995d8;
-  border-color: #9466e525;
-  background: #9466e508;
 }
 .outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  border: 1px solid #c4a36535;
-  background: #c4a36508;
+  border: 1px solid #a7a8ac35;
+  background: #a7a8ac08;
   border-radius: 4px;
-  color: #d4bf92;
+  color: #c2c3c7;
   padding: 9px 14px;
   font-size: 12px;
 }
 .outline:hover {
-  background: #c4a36515;
+  background: #a7a8ac15;
 }
 .icon-button {
   display: inline-flex;
@@ -469,36 +434,6 @@ em {
   background: transparent;
   color: #999999;
   padding: 4px;
-}
-.codex-panel {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at 100% 100%, #42424230, transparent), #1e1e1e;
-}
-.codex-panel h2 {
-  font-size: 29px;
-  line-height: 1.2;
-  margin: 16px 0 12px;
-}
-.codex-panel p {
-  font-size: 11px;
-  color: #999999;
-}
-.codex-panel > a {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  font-size: 11px;
-  color: #d4bf92;
-  margin-top: 21px;
-}
-.codex-watermark {
-  position: absolute;
-  right: -10px;
-  bottom: -10px;
-  color: #b5b5b515;
-  transform: rotate(-15deg);
 }
 footer {
   display: flex;
@@ -520,7 +455,7 @@ footer small {
   color: #505050;
 }
 footer svg {
-  color: #9b885e;
+  color: #8a8b8f;
 }
 footer i {
   height: 2px;
@@ -530,11 +465,11 @@ footer i {
 }
 .notice {
   padding: 15px;
-  border: 1px solid #e6bc6835;
-  background: #e6bc680a;
+  border: 1px solid #c1c2c635;
+  background: #c1c2c60a;
   border-radius: 6px;
   margin-bottom: 20px;
-  color: #e2cc9e;
+  color: #cfd0d4;
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -604,7 +539,7 @@ button.purchase:disabled {
   border-color: #ffffff4d;
 }
 .warning {
-  color: #e6bc68 !important;
+  color: #c1c2c6 !important;
 }
 .rates {
   display: grid;
@@ -655,7 +590,7 @@ button.purchase:disabled {
   padding: 65px 20px;
 }
 .empty > svg {
-  color: #b7a074;
+  color: #a3a4a8;
   margin: 0 auto 25px;
 }
 .empty h2 {
@@ -677,7 +612,7 @@ button.purchase:disabled {
 .game-card {
   position: relative;
   overflow: hidden;
-  border: 1px solid #bca46e70;
+  border: 1px solid #a7a8ac70;
   border-radius: 10px;
   background: linear-gradient(150deg, #383838, #1b1b1b);
   text-align: left;
@@ -693,11 +628,11 @@ button.purchase:disabled {
   justify-content: space-between;
   text-transform: uppercase;
   font-size: 10px;
-  color: #d3bb88;
+  color: #bebfc3;
   letter-spacing: 1px;
 }
 .card-bottom {
-  border-top: 1px solid #bca46e20;
+  border-top: 1px solid #a7a8ac20;
   padding-top: 12px;
 }
 .card-bottom small {
@@ -705,14 +640,12 @@ button.purchase:disabled {
   color: #969696;
 }
 .card-bottom h3 {
-  font:
-    20px Georgia,
-    serif;
+  font: 20px var(--font-ui);
   margin: 8px 0;
 }
 .card-bottom > span {
   font-size: 10px;
-  color: #bdaf94;
+  color: #b2b3b7;
 }
 .holo:after {
   content: '';
@@ -729,9 +662,6 @@ button.purchase:disabled {
   );
   animation: holo 5s linear infinite;
 }
-.rarity-5 {
-  box-shadow: 0 0 24px #e6bc6825;
-}
 .history > div {
   display: flex;
   justify-content: space-between;
@@ -747,7 +677,7 @@ button.purchase:disabled {
 .history strong {
   min-width: 85px;
   text-align: right;
-  color: #c8b387;
+  color: #b6b7bb;
   font-weight: normal;
 }
 .modal-backdrop {
@@ -764,7 +694,7 @@ button.purchase:disabled {
 }
 .modal {
   position: relative;
-  border: 1px solid #e6bc6840;
+  border: 1px solid #c1c2c640;
   background: radial-gradient(ellipse at top, #383838, #1a1a1a 65%);
   padding: 45px;
   border-radius: 12px;
@@ -774,10 +704,8 @@ button.purchase:disabled {
   overflow: auto;
 }
 .modal h2 {
-  font:
-    32px Georgia,
-    serif;
-  color: #e5cd9f;
+  font: 32px var(--font-ui);
+  color: #d1d2d6;
 }
 .modal p,
 .modal small {
@@ -866,9 +794,6 @@ button.purchase:disabled {
   .hero-actions {
     gap: 15px;
   }
-  .lower-grid {
-    grid-template-columns: 1fr;
-  }
   .rates {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -925,7 +850,7 @@ button.purchase:disabled {
   }
   .eyebrow {
     font-size: 11px;
-    letter-spacing: 2px;
+    letter-spacing: 0.6px;
   }
   h1 {
     font-size: 29px;
@@ -990,11 +915,6 @@ button.purchase:disabled {
   .mission-row p {
     font-size: 11px;
   }
-  .mission-icon {
-    width: 32px;
-    height: 35px;
-    flex-shrink: 0;
-  }
   .outline {
     padding: 9px;
     font-size: 12px;
@@ -1004,16 +924,6 @@ button.purchase:disabled {
   }
   .mission-row small span {
     margin-left: 5px;
-  }
-  .codex-panel {
-    padding: 25px;
-  }
-  .codex-panel h2 {
-    font-size: 30px;
-  }
-  .codex-watermark {
-    right: 12px;
-    bottom: 12px;
   }
   footer {
     align-items: flex-start;
@@ -1090,34 +1000,69 @@ button.purchase:disabled {
     transform: scale(1) rotate(0);
   }
 }
-/* Cadres de collection : CSS uniquement, aucun asset généré. */
+/* Cadres de collection : CSS uniquement, aucun asset généré.
+   Une couleur par rareté, de plus en plus présente : Commun argent, Rare bleu,
+   Épique violet, Légendaire or, Mythique rouge, Secret irisé. */
+@property --frame-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
 .illustrated-card {
-  --rarity-color: #a7a7a7;
-  border: 1px solid var(--rarity-color);
+  --rarity-color: #9a9aa2;
+  --rarity-glow: transparent;
+  border: 1px solid color-mix(in srgb, var(--rarity-color), transparent 35%);
   padding: 10px;
   box-shadow:
     inset 0 0 0 3px #121212,
-    inset 0 0 0 4px color-mix(in srgb, var(--rarity-color), transparent 65%);
+    inset 0 0 0 4px color-mix(in srgb, var(--rarity-color), transparent 70%),
+    0 10px 28px var(--rarity-glow);
   isolation: isolate;
 }
 .illustrated-card.rarity-1 {
-  --rarity-color: #76baf0;
+  --rarity-color: #6fb3f2;
+  --rarity-glow: #6fb3f214;
 }
 .illustrated-card.rarity-2 {
-  --rarity-color: #b090ee;
+  --rarity-color: #b48cff;
+  --rarity-glow: #b48cff22;
 }
 .illustrated-card.rarity-3 {
-  --rarity-color: #e6bc68;
+  --rarity-color: #f0c35c;
+  --rarity-glow: #f0c35c30;
+  border-width: 1.5px;
 }
 .illustrated-card.rarity-4 {
-  --rarity-color: #ef9bc9;
+  --rarity-color: #ff6b6b;
+  --rarity-glow: #ff6b6b38;
+  border-width: 1.5px;
 }
 .illustrated-card.rarity-5 {
-  --rarity-color: #f1dca5;
-  box-shadow:
-    0 0 23px #e6bc6820,
-    inset 0 0 0 3px #121212,
-    inset 0 0 0 4px #e6bc6860;
+  --rarity-color: #e6f0ff;
+  --rarity-glow: #a6d8ff40;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(150deg, #2c2c30, #18181b) padding-box,
+    conic-gradient(
+        from var(--frame-angle),
+        #7fd6ff,
+        #c99bff,
+        #ffd88a,
+        #8effc8,
+        #7fd6ff
+      )
+      border-box;
+  animation: secret-frame 8s linear infinite;
+}
+@keyframes secret-frame {
+  to {
+    --frame-angle: 360deg;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .illustrated-card.rarity-5 {
+    animation: none;
+  }
 }
 .illustrated-card .card-top {
   color: var(--rarity-color);
@@ -1149,9 +1094,7 @@ button.purchase:disabled {
   color: #8f8f8f50;
 }
 .neutral-card-frame > span {
-  font:
-    22px Georgia,
-    serif;
+  font: 22px var(--font-ui);
   line-height: 1.2;
 }
 .neutral-card-frame > small {
@@ -1179,7 +1122,10 @@ button.purchase:disabled {
   padding: 10px 3px 4px;
 }
 .illustrated-card .card-bottom h3 {
-  font-size: 19px;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.3px;
+  line-height: 1.15;
   margin: 6px 0;
 }
 .illustrated-card .card-bottom > small:first-child {
@@ -1311,9 +1257,9 @@ button.purchase:disabled {
   top: 30px;
   font-size: 10px;
   letter-spacing: 1px;
-  color: #c4b88e;
+  color: #b9babe;
   background: #121212bb;
-  border: 1px solid #c4b88e30;
+  border: 1px solid #b9babe30;
   padding: 4px;
   border-radius: 3px;
 }
@@ -1337,7 +1283,7 @@ button.purchase:disabled {
   display: block;
   font-size: 30px;
   font-weight: 400;
-  color: #e6c88e;
+  color: #cccdd1;
   margin-top: 12px;
 }
 .codex-totals strong span {
@@ -1360,7 +1306,7 @@ button.purchase:disabled {
 .mission-cycle {
   font-size: 12px;
   letter-spacing: 0.5px;
-  color: #d0bf9d;
+  color: #c2c3c7;
   margin: 20px 0;
 }
 .codex-progress {
@@ -1373,7 +1319,7 @@ button.purchase:disabled {
 }
 .codex-progress strong {
   font-weight: normal;
-  color: #c5b58d;
+  color: #b7b8bc;
 }
 .codex-progress progress {
   grid-column: 1/-1;
@@ -1381,7 +1327,7 @@ button.purchase:disabled {
 }
 progress {
   height: 5px;
-  accent-color: #e6bc68;
+  accent-color: #c1c2c6;
   max-width: 100%;
   border: 0;
   background: #ffffff08;
@@ -1392,7 +1338,7 @@ progress::-webkit-progress-bar {
   border-radius: 8px;
 }
 progress::-webkit-progress-value {
-  background: linear-gradient(90deg, #aa8443, #e6bc68);
+  background: linear-gradient(90deg, #88898d, #c1c2c6);
   border-radius: 8px;
 }
 .mission-row progress {
@@ -1432,9 +1378,7 @@ progress::-webkit-progress-value {
   color: #7c7c7c;
 }
 .unknown-card h3 {
-  font:
-    21px Georgia,
-    serif;
+  font: 21px var(--font-ui);
   color: #a3a3a3;
   margin: 0;
 }
@@ -1487,7 +1431,7 @@ progress::-webkit-progress-value {
 .codex-details summary {
   cursor: pointer;
   font-size: 11px;
-  color: #b9b092;
+  color: #b1b2b6;
   padding: 12px 0;
   border-top: 1px solid #ffffff0b;
 }
@@ -1514,15 +1458,15 @@ progress::-webkit-progress-value {
   align-items: center;
 }
 .summon-counter svg {
-  color: #dec18a;
+  color: #c5c6ca;
 }
 .summon-counter strong {
-  color: #f1dfbd;
+  color: #e3e4e8;
 }
 .summon-experience {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-  border: 1px solid #d9bd7c26;
+  border: 1px solid #c0c1c526;
   border-radius: 18px;
   overflow: hidden;
   background: #1d1d1d;
@@ -1815,9 +1759,7 @@ progress::-webkit-progress-value {
   justify-content: center;
 }
 .pack-order-heading h3 {
-  font:
-    25px/1.25 Georgia,
-    serif;
+  font: 25px/1.25 var(--font-ui);
   margin: 14px 0 24px;
   color: #f5e8ce;
 }
@@ -1895,9 +1837,7 @@ progress::-webkit-progress-value {
   line-height: 1.6;
 }
 .pack-order-total strong {
-  font:
-    30px Georgia,
-    serif;
+  font: 30px var(--font-ui);
   color: #f0d59a;
   white-space: nowrap;
 }
@@ -1979,16 +1919,12 @@ progress::-webkit-progress-value {
   margin: 28px 0 15px;
 }
 .theatre-progress h2 {
-  font:
-    28px Georgia,
-    serif;
+  font: 28px var(--font-ui);
   margin: 9px 0;
   color: #f1e8d5;
 }
 .theatre-progress > strong {
-  font:
-    28px Georgia,
-    serif;
+  font: 28px var(--font-ui);
   color: #e2c48e;
   white-space: nowrap;
 }
@@ -2103,9 +2039,7 @@ progress::-webkit-progress-value {
   border-radius: 5px;
 }
 .flip-back-brand {
-  font:
-    22px Georgia,
-    serif;
+  font: 22px var(--font-ui);
   letter-spacing: 3px;
 }
 .flip-back-brand > span {
@@ -2134,10 +2068,8 @@ progress::-webkit-progress-value {
   border-radius: 50%;
 }
 .flip-back-title {
-  font:
-    13px/1.5 Georgia,
-    serif;
-  letter-spacing: 4px;
+  font: 13px/1.5 var(--font-ui);
+  letter-spacing: 0.6px;
 }
 .flip-back-prompt {
   display: flex;
@@ -2231,14 +2163,12 @@ progress::-webkit-progress-value {
 }
 .theatre-rarity {
   font-size: 10px;
-  letter-spacing: 3px;
+  letter-spacing: 0.6px;
   color: var(--reveal-accent);
   text-transform: uppercase;
 }
 .theatre-card-caption p {
-  font:
-    20px Georgia,
-    serif;
+  font: 20px var(--font-ui);
   margin: 9px 0;
   color: #eae3d4;
 }
@@ -2985,7 +2915,7 @@ progress::-webkit-progress-value {
 }
 .atelier-brand small {
   display: block;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-ui);
   font-size: 6px;
   letter-spacing: 3px;
   color: #bbbbbb;
@@ -3005,11 +2935,11 @@ progress::-webkit-progress-value {
 .emblem-diamond {
   position: absolute;
   inset: 18px 23px;
-  border: 1px solid #d6c38b55;
+  border: 1px solid #c5c6ca55;
   transform: rotate(45deg);
   box-shadow:
-    0 0 0 7px #d6c38b08,
-    inset 0 0 0 7px #d6c38b08;
+    0 0 0 7px #c5c6ca08,
+    inset 0 0 0 7px #c5c6ca08;
 }
 .emblem-crown {
   position: absolute;
@@ -3736,7 +3666,7 @@ progress::-webkit-progress-value {
 }
 .sidebar nav a:hover {
   background: #ffffff06;
-  color: #f1e2bd;
+  color: #e5e6ea;
 }
 .collection-search {
   display: flex;
@@ -3846,11 +3776,11 @@ progress::-webkit-progress-value {
     padding: 5px 2px;
   }
   .mobile-dock > [aria-current='page'] {
-    background: #e3c37f10;
-    color: #edd49c;
+    background: #c7c8cc10;
+    color: #d8d9dd;
   }
   .mobile-dock > [aria-current='page'] > svg {
-    filter: drop-shadow(0 0 7px #e0bc6b44);
+    filter: drop-shadow(0 0 7px #c0c1c544);
   }
   .page-heading p {
     font-size: 12px;
@@ -3957,7 +3887,7 @@ progress::-webkit-progress-value {
 }
 .completed-missions {
   margin-top: 32px;
-  border-top: 1px solid #d8c59124;
+  border-top: 1px solid #c7c8cc24;
   padding-top: 26px;
 }
 .completed-missions-heading {
@@ -3972,8 +3902,8 @@ progress::-webkit-progress-value {
   border-radius: 20px;
   padding: 4px 10px;
   font-size: 12px;
-  color: #d5c58e;
-  background: #d5c58e12;
+  color: #c6c7cb;
+  background: #c6c7cb12;
 }
 .completed-missions > p,
 .mission-cycle-empty {
@@ -3983,7 +3913,7 @@ progress::-webkit-progress-value {
 }
 .mission-completion-label {
   display: inline-block;
-  color: #e3c78e;
+  color: #cbccd0;
   font-size: 11px;
   margin: 4px 0 3px;
 }
@@ -4013,9 +3943,7 @@ progress::-webkit-progress-value {
   margin-bottom: 6px;
 }
 .theatre-card-caption .reveal-card-legend {
-  font:
-    12px/1.75 Arial,
-    sans-serif;
+  font: 12px/1.75 var(--font-ui);
   color: #c0c0c0;
   max-width: 460px;
   margin: 13px auto 9px;
@@ -4030,15 +3958,11 @@ progress::-webkit-progress-value {
   background: linear-gradient(140deg, #d5bc7b08, #81b5df05);
 }
 .card-legend-detail h2 {
-  font:
-    23px Georgia,
-    serif;
+  font: 23px var(--font-ui);
   margin: 12px 0 18px;
 }
 .card-legend-detail blockquote {
-  font:
-    17px/1.85 Georgia,
-    serif;
+  font: 17px/1.85 var(--font-ui);
   color: #e5dfcf;
   margin: 0;
   border-left: 2px solid #d5bc7b77;
@@ -4095,9 +4019,6 @@ progress::-webkit-progress-value {
 .sidebar nav a:hover {
   background: #ffffff06;
   color: #fff;
-}
-.sidebar nav .active-dot {
-  background: #d3d4d7;
 }
 .primary {
   background: linear-gradient(135deg, #eeeeef, #bdbfc4);
@@ -4184,7 +4105,7 @@ progress::-webkit-progress-value {
 .theatre-progress h2,
 .theatre-card-caption > p,
 .page-heading h1 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-ui);
   font-weight: 600;
   letter-spacing: -0.6px;
   color: #f2f2f3;
@@ -4269,10 +4190,7 @@ progress::-webkit-progress-value {
 }
 /* Card-club layout: product photography, clear typography, and ruled sections. */
 .card-club .brand {
-  font:
-    700 19px/1 Arial,
-    Helvetica,
-    sans-serif;
+  font: 700 19px/1 var(--font-ui);
   letter-spacing: -0.6px;
   gap: 10px;
   margin-bottom: 44px;
@@ -4289,9 +4207,7 @@ progress::-webkit-progress-value {
   width: 34px;
   height: 36px;
   border: 1px solid #c0c0c755;
-  font:
-    700 12px Arial,
-    sans-serif;
+  font: 700 12px var(--font-ui);
   letter-spacing: -1px;
   color: #eee;
   flex-shrink: 0;
@@ -4300,11 +4216,8 @@ progress::-webkit-progress-value {
   padding-top: 28px;
 }
 .card-club .nav-label {
-  font:
-    600 11px/1.4 Arial,
-    Helvetica,
-    sans-serif;
-  letter-spacing: 1.5px;
+  font: 600 11px/1.4 var(--font-ui);
+  letter-spacing: 0.6px;
 }
 .card-club .sidebar nav a {
   border: 1px solid transparent;
@@ -4324,10 +4237,6 @@ progress::-webkit-progress-value {
 }
 .card-club .sidebar nav a.active > svg {
   color: #dedee3;
-}
-.card-club .sidebar .active-dot {
-  background: #d3d4d7;
-  box-shadow: none;
 }
 .card-club .world-status {
   font-size: 11px;
@@ -4353,10 +4262,7 @@ progress::-webkit-progress-value {
   margin-bottom: 26px;
 }
 .card-club .page-heading .eyebrow {
-  font:
-    600 11px/1.4 Arial,
-    Helvetica,
-    sans-serif;
+  font: 600 11px/1.4 var(--font-ui);
   letter-spacing: 1px;
   color: #898990;
 }
@@ -4403,6 +4309,19 @@ progress::-webkit-progress-value {
 .card-club .text-link {
   font-size: 13px;
 }
+/* Boutons secondaires : fond discret, sans bordure blanche marquée. */
+.card-club .outline {
+  border: 1px solid #ffffff14;
+  background: #ffffff0f;
+  color: #e6e6e8;
+}
+.card-club .outline:hover:not(:disabled) {
+  background: #ffffff1a;
+  border-color: #ffffff24;
+}
+.card-club .outline:disabled {
+  opacity: 0.45;
+}
 .card-club .game-card .outline {
   min-height: 36px;
   padding: 0 12px;
@@ -4426,18 +4345,12 @@ progress::-webkit-progress-value {
   padding: 32px 35px 30px 0;
 }
 .collection-edition {
-  font:
-    600 11px/1.4 Arial,
-    Helvetica,
-    sans-serif;
-  letter-spacing: 1.5px;
+  font: 600 11px/1.4 var(--font-ui);
+  letter-spacing: 0.6px;
   color: #aaaab0;
 }
 .card-club .hero h2 {
-  font:
-    700 clamp(48px, 5.2vw, 78px)/0.98 Arial,
-    Helvetica,
-    sans-serif;
+  font: 700 clamp(48px, 5.2vw, 78px)/0.98 var(--font-ui);
   letter-spacing: -3.5px;
   margin: 25px 0 22px;
   color: #efeff1;
@@ -4456,10 +4369,7 @@ progress::-webkit-progress-value {
   border-top: 1px solid #ffffff13;
   margin-top: 30px;
   padding-top: 17px;
-  font:
-    600 11px/1.4 Arial,
-    Helvetica,
-    sans-serif;
+  font: 600 11px/1.4 var(--font-ui);
   gap: 23px;
   color: #8c8c95;
   max-width: none;
@@ -4540,29 +4450,13 @@ progress::-webkit-progress-value {
   padding: 24px 0;
 }
 .card-club .panel h2 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-ui);
   font-size: 21px;
   font-weight: 500;
   letter-spacing: -0.4px;
 }
 .card-club .section-title h2 > svg {
   display: none;
-}
-.card-club .codex-panel {
-  padding-left: 24px;
-}
-.card-club .codex-watermark {
-  display: none;
-}
-.card-club .codex-panel h2 {
-  font-size: 30px;
-  line-height: 1.15;
-  margin-top: 20px;
-}
-.card-club .mission-row .mission-icon {
-  background: none;
-  border: 0;
-  border-radius: 0;
 }
 .card-club footer {
   font-size: 11px;
@@ -4604,10 +4498,7 @@ progress::-webkit-progress-value {
   color: #96969f;
 }
 .card-club .pack-display-caption {
-  font:
-    600 11px/1.4 Arial,
-    Helvetica,
-    sans-serif;
+  font: 600 11px/1.4 var(--font-ui);
   letter-spacing: 1px;
   bottom: 24px;
   color: #93939d;
@@ -4627,18 +4518,12 @@ progress::-webkit-progress-value {
   padding: 28px 0 24px 35px;
 }
 .card-club .pack-order-heading .eyebrow {
-  font:
-    600 11px/1.4 Arial,
-    Helvetica,
-    sans-serif;
+  font: 600 11px/1.4 var(--font-ui);
   letter-spacing: 1px;
   color: #888891;
 }
 .card-club .pack-order-heading h3 {
-  font:
-    500 28px Arial,
-    Helvetica,
-    sans-serif;
+  font: 500 28px var(--font-ui);
   margin: 10px 0 24px;
   color: #eeeef0;
   letter-spacing: -0.7px;
@@ -4684,10 +4569,7 @@ progress::-webkit-progress-value {
   font-weight: 400;
 }
 .card-club .pack-mode small {
-  font:
-    600 11px/1.4 Arial,
-    Helvetica,
-    sans-serif;
+  font: 600 11px/1.4 var(--font-ui);
   white-space: normal;
   max-width: 110px;
   text-align: right;
@@ -4704,7 +4586,7 @@ progress::-webkit-progress-value {
   font-size: 11px;
 }
 .card-club .pack-order-total > strong {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-ui);
   font-size: 27px;
   color: #eee;
 }
@@ -4831,9 +4713,6 @@ progress::-webkit-progress-value {
   }
   .cover-character figcaption {
     margin-top: 12px;
-  }
-  .card-club .codex-panel {
-    padding-left: 0;
   }
   .card-club .panel {
     padding: 20px 0;
@@ -5034,7 +4913,7 @@ progress::-webkit-progress-value {
 .bonus-progress > span {
   display: block;
   height: 100%;
-  background: #c1b399;
+  background: #b6b7bb;
 }
 .card-club .pack-display {
   background: linear-gradient(145deg, #29292b 0%, #202022 50%, #18181a 100%);
@@ -5114,7 +4993,7 @@ progress::-webkit-progress-value {
 .card-club a:focus-visible,
 .card-club input:focus-visible,
 .card-club select:focus-visible {
-  outline: 2px solid #d7c49b;
+  outline: 2px solid #c7c8cc;
   outline-offset: 4px;
 }
 @media (max-width: 700px) {
@@ -5197,7 +5076,7 @@ progress::-webkit-progress-value {
   color: #9999a3;
 }
 .wishlist-list a {
-  color: #e4dfd4;
+  color: #e2e3e7;
   text-decoration: none;
 }
 .profile-card-grid {
@@ -5237,7 +5116,7 @@ progress::-webkit-progress-value {
   cursor: pointer;
 }
 .card-face[role='button']:focus-visible {
-  outline: 2px solid #e2d7b7;
+  outline: 2px solid #d9dade;
   outline-offset: 4px;
 }
 .collector-market {
@@ -5299,8 +5178,8 @@ progress::-webkit-progress-value {
   font-size: 13px;
 }
 .market-tabs button.active {
-  color: #f2efe7;
-  border-bottom-color: #d8c9a6;
+  color: #f2f3f7;
+  border-bottom-color: #cccdd1;
 }
 .market-tabs button span {
   background: #303030;
@@ -5332,7 +5211,7 @@ progress::-webkit-progress-value {
   min-width: 0;
   width: 100%;
   background: #202020;
-  color: #eeeae2;
+  color: #edeef2;
   border: 1px solid #424242;
   border-radius: 5px;
   padding: 12px;
@@ -5375,7 +5254,7 @@ progress::-webkit-progress-value {
 .market-message {
   margin: 0;
   font-size: 13px;
-  color: #dacda9;
+  color: #cfd0d4;
 }
 .market-grid {
   display: grid;
@@ -5418,7 +5297,7 @@ progress::-webkit-progress-value {
   white-space: nowrap;
 }
 .lot-time.urgent {
-  color: #e3bb89;
+  color: #c2c3c7;
 }
 .market-card-button {
   display: block;
@@ -5477,7 +5356,7 @@ progress::-webkit-progress-value {
 .lot-price strong {
   font-size: 22px;
   font-variant-numeric: tabular-nums;
-  color: #f0e8d9;
+  color: #ebecf0;
 }
 .lot-price strong span,
 .detail-price strong span {
@@ -5508,7 +5387,7 @@ progress::-webkit-progress-value {
 }
 .lot-seller button {
   flex-shrink: 0;
-  color: #ddd6c8;
+  color: #d9dade;
   font-size: 12px;
 }
 .market-empty {
@@ -5521,7 +5400,7 @@ progress::-webkit-progress-value {
   color: #a4a198;
 }
 .market-empty h3 {
-  color: #e4dfd4;
+  color: #e2e3e7;
   font-size: 20px;
   margin: 20px 0 8px;
 }
@@ -5535,7 +5414,7 @@ progress::-webkit-progress-value {
   margin-top: 15px;
 }
 .collector-dialog {
-  color: #ece8de;
+  color: #ebecf0;
   background: #202020;
   border: 1px solid #52504c;
   border-radius: 12px;
@@ -5612,7 +5491,7 @@ progress::-webkit-progress-value {
   color: #aaa69e;
 }
 .auction-copy-stats b {
-  color: #e3ded3;
+  color: #e1e2e6;
   margin-left: 3px;
 }
 .auction-facts {
@@ -5635,7 +5514,7 @@ progress::-webkit-progress-value {
   overflow-wrap: anywhere;
 }
 .auction-detail-info .auction-standing {
-  color: #d5c8ab;
+  color: #cbccd0;
   font-size: 12px;
 }
 .detail-price {
@@ -5878,7 +5757,7 @@ progress::-webkit-progress-value {
   padding-top: 4px;
 }
 .getting-started li.current > span {
-  color: #e8d2a1;
+  color: #d5d6da;
 }
 .getting-started li.done > span {
   color: #aac5a1;
@@ -5912,7 +5791,7 @@ progress::-webkit-progress-value {
   cursor: pointer;
   font-size: 11px;
   padding: 8px 0 14px;
-  color: #c6bdab;
+  color: #bfc0c4;
 }
 .auction-bid-form .auction-dialog-actions {
   position: sticky;
@@ -5970,8 +5849,8 @@ progress::-webkit-progress-value {
 }
 .listed-badge {
   font-size: 11px;
-  border: 1px solid #625641;
-  color: #d9c49f;
+  border: 1px solid #57585c;
+  color: #c8c9cd;
   padding: 5px 8px;
   border-radius: 4px;
   display: inline-block;
@@ -5984,7 +5863,7 @@ progress::-webkit-progress-value {
   position: absolute;
   top: -6px;
   right: -8px;
-  background: #ddd0b1;
+  background: #d3d4d8;
   color: #171717;
   border-radius: 20px;
   padding: 2px 5px;
@@ -6030,7 +5909,7 @@ progress::-webkit-progress-value {
 }
 .notification-inbox li.unread {
   background: #2b2822;
-  border-left: 2px solid #c3ac80;
+  border-left: 2px solid #afb0b4;
 }
 .notification-inbox li h3 {
   font-size: 14px;
@@ -6056,18 +5935,6 @@ progress::-webkit-progress-value {
   padding: 40px 16px;
   color: #aaa18e;
   font-size: 12px;
-}
-.notification-block {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  font-size: 12px;
-}
-.notification-block input {
-  width: 18px;
-  height: 18px;
-  accent-color: #cab98f;
 }
 @media (max-width: 800px) {
   .getting-started ol {
@@ -6097,55 +5964,59 @@ progress::-webkit-progress-value {
     gap: 14px;
   }
 }
-/* Card progression and collection tools */
+/* Progression d'un exemplaire : une ligne fine sous la carte. */
 .copy-progress {
-  margin-top: 12px;
-  padding: 12px;
-  background: #272624;
-  border: 1px solid #4b4539;
-  border-radius: 6px;
-}
-.copy-progress > div:first-child {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px;
-  font-size: 11px;
-  color: #c7baa0;
-}
-.copy-progress strong {
-  font-size: 11px;
-  font-weight: 500;
-}
-.copy-progress.is-mastered {
-  border-color: #b39c6c;
-  background: #312c23;
+  display: grid;
+  gap: 7px;
+  margin-top: 8px;
+  padding: 0 2px;
 }
 .copy-level-track {
-  height: 3px;
-  background: #444037;
-  margin: 10px 0;
+  height: 2px;
+  border-radius: 1px;
+  background: #ffffff14;
   overflow: hidden;
 }
 .copy-level-track > i {
   display: block;
   height: 100%;
-  background: #d4be8b;
+  background: var(--rarity-color, #d3d4d7);
 }
-.awakening-stars {
+.copy-progress-line {
   display: flex;
   align-items: center;
-  gap: 4px;
-  color: #575248;
-  font-size: 13px;
+  gap: 10px;
+  font-size: 12px;
+  color: #c9cace;
+  font-variant-numeric: tabular-nums;
+}
+.copy-progress-line strong {
+  font-weight: 600;
+}
+.copy-progress-line small {
+  color: #7d7d85;
+  font-size: 11px;
+}
+.awakening-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #ffffff24;
+  font-size: 11px;
 }
 .awakening-stars .filled {
-  color: #e1c68c;
+  color: #e9d29b;
 }
-.awakening-stars small {
+.copy-fusion-rank {
   margin-left: auto;
-  color: #a99e89;
+  padding: 1px 6px;
+  border: 1px solid #ffffff2a;
+  border-radius: 4px;
   font-size: 11px;
+  font-weight: 700;
+  color: #e6e6e8;
+}
+.copy-progress.is-mastered .copy-progress-line strong {
+  color: #e9d29b;
 }
 .advanced-collection-filters {
   display: flex;
@@ -6174,7 +6045,7 @@ progress::-webkit-progress-value {
   width: 100%;
   min-width: 0;
   background: #252525;
-  color: #e8e4db;
+  color: #e7e8ec;
   border: 1px solid #4b463d;
   border-radius: 5px;
   padding: 11px;
@@ -6255,7 +6126,7 @@ progress::-webkit-progress-value {
 }
 .opening-summary-stats strong {
   font-size: 26px;
-  color: #e7d8b5;
+  color: #dbdce0;
 }
 .opening-summary-stats span {
   font-size: 11px;
@@ -6263,7 +6134,7 @@ progress::-webkit-progress-value {
 }
 .opening-summary summary {
   cursor: pointer;
-  color: #cec1a7;
+  color: #c4c5c9;
   font-size: 12px;
   margin-bottom: 12px;
 }
@@ -6294,7 +6165,7 @@ progress::-webkit-progress-value {
 .opening-summary li span,
 .opening-summary li a {
   font-size: 11px;
-  color: #e0c99c;
+  color: #cdced2;
 }
 .opening-summary > p {
   color: #aaa08f;
@@ -6308,8 +6179,8 @@ progress::-webkit-progress-value {
   font-size: 11px;
 }
 .price-reference.limited {
-  border-color: #c09b63;
-  color: #ddbd87;
+  border-color: #a0a1a5;
+  color: #c2c3c7;
 }
 /* Explicit native-control contrast, including dropdown menus in the admin dialogs. */
 .admin-console {
@@ -6320,7 +6191,7 @@ progress::-webkit-progress-value {
 .admin-console select,
 .admin-console option,
 .admin-console optgroup {
-  color: #eeeae1;
+  color: #edeef2;
   background-color: #252525;
   border-color: #5b5549;
   color-scheme: dark;
@@ -6333,7 +6204,7 @@ progress::-webkit-progress-value {
 .admin-console input:focus-visible,
 .admin-console textarea:focus-visible,
 .admin-console select:focus-visible {
-  outline: 2px solid #d6c18f;
+  outline: 2px solid #c4c5c9;
   outline-offset: 2px;
 }
 .admin-console .collector-dialog {
@@ -6398,7 +6269,7 @@ progress::-webkit-progress-value {
   gap: 9px;
   padding: 15px;
   background: #2d2a23;
-  border: 1px solid #6c5d40;
+  border: 1px solid #5e5f63;
   border-radius: 6px;
   font-size: 12px;
 }
@@ -6406,7 +6277,7 @@ progress::-webkit-progress-value {
   color: #b9af9b;
 }
 .admin-balance-preview > strong {
-  color: #ecd5a7;
+  color: #d9dade;
 }
 .admin-balance-preview p {
   color: #eab1a1;
@@ -6487,7 +6358,7 @@ progress::-webkit-progress-value {
   flex-shrink: 0;
   font-size: 11px;
   letter-spacing: 0.06em;
-  color: #d8c89e;
+  color: #cacbcf;
 }
 .drop-window {
   min-width: 0;
@@ -6534,7 +6405,7 @@ progress::-webkit-progress-value {
 .drop-item strong {
   display: block;
   font-size: 12px;
-  color: #faf6ed;
+  color: #f9fafe;
 }
 .drop-card-name {
   display: block;
@@ -6547,7 +6418,7 @@ progress::-webkit-progress-value {
 }
 .drop-finish {
   font-size: 11px;
-  color: #d8c89e;
+  color: #cacbcf;
   white-space: nowrap;
 }
 .drop-finish.is-holo {
@@ -6748,7 +6619,7 @@ progress::-webkit-progress-value {
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  border-color: #99845c;
+  border-color: #86878b;
 }
 .pending-action p {
   margin: 6px 0 0;
@@ -7692,4 +7563,351 @@ button.danger {
 }
 .trade-only-selected {
   white-space: nowrap;
+}
+
+/* Accueil : bonus compacts, aide de la banque repliée, quêtes du jour. */
+.finance-panel .finance-bonuses {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 16px 0 22px;
+}
+.finance-panel .finance-bonuses > div {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 14px;
+  border: 1px solid #ffffff12;
+  border-radius: 10px;
+  background: #ffffff04;
+}
+.finance-panel .finance-bonuses > div.ready {
+  border-color: #ffffff2e;
+  background: #ffffff0a;
+}
+.finance-panel .finance-bonuses span {
+  font-size: 12px;
+  color: #9b9ba3;
+}
+.finance-panel .finance-bonuses strong {
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+.finance-panel .finance-bonuses small {
+  font-size: 12px;
+  color: #8f8f97;
+}
+.finance-panel .finance-bonuses button {
+  margin-top: 4px;
+  min-height: 38px;
+  width: 100%;
+  padding: 0 10px;
+}
+.finance-help {
+  margin-top: 12px;
+}
+.finance-help > summary {
+  font-size: 12px;
+  color: #9b9ba3;
+  cursor: pointer;
+}
+.finance-help p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #9b9ba3;
+}
+.home-quests .quest-list button {
+  min-width: 96px;
+}
+@media (max-width: 700px) {
+  .finance-panel .finance-bonuses {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Carnet des mondes : une tuile par monde avec ses cartes. */
+.world-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+.world-tile {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 16px;
+  border: 1px solid #ffffff12;
+  border-radius: 12px;
+  background: #ffffff04;
+}
+.world-tile.complete {
+  border-color: #ffffff38;
+}
+.world-tile header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.world-tile h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 650;
+}
+.world-tile header svg {
+  color: #e9d29b;
+}
+.world-meta {
+  margin: 0;
+  font-size: 12px;
+  color: #9b9ba3;
+  font-variant-numeric: tabular-nums;
+}
+.world-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+  gap: 8px;
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+}
+.world-cards a {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 3 / 4;
+  border: 1px solid #ffffff10;
+  border-radius: 8px;
+  background: #1c1c1e;
+  overflow: hidden;
+  color: #6f6f77;
+  font-weight: 700;
+}
+.world-cards li:not(.seen) img {
+  filter: grayscale(1) brightness(0.35);
+}
+.world-cards li.seen a {
+  border-color: #ffffff2e;
+  background: #232326;
+}
+
+/* Paramètres : lignes alignées et interrupteurs. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  border-top: 1px solid #ffffff0d;
+}
+.setting-row h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.setting-row p {
+  margin: 0;
+  max-width: 560px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #9b9ba3;
+}
+.switch {
+  position: relative;
+  flex: none;
+  display: inline-block;
+  width: 46px;
+  height: 28px;
+  cursor: pointer;
+}
+.switch input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.switch > span[aria-hidden] {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: #ffffff1f;
+  transition: background-color 0.2s ease;
+}
+.switch > span[aria-hidden]::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f0f0f1;
+  box-shadow: 0 2px 6px #0006;
+  transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.switch input:checked + span {
+  background: #e6e6e8;
+}
+.switch input:checked + span::after {
+  transform: translateX(18px);
+  background: #1b1b1e;
+}
+.switch input:focus-visible + span {
+  outline: 2px solid #f0f0f1;
+  outline-offset: 2px;
+}
+.switch input:disabled + span {
+  opacity: 0.45;
+}
+@media (prefers-reduced-motion: reduce) {
+  .switch > span[aria-hidden],
+  .switch > span[aria-hidden]::after {
+    transition: none;
+  }
+}
+.codex-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 18px 0;
+}
+.workshop-chip[aria-pressed='true'] {
+  background: #f0f0f1;
+  border-color: #f0f0f1;
+  color: #1b1b1e;
+}
+a.workshop-chip {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Finitions : notification flottante, monogramme, avatar, en-tête, pied. */
+.notice.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  max-width: min(560px, calc(100vw - 32px));
+  margin: 0;
+  padding: 12px 12px 12px 18px;
+  border: 1px solid #ffffff1f;
+  border-radius: 12px;
+  background: #242427f2;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 40px #0009;
+  color: #f0f0f1;
+  font-size: 14px;
+  transform: translateX(-50%);
+  animation: toast-in 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px) scale(0.98);
+  }
+}
+@media (max-width: 700px) {
+  .notice.toast {
+    bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+  .crumb-root {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .notice.toast {
+    animation: none;
+  }
+}
+.card-club .brand-mark {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 25%,
+    #ffffff 0,
+    #d9dade 38%,
+    #8d8e95 100%
+  );
+  box-shadow:
+    0 0 0 1px #ffffff26,
+    0 4px 14px #0007;
+  color: #1b1b1e;
+  font: 800 16px var(--font-ui);
+  letter-spacing: 0;
+}
+.card-club .avatar {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.card-club footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 40px;
+  padding: 22px 0 8px;
+  border-top: 1px solid #ffffff12;
+  font-size: 12px;
+  color: #8f8f97;
+}
+.card-club footer small {
+  color: #8f8f97;
+}
+
+/* La classe « outline » des boutons croise l'utilitaire Tailwind du même nom
+   (outline-style: solid) : on ne garde le contour que pour le focus clavier. */
+.outline:not(:focus-visible) {
+  outline: none;
+}
+.outline:focus-visible {
+  outline: 2px solid #f0f0f1;
+  outline-offset: 2px;
+}
+.home-quests .section-title a,
+.section-title a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.world-tile header {
+  height: auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  position: static;
+  backdrop-filter: none;
+}
+.switch input {
+  z-index: 1;
+}
+.switch > span[aria-hidden] {
+  pointer-events: none;
 }

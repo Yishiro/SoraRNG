@@ -126,9 +126,13 @@ export default function GameCard({
       <div className="card-actions">
         {copy && (
           <small className="copy-details">
-            ×{quantity} · Éveil {copy.awakening}
-            {copy.locked ? ' · Verrouillée' : ''}
-            {copy.favorite ? ' · Favori' : ''}
+            {[
+              quantity > 1 ? `×${quantity} exemplaires` : '',
+              copy.locked ? 'Verrouillée' : '',
+              copy.favorite ? 'Favori' : '',
+            ]
+              .filter(Boolean)
+              .join(' · ')}
           </small>
         )}
         {copy && onManage && (
