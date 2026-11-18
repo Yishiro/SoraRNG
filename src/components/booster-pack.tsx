@@ -7,7 +7,7 @@ export default function BoosterPack({
   opening = false,
 }: {
   count?: number;
-  tone?: 'gold' | 'violet' | 'silver';
+  tone?: 'gold' | 'violet' | 'silver' | 'winter';
   opening?: boolean;
 }) {
   const id = useId().replaceAll(':', '');

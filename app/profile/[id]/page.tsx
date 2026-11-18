@@ -9,6 +9,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '../../../src/server/auth';
 import { rarities } from '../../../src/game/config';
 import Achievements from '../../../src/components/achievements';
+import { membership } from '../../../src/server/community';
 export const dynamic = 'force-dynamic';
 export default async function ProfilePage({
   params,
@@ -35,6 +36,7 @@ export default async function ProfilePage({
     world.cards.every((id) => discoveries.has(id)),
   );
   const wished = cards.filter((card) => p.wishlist?.includes(card.id));
+  const guild = await membership(pool, id);
   // Comparateur : seulement pour un visiteur connecté qui regarde un autre profil.
   const viewerId = (
     (await getServerSession(authOptions))?.user as { id?: string } | undefined
@@ -75,6 +77,16 @@ export default async function ProfilePage({
       <section className="panel" style={{ marginTop: 25 }}>
         <span className="eyebrow">PROFIL COLLECTIONNEUR · ÉDITION 01</span>
         <h1>{row.name}</h1>
+        {(p.titles?.length || guild) && (
+          <p className="profile-tags">
+            {p.titles?.map((title) => (
+              <span key={title} className="profile-title">
+                {title}
+              </span>
+            ))}
+            {guild && <span>Guilde · {guild.name}</span>}
+          </p>
+        )}
         <p>
           {p.copies.length} exemplaires ·{' '}
           {p.discoveries?.length ?? new Set(p.copies.map((c) => c.cardId)).size}

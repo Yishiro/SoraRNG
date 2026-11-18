@@ -17,6 +17,14 @@ import { playerMissions } from './missions';
 import { playerQuests } from './quests';
 import { pruneQuestClaims } from '../game/quests';
 import {
+  themedBoosters,
+  themedOdds,
+  themedStatus,
+} from '../game/themed-boosters';
+import { claimStreak } from '../game/streak';
+import { codexClaimKey, codexRewardStatus } from '../game/codex-rewards';
+import { communityAction, communityKinds } from './community';
+import {
   awakeningFodder,
   awakeningNeed,
   levelCap,
@@ -126,17 +134,34 @@ export async function mutate(
           'Le catalogue officiel de 150 cartes doit être importé',
         );
       const mode = payload.mode;
-      if (!['single', 'multi', 'ticket'].includes(String(mode)))
+      if (
+        !['single', 'multi', 'ticket', 'themed', 'themed-multi'].includes(
+          String(mode),
+        )
+      )
         throw new Error('Mode invalide');
-      const boosters = mode === 'multi' ? 10 : 1;
+      const themed =
+        mode === 'themed' || mode === 'themed-multi'
+          ? themedBoosters.find((b) => b.id === payload.booster)
+          : undefined;
+      if ((mode === 'themed' || mode === 'themed-multi') && !themed)
+        throw new Error('Booster à thème inconnu');
+      if (themed && !themedStatus(themed, now).active)
+        throw new Error('Ce booster à thème n’est pas en vente actuellement.');
+      const boosters = mode === 'multi' || mode === 'themed-multi' ? 10 : 1;
       const count = boosters * economy.cardsPerBooster;
       if (mode === 'ticket') {
         if (p.tickets < 1) throw new Error('Ticket insuffisant');
         p.tickets--;
-      } else requireFunds(p, boosters * economy.summon);
-      const odds = summonOdds(p.boost, now);
+      } else requireFunds(p, boosters * (themed?.cost ?? economy.summon));
+      const odds = themed
+        ? themedOdds(themed, p.boost, now)
+        : summonOdds(p.boost, now);
+      const pool = themed?.cardIds
+        ? cards.filter((c) => themed.cardIds!.includes(c.id))
+        : cards;
       const copies = Array.from({ length: count }, () => ({
-        ...draw(cards, undefined, odds),
+        ...draw(pool, undefined, odds),
         id: randomUUID(),
         level: 1,
         awakening: 0,
@@ -163,9 +188,8 @@ export async function mutate(
         copies,
         boosterCount: boosters,
         cardsPerBooster: economy.cardsPerBooster,
-        rateVersion: odds.active
-          ? `standard-v2-${odds.active.kind}`
-          : 'standard-v2',
+        rateVersion: `${themed?.id ?? 'standard-v2'}${odds.active ? `-${odds.active.kind}` : ''}`,
+        ...(themed ? { booster: themed.id } : {}),
         catalogueVersion: version,
         rates: odds.rates,
         holoRate: odds.holoRate,
@@ -297,6 +321,24 @@ export async function mutate(
         recycled: copies.length,
         fragments: copies.length * economy.recycleFragments,
       };
+    } else if (kind === 'streak') {
+      result = { success: true, ...claimStreak(p, now) };
+    } else if (kind === 'codex-reward') {
+      const milestone = codexRewardStatus(p).find(
+        (m) => m.id === payload.milestone,
+      );
+      if (!milestone?.claimable) throw new Error('Palier non disponible');
+      p.claimed.push(codexClaimKey(milestone.id));
+      p.munny += milestone.munny;
+      if (milestone.title)
+        p.titles = [...new Set([...(p.titles ?? []), milestone.title])];
+      result = {
+        success: true,
+        milestone: milestone.id,
+        munny: milestone.munny,
+      };
+    } else if ((communityKinds as readonly string[]).includes(kind)) {
+      result = await communityAction(db, id, p, kind, payload, cards, now);
     } else if (kind === 'settings') {
       if (
         Object.keys(payload).length !== 1 ||

@@ -216,3 +216,34 @@ model SeasonSettlement {
   standings Json
   createdAt DateTime @default(now()) @db.Timestamptz
 }
+
+model Guild {
+  id        String        @id
+  name      String
+  ownerId   String
+  createdAt DateTime      @default(now()) @db.Timestamptz
+  members   GuildMember[]
+}
+
+model GuildMember {
+  playerId String   @id
+  guildId  String
+  guild    Guild    @relation(fields: [guildId], references: [id], onDelete: Cascade)
+  joinedAt DateTime @default(now()) @db.Timestamptz
+
+  @@index([guildId], map: "GuildMember_guild")
+}
+
+model Announcement {
+  id        String   @id
+  playerId  String
+  kind      String
+  text      String
+  cardIds   Json     @default("[]")
+  status    String   @default("active")
+  createdAt DateTime @default(now()) @db.Timestamptz
+  expiresAt DateTime @db.Timestamptz
+
+  @@index([status, expiresAt], map: "Announcement_active")
+  @@index([playerId, status], map: "Announcement_player")
+}

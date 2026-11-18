@@ -10,6 +10,8 @@ import {
   WandSparkles,
   Gavel,
   Handshake,
+  Megaphone,
+  Users,
   Map as MapIcon,
   ShoppingBag,
   ScrollText,
@@ -56,6 +58,11 @@ import DashboardWelcome from './dashboard-welcome';
 import DashboardNext from './dashboard-next';
 import RecentCards from './recent-cards';
 import CopyWorkshop from './copy-workshop';
+import StreakCard from './streak-card';
+import CodexRewards from './codex-rewards';
+import Guild from './guild';
+import Board from './board';
+import ThemedBoosters from './themed-boosters';
 import RecycleWorkshop from './recycle-workshop';
 import Leaderboards from './leaderboards';
 import Events from './events';
@@ -79,6 +86,9 @@ import type { MissionStatus } from '../game/missions';
 import { authMessage } from '../game/auth-messages';
 
 const pageDescriptions: Record<string, string> = {
+  guild: 'Rejoignez une guilde et atteignez ensemble l’objectif de la semaine.',
+  board:
+    'Publiez ce que vous cherchez ou proposez, et trouvez un partenaire d’échange.',
   worlds:
     'Complétez les pages du Carnet et affichez vos insignes sur votre profil.',
   exchanges:
@@ -127,6 +137,8 @@ const nav = [
   ['upgrade', 'Progression', WandSparkles],
   ['trade', 'Marché', Gavel],
   ['exchanges', 'Échanges directs', Handshake],
+  ['board', 'Annonces', Megaphone],
+  ['guild', 'Guilde', Users],
   ['worlds', 'Carnet des mondes', MapIcon],
   ['shop', 'Boutique', ShoppingBag],
   ['missions', 'Missions', ScrollText],
@@ -347,7 +359,12 @@ export default function Game({ section }: { section: string }) {
       if (result.copies) {
         setOpeningBaseline(request.baseline ?? { discoveries: [], owned: {} });
         setDemoReveal(false);
-        setRevealTone(request.payload.mode === 'multi' ? 'violet' : 'gold');
+        setRevealTone(
+          request.payload.mode === 'multi' ||
+            request.payload.mode === 'themed-multi'
+            ? 'violet'
+            : 'gold',
+        );
         setReveal(result.copies);
       } else if (request.path === '/api/economy') {
         setMessage(
@@ -707,6 +724,14 @@ export default function Game({ section }: { section: string }) {
             </>
           )}
           {section === 'dashboard' && player && (
+            <StreakCard
+              player={player}
+              now={now}
+              busy={busy}
+              onClaim={() => void act('streak')}
+            />
+          )}
+          {section === 'dashboard' && player && (
             <div id="wallet">
               <FinancePanel
                 player={player}
@@ -742,12 +767,32 @@ export default function Game({ section }: { section: string }) {
             />
           )}
           {section === 'summon' && (
+            <ThemedBoosters
+              player={player}
+              now={now}
+              busy={sending}
+              onOpen={(booster, multi) =>
+                void act('summon', {
+                  mode: multi ? 'themed-multi' : 'themed',
+                  booster,
+                })
+              }
+            />
+          )}
+          {section === 'summon' && (
             <SummonRates cards={cards} odds={openingOdds} />
           )}
           {section === 'codex' && (
             <>
               {player && (
                 <>
+                  <CodexRewards
+                    player={player}
+                    busy={busy}
+                    onClaim={(milestone) =>
+                      void act('codex-reward', { milestone })
+                    }
+                  />
                   <Wishlist
                     cards={cards}
                     player={player}
@@ -1113,6 +1158,26 @@ export default function Game({ section }: { section: string }) {
               <Events />
               <ActivityFeed cards={cards} />
             </>
+          )}
+          {section === 'guild' &&
+            (player && data ? (
+              <Guild
+                player={player}
+                playerId={data.id}
+                busy={busy}
+                onAction={(kind, payload) => act(kind, payload)}
+              />
+            ) : (
+              <p>Connectez-vous avec Discord pour rejoindre une guilde.</p>
+            ))}
+          {section === 'board' && (
+            <Board
+              player={player}
+              playerId={data?.id}
+              cards={cards}
+              busy={busy}
+              onAction={(kind, payload) => act(kind, payload)}
+            />
           )}
           {section === 'admin' && <Admin />}
           {data && section === 'dashboard' && (

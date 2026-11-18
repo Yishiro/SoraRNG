@@ -26,7 +26,7 @@ export async function recentDrops(
        THEN o.result->'copies' ELSE '[]'::jsonb END
      ) WITH ORDINALITY AS c(copy,position)
      WHERE o.kind='summon'
-       AND o.request->>'mode' IN ('single','multi','ticket')
+       AND o.request->>'mode' IN ('single','multi','ticket','themed','themed-multi')
        AND (c.copy->>'cardId'=ANY($1::text[]) OR c.copy->>'holo'='true')
      ORDER BY o."createdAt" DESC,o.id DESC,c.position DESC LIMIT 20`,
     [eligible],

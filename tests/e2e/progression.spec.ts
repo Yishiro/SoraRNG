@@ -162,3 +162,61 @@ test('atelier : plusieurs niveaux d’un coup et recyclage groupé confirmé', a
     .poll(() => posts.find((p) => p.kind === 'upgrade')?.payload)
     .toEqual({ copyId: 'best', levels: 3 });
 });
+
+test('série de connexion, guilde et annonce payante confirmée', async ({
+  page,
+}) => {
+  const player: Player = { ...initialPlayer(), munny: 20000 };
+  const posts: { kind: string; payload: Record<string, unknown> }[] = [];
+  await page.route('**/api/game', (route) => {
+    if (route.request().method() === 'POST') {
+      posts.push(route.request().postDataJSON());
+      return route.fulfill({ json: { success: true } });
+    }
+    return route.fulfill({
+      json: {
+        id: '100000000000000001',
+        name: 'Test',
+        state: player,
+        cards,
+        history: [],
+        missions: [],
+        quests: [],
+      },
+    });
+  });
+  await page.route('**/api/catalog', (r) => r.fulfill({ json: { cards } }));
+  await page.route('**/api/notifications', (r) =>
+    r.fulfill({ json: { items: [], unread: 0 } }),
+  );
+  await page.route('**/api/recent-drops', (r) =>
+    r.fulfill({ json: { drops: [] } }),
+  );
+  await page.route('**/api/guilds', (r) =>
+    r.fulfill({ json: { guilds: [], mine: null } }),
+  );
+  await page.route('**/api/announcements', (r) =>
+    r.fulfill({ json: { announcements: [] } }),
+  );
+  await page.goto('/dashboard');
+  await page.getByRole('button', { name: 'Réclamer 500 Munny' }).click();
+  await expect.poll(() => posts.some((p) => p.kind === 'streak')).toBe(true);
+
+  await page.goto('/guild');
+  await page.getByLabel('Nom de la guilde').fill('Les Gardiens');
+  await page.getByRole('button', { name: 'Fonder pour 10 000 Munny' }).click();
+  await expect
+    .poll(() => posts.find((p) => p.kind === 'guild-create')?.payload)
+    .toEqual({ name: 'Les Gardiens' });
+
+  await page.goto('/board');
+  await page.getByLabel('Texte de l’annonce').fill('Je cherche Sora holo');
+  await page.getByRole('button', { name: 'Publier l’annonce' }).click();
+  expect(posts.some((p) => p.kind === 'announce')).toBe(false);
+  await page
+    .getByRole('button', { name: 'Confirmer : payer 500 Munny' })
+    .click();
+  await expect
+    .poll(() => posts.find((p) => p.kind === 'announce')?.payload)
+    .toEqual({ kind: 'seek', text: 'Je cherche Sora holo', cardIds: [] });
+});

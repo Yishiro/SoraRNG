@@ -1536,6 +1536,10 @@ progress::-webkit-progress-value {
   --foil: #bcd6df;
   --pack-bg: #313131;
 }
+.booster-winter {
+  --foil: #d7eeff;
+  --pack-bg: #1d3247;
+}
 .booster-wrapper {
   position: absolute;
   inset: 0;
@@ -7910,4 +7914,398 @@ a.workshop-chip {
 }
 .switch > span[aria-hidden] {
   pointer-events: none;
+}
+
+/* Série de connexion. */
+.streak-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.streak-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px;
+}
+.streak-head p {
+  margin: 0;
+  font-size: 13px;
+  color: #9b9ba3;
+}
+.streak-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.streak-days li {
+  display: grid;
+  gap: 3px;
+  justify-items: center;
+  padding: 10px 4px;
+  border: 1px solid #ffffff10;
+  border-radius: 10px;
+  color: #7d7d85;
+  font-variant-numeric: tabular-nums;
+}
+.streak-days span {
+  font-size: 11px;
+}
+.streak-days strong {
+  font-size: 14px;
+}
+.streak-days small {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+}
+.streak-days li.done {
+  border-color: #ffffff24;
+  background: #ffffff0a;
+  color: #e6e6e8;
+}
+.streak-days li.today {
+  border-color: #f0f0f1;
+  color: #f0f0f1;
+}
+
+/* Récompenses de collection. */
+.milestone-track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.milestone-track li {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: 14px;
+  border: 1px solid #ffffff12;
+  border-radius: 10px;
+}
+.milestone-track li.ready {
+  border-color: #f0f0f1;
+}
+.milestone-track li.done {
+  opacity: 0.6;
+}
+.milestone-head {
+  display: grid;
+  gap: 2px;
+}
+.milestone-head strong {
+  font-size: 15px;
+}
+.milestone-head span,
+.milestone-track small {
+  font-size: 12px;
+  color: #9b9ba3;
+}
+.milestone-track small {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #e9d29b;
+}
+
+/* Guildes. */
+.guild-hero h2 {
+  font-size: 26px;
+  margin: 6px 0;
+}
+.guild-progress {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+}
+.guild-progress strong {
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+}
+.guild-progress span,
+.guild-progress small {
+  font-size: 13px;
+  color: #9b9ba3;
+}
+.guild-reward {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #ffffff2a;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+.guild-members,
+.guild-list,
+.board-list {
+  list-style: none;
+  margin: 12px 0 18px;
+  padding: 0;
+}
+.guild-members li,
+.guild-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  border-bottom: 1px solid #ffffff0d;
+}
+.guild-members a {
+  color: #e6e6e8;
+  font-weight: 600;
+}
+.guild-members small,
+.guild-list small {
+  color: #8f8f97;
+  font-size: 12px;
+}
+.guild-members button,
+.guild-list button {
+  margin-left: auto;
+}
+.guild-owner {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #e9d29b;
+}
+.guild-list li > div {
+  display: grid;
+  flex: 1;
+}
+.guild-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+.guild-form input,
+.board-compose textarea,
+.board-cards-picker input {
+  flex: 1 1 260px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #ffffff1a;
+  border-radius: 8px;
+  background: #1c1c1e;
+  color: #f0f0f1;
+  font: inherit;
+}
+
+/* Tableau d'annonces. */
+.board-compose {
+  display: grid;
+  gap: 12px;
+}
+.board-compose h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.board-compose textarea {
+  resize: vertical;
+  width: 100%;
+}
+.board-count {
+  justify-self: end;
+  font-size: 12px;
+  color: #8f8f97;
+}
+.board-cards-picker {
+  display: grid;
+  gap: 8px;
+}
+.board-cards-picker ul {
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  border: 1px solid #ffffff14;
+  border-radius: 8px;
+}
+.board-cards-picker ul button {
+  width: 100%;
+  min-height: 38px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #e6e6e8;
+  text-align: left;
+}
+.board-cards-picker ul button:hover {
+  background: #ffffff0f;
+}
+.board-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.board-chips > span,
+.board-chips > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid #ffffff1f;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #d1d2d5;
+}
+.board-chips > a.wanted {
+  border-color: #f0f0f1;
+  color: #f0f0f1;
+}
+.board-chips button {
+  display: inline-flex;
+  border: 0;
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+.board-item {
+  display: grid;
+  gap: 8px;
+  padding: 16px 0;
+  border-bottom: 1px solid #ffffff0d;
+}
+.board-item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.board-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+.board-meta a {
+  color: #e6e6e8;
+  font-weight: 600;
+}
+.board-meta small {
+  color: #8f8f97;
+}
+.board-kind {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #ffffff14;
+  font-weight: 700;
+}
+.board-offer .board-kind {
+  background: #f0f0f1;
+  color: #1b1b1e;
+}
+
+/* Booster à thème. */
+.themed-booster {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+.themed-winter {
+  background: linear-gradient(135deg, #1b2838 0%, #171718 60%) !important;
+  border: 1px solid #9fd4ff26 !important;
+  border-radius: 14px !important;
+  padding: 24px !important;
+}
+.themed-pack {
+  display: grid;
+  place-items: center;
+  transform: rotate(-4deg) scale(0.9);
+}
+.themed-body h2 {
+  font-size: 26px;
+  margin: 8px 0;
+}
+.themed-body .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #bfe3ff;
+}
+.themed-window {
+  font-size: 13px;
+  color: #bfe3ff;
+}
+.themed-rates {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0;
+}
+.themed-rates div {
+  padding: 8px;
+  border: 1px solid #ffffff12;
+  border-radius: 8px;
+}
+.themed-rates dt {
+  font-size: 11px;
+  color: #9b9ba3;
+}
+.themed-rates dd {
+  margin: 2px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.themed-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Profil : titres et guilde. */
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.profile-tags span {
+  padding: 3px 10px;
+  border: 1px solid #ffffff24;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.profile-tags .profile-title {
+  border-color: #e9d29b;
+  color: #e9d29b;
+}
+@media (max-width: 700px) {
+  .streak-days {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .milestone-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .themed-booster {
+    grid-template-columns: 1fr;
+  }
+  .themed-pack {
+    transform: rotate(-4deg) scale(0.7);
+    margin: -40px 0;
+  }
+  .themed-rates {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

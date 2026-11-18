@@ -11,6 +11,8 @@ const sections = [
   'settings',
   'trade',
   'exchanges',
+  'guild',
+  'board',
   'worlds',
   'events',
   'leaderboards',

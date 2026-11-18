@@ -33,6 +33,8 @@ export type Player = {
   wishlist?: string[];
   showcase?: string[];
   boost?: import('./boosts').Boost;
+  streak?: import('./streak').Streak;
+  titles?: string[];
   finance?: import('./finance').FinanceState;
   munny: number;
   tickets: number;
