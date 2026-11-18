@@ -76,14 +76,16 @@ describe('fusion et statistiques', () => {
     expect(fusionCost({})).toBe(500);
     expect(fusionCost({ fusion: 4 })).toBe(2500);
     const target = copy();
-    expect(fusionFodder(copy({ id: 'b' }), target)).toBe(true);
-    expect(fusionFodder(copy({ id: 'b', locked: true }), target)).toBe(false);
-    expect(fusionFodder(copy({ id: 'b', holo: true }), target)).toBe(false);
-    expect(fusionFodder(copy({ id: 'b', level: 2 }), target)).toBe(false);
-    expect(fusionFodder(copy({ id: 'b', cardId: cards[1].id }), target)).toBe(
+    expect(fusionFodder(copy({ id: 'b' }), target, [])).toBe(true);
+    expect(fusionFodder(copy({ id: 'b', locked: true }), target, [])).toBe(
       false,
     );
-    expect(fusionFodder(target, target)).toBe(false);
+    expect(fusionFodder(copy({ id: 'b', holo: true }), target, [])).toBe(false);
+    expect(fusionFodder(copy({ id: 'b', level: 2 }), target, [])).toBe(false);
+    expect(
+      fusionFodder(copy({ id: 'b', cardId: cards[1].id }), target, []),
+    ).toBe(false);
+    expect(fusionFodder(target, target, [])).toBe(false);
   });
 });
 

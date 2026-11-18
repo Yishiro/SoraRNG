@@ -59,7 +59,9 @@ export default function CopyWorkshop({
   const steps = Math.min(Math.max(1, levels), Math.max(1, room));
   const cost = upgradeCost(copy.level, steps);
   const awaken = awakeningNeed(copy);
-  const fodder = player.copies.filter((c) => awakeningFodder(c, copy));
+  const fodder = player.copies.filter((c) =>
+    awakeningFodder(c, copy, player.showcase ?? []),
+  );
   const protectedCopy = !recyclable(copy, player);
   const [armed, setArmed] = useState(false);
   useEffect(() => {
@@ -250,7 +252,7 @@ export default function CopyWorkshop({
                   <small>
                     {fodder.length} disponible{fodder.length > 1 ? 's' : ''}{' '}
                     (niveau 1, sans éveil ni fusion, ni holo, ni verrou, ni
-                    favori)
+                    favori, ni en vitrine)
                   </small>
                   <button
                     className="outline"
@@ -295,6 +297,7 @@ export default function CopyWorkshop({
             card={card}
             copy={copy}
             copies={player.copies}
+            showcase={player.showcase ?? []}
             munny={player.munny}
             busy={busy}
             onFuse={(duplicateId) =>

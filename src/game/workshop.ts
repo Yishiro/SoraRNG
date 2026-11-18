@@ -36,9 +36,15 @@ export function affordableLevels(
 }
 
 // Doublon consommable par un éveil : exemplaire standard, jamais protégé.
-export function awakeningFodder(copy: Copy, target: Copy) {
+// Un exemplaire exposé en vitrine n'est jamais consommé.
+export function awakeningFodder(
+  copy: Copy,
+  target: Copy,
+  showcase: readonly string[],
+) {
   return (
     copy.id !== target.id &&
+    !showcase.includes(copy.id) &&
     copy.cardId === target.cardId &&
     !copy.locked &&
     !copy.favorite &&

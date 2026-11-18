@@ -74,9 +74,15 @@ export function copyStats(card: Card, copy: Copy): Stats {
 }
 
 // Un doublon consommable : même modèle, exemplaire standard et non protégé.
-export function fusionFodder(copy: Copy, target: Copy) {
+// Un exemplaire exposé en vitrine n'est jamais consommé.
+export function fusionFodder(
+  copy: Copy,
+  target: Copy,
+  showcase: readonly string[],
+) {
   return (
     copy.id !== target.id &&
+    !showcase.includes(copy.id) &&
     copy.cardId === target.cardId &&
     !copy.locked &&
     !copy.favorite &&

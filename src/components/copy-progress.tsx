@@ -40,10 +40,9 @@ export default function CopyProgress({
             <small>/{card.maxLevel}</small>
           </strong>
         )}
-        <span
-          className="awakening-stars"
-          aria-label={`Éveil ${copy.awakening} sur 5`}
-        >
+        <span className="awakening-stars">
+          {/* Texte lu par les lecteurs d'écran ; les étoiles restent visuelles. */}
+          <span className="sr-only">Éveil {copy.awakening}/5</span>
           {[1, 2, 3, 4, 5].map((n) => (
             <span
               key={n}

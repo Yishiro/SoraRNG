@@ -247,3 +247,14 @@ model Announcement {
   @@index([status, expiresAt], map: "Announcement_active")
   @@index([playerId, status], map: "Announcement_player")
 }
+
+model GuildContribution {
+  guildId   String
+  playerId  String
+  week      String
+  boosters  Int      @default(0)
+  updatedAt DateTime @default(now()) @db.Timestamptz
+
+  @@id([guildId, playerId, week])
+  @@index([guildId, week], map: "GuildContribution_week")
+}

@@ -101,6 +101,8 @@ export default function Trades({
       }
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Erreur');
+      // Le serveur a pu remettre l'offre à jour (carte modifiée) : on la recharge.
+      await load().catch(() => undefined);
     } finally {
       pending.current = false;
       setBusy(false);

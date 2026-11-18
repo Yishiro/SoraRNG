@@ -23,7 +23,11 @@ import {
 } from '../game/themed-boosters';
 import { claimStreak } from '../game/streak';
 import { codexClaimKey, codexRewardStatus } from '../game/codex-rewards';
-import { communityAction, communityKinds } from './community';
+import {
+  communityAction,
+  communityKinds,
+  recordGuildContribution,
+} from './community';
 import {
   awakeningFodder,
   awakeningNeed,
@@ -179,6 +183,7 @@ export async function mutate(
         ]),
       ];
       p.summons += count;
+      await recordGuildContribution(db, id, boosters, now);
       const version = (
         await db.query('SELECT version FROM "Catalogue" WHERE id=$1', [
           'standard',
@@ -275,9 +280,9 @@ export async function mutate(
       if (!target || !fodder) throw new Error('Exemplaire introuvable');
       if (fusionRank(target) >= fusion.maxRank)
         throw new Error('Fusion maximale atteinte');
-      if (!fusionFodder(fodder, target))
+      if (!fusionFodder(fodder, target, p.showcase ?? []))
         throw new Error(
-          'Le doublon doit être un exemplaire standard du même modèle, ni verrouillé, ni favori.',
+          'Le doublon doit être un exemplaire standard du même modèle, ni verrouillé, ni favori, ni en vitrine.',
         );
       requireFunds(p, fusionCost(target));
       p.copies = p.copies.filter((c) => c.id !== fodder.id);
@@ -387,7 +392,7 @@ export async function mutate(
             p.fragments -= fragments;
           } else {
             const duplicates = p.copies
-              .filter((c) => awakeningFodder(c, copy))
+              .filter((c) => awakeningFodder(c, copy, p.showcase ?? []))
               .slice(0, needed);
             if (duplicates.length !== needed)
               throw new Error('Doublons standards disponibles insuffisants');

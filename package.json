@@ -29,6 +29,7 @@
     "assets:local": "node scripts/prepare-local-card-assets.mjs",
     "test:integration": "tsx --env-file=.env scripts/test-game.ts",
     "test:auth": "tsx scripts/test-auth-integration.ts",
+    "test:community": "tsx --env-file=.env scripts/test-community.ts",
     "test:admin": "tsx --env-file=.env scripts/test-admin-integration.ts",
     "auth:check": "tsx scripts/check-auth-config.ts",
     "typecheck": "tsc --noEmit",

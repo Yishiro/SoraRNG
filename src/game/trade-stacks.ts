@@ -58,3 +58,22 @@ export function selectStackQuantity(
     throw new Error('Une offre contient au maximum 50 exemplaires');
   return result;
 }
+
+// Deux états d'un même exemplaire sont équivalents pour un échange si rien de
+// ce que l'autre joueur a accepté n'a changé : modèle, finition, niveau, éveil,
+// fusion et points de statistiques répartis.
+export function sameTradeCopy(a: Copy, b: Copy) {
+  const bonus = (c: Copy) =>
+    (['hp', 'atk', 'def', 'spd'] as const)
+      .map((k) => c.bonus?.[k] ?? 0)
+      .join(',');
+  return (
+    a.id === b.id &&
+    a.cardId === b.cardId &&
+    a.holo === b.holo &&
+    a.level === b.level &&
+    a.awakening === b.awakening &&
+    (a.fusion ?? 0) === (b.fusion ?? 0) &&
+    bonus(a) === bonus(b)
+  );
+}

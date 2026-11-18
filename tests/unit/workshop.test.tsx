@@ -34,9 +34,11 @@ describe('atelier', () => {
   });
   it('ne consomme jamais un exemplaire fusionné ou protégé pour un éveil', () => {
     const target = copy({ id: 't' });
-    expect(awakeningFodder(copy({ id: 'b' }), target)).toBe(true);
-    expect(awakeningFodder(copy({ id: 'b', fusion: 1 }), target)).toBe(false);
-    expect(awakeningFodder(copy({ id: 'b', favorite: true }), target)).toBe(
+    expect(awakeningFodder(copy({ id: 'b' }), target, [])).toBe(true);
+    expect(awakeningFodder(copy({ id: 'b', fusion: 1 }), target, [])).toBe(
+      false,
+    );
+    expect(awakeningFodder(copy({ id: 'b', favorite: true }), target, [])).toBe(
       false,
     );
   });

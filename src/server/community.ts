@@ -16,23 +16,38 @@ import {
 
 type Db = Pool | PoolClient;
 
-export async function guildBoosters(
-  db: Db,
-  guildId: string,
-  start: Date,
-  end: Date,
-) {
-  // Seules les ouvertures faites après l'arrivée du membre dans la guilde comptent.
+// Total d'une guilde pour une semaine, depuis les contributions conservées :
+// les ouvertures d'un membre parti restent acquises à la guilde.
+export async function guildBoosters(db: Db, guildId: string, week: string) {
   const row = (
     await db.query(
-      `SELECT COALESCE(SUM(COALESCE((o.result->>'boosterCount')::int,1)),0)::int AS boosters
-         FROM "Operation" o JOIN "GuildMember" m ON m."playerId"=o."playerId"
-        WHERE m."guildId"=$1 AND o.kind='summon'
-          AND o."createdAt">=GREATEST($2::timestamptz,m."joinedAt") AND o."createdAt"<$3`,
-      [guildId, start, end],
+      'SELECT COALESCE(SUM(boosters),0)::int AS boosters FROM "GuildContribution" WHERE "guildId"=$1 AND week=$2',
+      [guildId, week],
     )
   ).rows[0];
   return Number(row.boosters) || 0;
+}
+
+// Appelée dans la transaction d'une ouverture : la contribution va à la guilde
+// du joueur à cet instant, et à elle seule (un joueur n'a qu'une guilde).
+export async function recordGuildContribution(
+  db: PoolClient,
+  playerId: string,
+  boosters: number,
+  now: number,
+) {
+  const member = (
+    await db.query('SELECT "guildId" FROM "GuildMember" WHERE "playerId"=$1', [
+      playerId,
+    ])
+  ).rows[0];
+  if (!member) return;
+  await db.query(
+    `INSERT INTO "GuildContribution" ("guildId","playerId",week,boosters) VALUES ($1,$2,$3,$4)
+     ON CONFLICT ("guildId","playerId",week)
+     DO UPDATE SET boosters="GuildContribution".boosters+EXCLUDED.boosters,"updatedAt"=now()`,
+    [member.guildId, playerId, guildWeek(new Date(now)).key, boosters],
+  );
 }
 
 export async function membership(db: Db, playerId: string) {
@@ -70,13 +85,8 @@ export async function guildOverview(
       [mine.guildId],
     )
   ).rows;
-  const progress = await guildBoosters(db, mine.guildId, week.start, week.end);
-  const last = await guildBoosters(
-    db,
-    mine.guildId,
-    previous.start,
-    previous.end,
-  );
+  const progress = await guildBoosters(db, mine.guildId, week.key);
+  const last = await guildBoosters(db, mine.guildId, previous.key);
   return {
     guilds,
     mine: {
@@ -259,12 +269,7 @@ export async function communityAction(
       throw new Error(
         'Il fallait avoir rejoint la guilde au moins 72 h avant la fin de la semaine.',
       );
-    const boosters = await guildBoosters(
-      db,
-      mine.guildId,
-      previous.start,
-      previous.end,
-    );
+    const boosters = await guildBoosters(db, mine.guildId, previous.key);
     if (boosters < guildRules.weeklyBoosters)
       throw new Error('L’objectif de la semaine passée n’a pas été atteint.');
     p.claimed.push(key);

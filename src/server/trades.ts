@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import type { Copy, Player } from '../game/core';
+import { sameTradeCopy } from '../game/trade-stacks';
 import { pool } from './game';
 import { PlayerSuspended } from './permissions';
 export type TradeState = {
@@ -24,6 +25,7 @@ export async function tradeAction(
   input: { id?: string; target?: string; copies?: string[]; revision?: number },
 ) {
   const db = await pool.connect();
+  let committed = false;
   try {
     await db.query('BEGIN');
     if (action === 'invite') {
@@ -100,41 +102,63 @@ export async function tradeAction(
         s.offers[userId] = copies as Copy[];
         s.locked = [];
         s.confirmed = [];
-      } else if (action === 'lock') {
-        if (!s.offers[trade.a].length && !s.offers[trade.b].length)
+      } else if (action === 'lock' || action === 'confirm') {
+        if (
+          action === 'lock' &&
+          !s.offers[trade.a].length &&
+          !s.offers[trade.b].length
+        )
           throw new Error('Proposez au moins une carte avant de valider.');
-        if (!s.locked.includes(userId)) s.locked.push(userId);
-      } else if (action === 'confirm') {
-        if (s.locked.length !== 2)
+        if (action === 'confirm' && s.locked.length !== 2)
           throw new Error('Les deux offres doivent être verrouillées');
-        if (!s.confirmed.includes(userId)) s.confirmed.push(userId);
-        if (s.confirmed.length === 2) {
-          const rows = (
-            await db.query(
-              'SELECT id,state FROM "Player" WHERE id=ANY($1::text[]) ORDER BY id FOR UPDATE',
-              [[trade.a, trade.b]],
-            )
-          ).rows as { id: string; state: Player }[];
-          for (const owner of rows) {
-            if (owner.state.moderation?.suspended) throw new PlayerSuspended();
-            for (const offered of s.offers[owner.id]) {
-              const current = owner.state.copies.find(
-                (c) => c.id === offered.id,
-              );
-              if (
-                !current ||
-                current.locked ||
-                current.cardId !== offered.cardId ||
-                current.level !== offered.level ||
-                current.awakening !== offered.awakening ||
-                current.holo !== offered.holo ||
-                (current.fusion ?? 0) !== (offered.fusion ?? 0)
-              )
-                throw new Error(
-                  'Une carte proposée a changé ou n’est plus disponible',
-                );
+        // Les deux joueurs sont verrouillés dans l'ordre des identifiants, comme
+        // au transfert, puis chaque carte proposée est comparée à son état actuel.
+        const rows = (
+          await db.query(
+            'SELECT id,state FROM "Player" WHERE id=ANY($1::text[]) ORDER BY id FOR UPDATE',
+            [[trade.a, trade.b]],
+          )
+        ).rows as { id: string; state: Player }[];
+        const players = new Map(rows.map((row) => [row.id, row.state]));
+        let changed = false;
+        for (const owner of [trade.a, trade.b]) {
+          const state = players.get(owner);
+          const current: Copy[] = [];
+          for (const offered of s.offers[owner]) {
+            const copy = state?.copies.find((c) => c.id === offered.id);
+            if (!copy || copy.locked) {
+              changed = true;
+              continue;
             }
+            if (!sameTradeCopy(copy, offered)) changed = true;
+            current.push(copy);
           }
+          s.offers[owner] = current;
+        }
+        if (changed) {
+          // Une carte a été modifiée, verrouillée ou n'est plus disponible :
+          // l'offre affichée est mise à jour et les deux joueurs doivent revalider.
+          s.locked = [];
+          s.confirmed = [];
+          s.revision++;
+          await db.query('UPDATE "Trade" SET state=$2 WHERE id=$1', [
+            trade.id,
+            JSON.stringify(s),
+          ]);
+          await db.query('COMMIT');
+          committed = true;
+          throw new Error(
+            'Une carte proposée a changé ou n’est plus disponible : les deux joueurs doivent revalider l’échange.',
+          );
+        }
+        if (action === 'lock') {
+          if (!s.locked.includes(userId)) s.locked.push(userId);
+        } else {
+          if (!s.confirmed.includes(userId)) s.confirmed.push(userId);
+        }
+        if (action === 'confirm' && s.confirmed.length === 2) {
+          for (const owner of rows)
+            if (owner.state.moderation?.suspended) throw new PlayerSuspended();
           for (const owner of rows) {
             const other = owner.id === trade.a ? trade.b : trade.a;
             owner.state.copies = owner.state.copies.filter(
@@ -189,7 +213,7 @@ export async function tradeAction(
     await db.query('COMMIT');
     return { ...trade, state: s };
   } catch (error) {
-    await db.query('ROLLBACK');
+    if (!committed) await db.query('ROLLBACK');
     throw error;
   } finally {
     db.release();

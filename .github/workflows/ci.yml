@@ -71,6 +71,7 @@ jobs:
       - run: pnpm db:deploy
       - run: pnpm catalog:import
       - run: pnpm test:integration
+      - run: pnpm test:community
       # test:auth démarre l'application avec `next start` : le build doit exister.
       - run: pnpm build
       - run: pnpm test:auth

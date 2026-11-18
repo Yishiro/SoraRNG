@@ -26,6 +26,7 @@ export default function CopyFusion({
   card,
   copy,
   copies,
+  showcase,
   munny,
   busy,
   onFuse,
@@ -34,6 +35,7 @@ export default function CopyFusion({
   card: Card;
   copy: Copy;
   copies: Copy[];
+  showcase: readonly string[];
   munny: number;
   busy: boolean;
   onFuse: (duplicateId: string) => void;
@@ -42,7 +44,7 @@ export default function CopyFusion({
   const stats = copyStats(card, copy);
   const rank = fusionRank(copy);
   const points = unspentPoints(copy);
-  const fodder = copies.filter((c) => fusionFodder(c, copy));
+  const fodder = copies.filter((c) => fusionFodder(c, copy, showcase));
   const [choice, setChoice] = useState('');
   const duplicate = fodder.find((c) => c.id === choice) ?? fodder[0];
   const cost = fusionCost(copy);
@@ -122,7 +124,7 @@ export default function CopyFusion({
       ) : (
         <p className="fusion-note">
           Pour fusionner, il faut un doublon standard de ce modèle : niveau 1,
-          sans éveil, ni holographique, ni verrouillé, ni favori.
+          sans éveil, ni holographique, ni verrouillé, ni favori, ni en vitrine.
         </p>
       )}
     </section>
