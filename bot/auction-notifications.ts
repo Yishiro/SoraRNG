@@ -5,7 +5,7 @@ export type PendingNotice = {
   id: string;
   playerId: string;
   auctionId: string;
-  kind: 'outbid' | 'won' | 'sold' | 'unsold';
+  kind: 'outbid' | 'won' | 'sold' | 'unsold' | 'wishlist';
   payload: AuctionNotice;
   attempts: number;
   name?: string;
@@ -33,6 +33,10 @@ export function noticeMessage(
     unsold: [
       'Votre enchère est terminée',
       'Aucune offre reçue : votre carte est de retour dans votre collection.',
+    ],
+    wishlist: [
+      'Une carte de votre liste est en vente',
+      `Mise de départ : **${amount} Munny**. L’enchère dure 24 heures.`,
     ],
   }[notice.kind];
   return {

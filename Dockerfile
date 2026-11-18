@@ -18,14 +18,12 @@ CMD ["pnpm", "db:deploy"]
 # Independent Discord process; no website or OAuth secrets are copied here.
 FROM dependencies AS discord-bot
 COPY --chown=node:node bot ./bot
-COPY --chown=node:node src/game/config.ts src/game/finance.ts ./src/game/
-COPY --chown=node:node src/game/market-query.ts ./src/game/
-COPY --chown=node:node src/game/showcase.ts ./src/game/
-COPY --chown=node:node src/game/core.ts src/game/assets.ts src/game/card-legends.ts ./src/game/
+# Le bot exécute les mêmes actions que le site (src/server/play.ts) : il reçoit
+# donc toute la logique de jeu et serveur, sans les secrets OAuth du site.
+COPY --chown=node:node src/game ./src/game
+COPY --chown=node:node src/server ./src/server
 COPY --chown=node:node card-assets.json ./card-assets.json
 COPY --chown=node:node data/card-legends.fr.json ./data/card-legends.fr.json
-COPY --chown=node:node src/server/wallet-audit.ts src/server/auction-notifications.ts src/server/auctions.ts src/server/finance.ts src/server/permissions.ts src/server/auth-policy.ts ./src/server/
-COPY --chown=node:node src/server/auction-history.ts ./src/server/
 USER node
 CMD ["pnpm", "exec", "tsx", "bot/index.ts"]
 

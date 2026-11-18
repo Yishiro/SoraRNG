@@ -18,6 +18,7 @@ import { botConfig } from './config';
 import { botReply, replyVisibility } from './replies';
 import { handleEconomy } from './economy';
 import { handleCollector } from './collector';
+import { handleProgression } from './progression';
 import { CollectorStore } from './collector-store';
 import { AuctionService } from '../src/server/auctions';
 import { FinanceService } from '../src/server/finance';
@@ -40,6 +41,12 @@ async function main() {
     team?: { owner_user_id: string };
   };
   const finance = new FinanceService(db);
+  // Actions du jeu partagées avec le site (même transaction, même idempotence).
+  const progressionDeps = {
+    play: await import('../src/server/play'),
+    community: await import('../src/server/community'),
+    seasons: await import('../src/server/seasons'),
+  };
   const collector = new CollectorStore(db);
   const auctions = new AuctionService(db);
   let settlingAuctions = false;
@@ -211,6 +218,8 @@ async function main() {
         else await challenges.configure(interaction);
         return;
       }
+      if (await handleProgression(interaction, progressionDeps, config.site))
+        return;
       if (await handleEconomy(interaction, finance)) return;
       if (await handleCollector(interaction, collector, finance, config.site))
         return;

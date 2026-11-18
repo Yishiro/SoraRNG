@@ -78,8 +78,8 @@ test('collection is public while profile responses stay private', () => {
 });
 test('bot command declarations are unique and config never echoes invalid secrets', () => {
   const names = commands.map((c) => c.name);
-  expect(names).toHaveLength(26);
-  expect(new Set(names).size).toBe(26);
+  expect(names).toHaveLength(30);
+  expect(new Set(names).size).toBe(30);
   expect(names).toContain('defi-maintenant');
   expect(names).toContain('defis');
   expect(names).not.toContain('ajouter-argent');
@@ -98,6 +98,10 @@ test('bot command declarations are unique and config never echoes invalid secret
       'profile',
       'collection',
       'leaderboard',
+      'quetes',
+      'serie',
+      'guilde',
+      'saison',
       'help',
       'hourly',
       'daily',

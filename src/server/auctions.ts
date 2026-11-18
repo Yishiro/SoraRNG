@@ -288,11 +288,11 @@ export class AuctionService {
             new Date(this.now() + 86400000),
           ],
         );
-        // Alerte de liste de souhaits, visible sur le site uniquement (statut
-        // « ignored » : le bot Discord ne l'envoie pas en message privé).
+        // Alerte de liste de souhaits : visible sur le site et envoyée en
+        // message privé par le bot, sauf si le joueur a bloqué ses MP.
         await db.query(
           `INSERT INTO "AuctionNotification" (id,"playerId",kind,"auctionId",payload,status)
-           SELECT md5($1 || ':' || p.id),p.id,'wishlist',$1,$2,'ignored' FROM "Player" p
+           SELECT md5($1 || ':' || p.id),p.id,'wishlist',$1,$2,'pending' FROM "Player" p
             WHERE p.id<>$3 AND COALESCE(p.state->'wishlist','[]'::jsonb) ? $4
               AND COALESCE(p.state#>>'{moderation,suspended}','false')<>'true'
            ON CONFLICT (id) DO NOTHING`,

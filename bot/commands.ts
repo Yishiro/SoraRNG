@@ -7,7 +7,7 @@ const basics = [
   ['play', 'Ouvrir le site et les boosters SoraRNG'],
   ['profile', 'Afficher votre profil global'],
   ['collection', 'Consulter votre collection globale'],
-  ['leaderboard', 'Classement — en construction'],
+  ['leaderboard', 'Classement de la saison en cours'],
   ['help', 'Aide et commandes SoraRNG'],
 ] as const;
 const builders = basics.map(([name, description]) =>
@@ -225,6 +225,31 @@ const donation = new SlashCommandBuilder()
       .setDescription('Montant entier, all ou tout (tout le disponible)')
       .setRequired(true),
   );
+const progression = [
+  new SlashCommandBuilder()
+    .setName('quetes')
+    .setDescription(
+      'Vos quêtes du jour ou de la semaine, à réclamer en un clic',
+    )
+    .addStringOption((option) =>
+      option
+        .setName('periode')
+        .setDescription('Journalières par défaut')
+        .addChoices(
+          { name: 'Journalières', value: 'jour' },
+          { name: 'Hebdomadaires', value: 'semaine' },
+        ),
+    ),
+  new SlashCommandBuilder()
+    .setName('serie')
+    .setDescription('Réclamer la récompense de votre série de connexion'),
+  new SlashCommandBuilder()
+    .setName('guilde')
+    .setDescription('Progression hebdomadaire de votre guilde'),
+  new SlashCommandBuilder()
+    .setName('saison')
+    .setDescription('Classement de la saison mensuelle et votre rang'),
+];
 export const commands = [
   new SlashCommandBuilder()
     .setName('defi-maintenant')
@@ -262,6 +287,7 @@ export const commands = [
   donation,
   ...builders,
   ...collectorCommands,
+  ...progression,
   balance,
   bank,
   roulette,

@@ -27,7 +27,7 @@ const base: PendingNotice = {
     },
   },
 };
-test.each(['outbid', 'won', 'sold', 'unsold'] as const)(
+test.each(['outbid', 'won', 'sold', 'unsold', 'wishlist'] as const)(
   'notification %s has no mentions and uses the stable Discord nonce',
   (kind) => {
     const message = noticeMessage({ ...base, kind }, 'https://example.com');

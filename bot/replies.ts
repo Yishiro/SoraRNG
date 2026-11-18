@@ -58,7 +58,7 @@ export async function botReply(
         embed
           .setTitle('Les commandes de SoraRNG')
           .setDescription(
-            '/play — Ouvrir le site et les boosters\n/profile — Consulter vos ressources et votre progression\n/collection — Partager votre collection dans le salon\n/leaderboard — Classement en construction\n/solde [pseudo] — Portefeuille et épargne, visibles par tout le salon\n/hourly · /daily · /weekly · /monthly — Bonus\n/banque — Déposer ou retirer\n/roulette · /guess — Jouer contre le bot\n/coinflip · /duel-des — Défier un joueur\n/help — Afficher cette aide',
+            '/play — Ouvrir le site et les boosters\n/profile — Consulter vos ressources et votre progression\n/collection — Partager votre collection dans le salon\n/quetes — Quêtes du jour ou de la semaine\n/serie — Série de connexion\n/guilde — Progression de votre guilde\n/saison · /leaderboard — Classement de la saison\n/solde [pseudo] — Portefeuille et épargne, visibles par tout le salon\n/hourly · /daily · /weekly · /monthly — Bonus\n/banque — Déposer ou retirer\n/roulette · /guess — Jouer contre le bot\n/coinflip · /duel-des — Défier un joueur\n/help — Afficher cette aide',
           )
           .addFields(
             {
