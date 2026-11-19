@@ -26,6 +26,7 @@ import {
   Menu,
   Search,
   RotateCcw,
+  Swords,
 } from 'lucide-react';
 import type { Card, Copy, Player } from '../game/core';
 import {
@@ -65,6 +66,7 @@ import Board from './board';
 import ThemedBoosters from './themed-boosters';
 import RecycleWorkshop from './recycle-workshop';
 import Leaderboards from './leaderboards';
+import Arena from './arena';
 import Events from './events';
 import ActivityFeed from './activity-feed';
 import Quests from './quests';
@@ -104,6 +106,8 @@ const pageDescriptions: Record<string, string> = {
     'Vendez vos cartes et enchérissez sur celles des autres collectionneurs.',
   missions: 'Consultez vos objectifs et récupérez les récompenses disponibles.',
   shop: 'Échangez vos Munny contre des tickets et des fragments.',
+  arena:
+    'Composez votre équipe et affrontez les défenses des autres joueurs de votre ligue.',
   leaderboards: 'La saison du mois, son podium et les meilleures collections.',
   events: 'Les rendez-vous de l’équipe et l’actualité des collectionneurs.',
   settings: 'Adaptez les animations et gérez votre connexion.',
@@ -142,6 +146,7 @@ const nav = [
   ['worlds', 'Carnet des mondes', MapIcon],
   ['shop', 'Boutique', ShoppingBag],
   ['missions', 'Missions', ScrollText],
+  ['arena', 'Arène', Swords],
   ['leaderboards', 'Classements', Trophy],
   ['events', 'Événements', Star],
   ['settings', 'Paramètres', Settings],
@@ -1151,6 +1156,12 @@ export default function Game({ section }: { section: string }) {
                   Se connecter avec Discord
                 </button>
               </section>
+            ))}
+          {section === 'arena' &&
+            (player && data ? (
+              <Arena player={player} playerId={data.id} cards={cards} />
+            ) : (
+              <p>Connectez-vous avec Discord pour entrer dans l’arène.</p>
             ))}
           {section === 'leaderboards' && <Leaderboards playerId={data?.id} />}
           {section === 'events' && (

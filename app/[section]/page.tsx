@@ -15,6 +15,7 @@ const sections = [
   'board',
   'worlds',
   'events',
+  'arena',
   'leaderboards',
   'admin',
 ];

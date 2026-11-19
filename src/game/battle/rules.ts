@@ -23,6 +23,12 @@ export const pvpRules = {
   },
   arena: {
     attacksPerDay: 10,
+    // Un combat d'arène non terminé compte comme un abandon au bout de 30 min :
+    // impossible de quitter un combat perdu pour protéger son classement.
+    staleMs: 30 * 60 * 1000,
+    opponentsShown: 8,
+    // Récompense mensuelle : avoir livré au moins un combat d'arène dans le mois.
+    monthlyMinBattles: 1,
   },
   elo: {
     start: 1000,

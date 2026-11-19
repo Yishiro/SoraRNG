@@ -8309,3 +8309,227 @@ a.workshop-chip {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* Arène PvP : équipe, adversaires, combat. */
+.arena-hero h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 28px;
+}
+.arena-rules,
+.arena-hint {
+  color: var(--muted);
+  font-size: 13px;
+}
+.arena-roster {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+.arena-pick {
+  display: grid;
+  gap: 3px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ffffff1a;
+  border-radius: 10px;
+  background: #ffffff05;
+  color: var(--text);
+  text-align: left;
+}
+.arena-pick small {
+  color: var(--muted);
+  font-size: 11px;
+}
+.arena-pick.active {
+  border-color: var(--gold);
+  background: #ffffff12;
+}
+.arena-pick:disabled {
+  opacity: 0.45;
+}
+.arena-team-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.arena-opponents,
+.arena-recent {
+  display: grid;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+.arena-opponents li,
+.arena-recent li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #ffffff05;
+}
+.arena-opponents small,
+.arena-recent small {
+  color: var(--muted);
+}
+.arena-recent li.won strong {
+  color: #8fd19e;
+}
+.arena-recent li.lost strong {
+  color: #e59a9a;
+}
+.battle-field {
+  display: grid;
+  gap: 14px;
+  margin: 12px 0;
+}
+.battle-fighter {
+  display: grid;
+  gap: 6px;
+  max-width: 420px;
+  padding: 12px 14px;
+  border: 1px solid #ffffff1a;
+  border-radius: 12px;
+  background: #ffffff06;
+}
+.battle-fighter.mine {
+  justify-self: end;
+  width: 100%;
+}
+.battle-fighter-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.battle-fighter small {
+  color: var(--muted);
+}
+.element-chip {
+  padding: 2px 8px;
+  border: 1px solid #ffffff26;
+  border-radius: 999px;
+  font-size: 11px;
+}
+.hp-bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #ffffff14;
+}
+.hp-bar i {
+  display: block;
+  height: 100%;
+  background: #8fd19e;
+  transition: width 0.35s ease;
+}
+.hp-bar.mid i {
+  background: #e2c46f;
+}
+.hp-bar.low i {
+  background: #e07a7a;
+}
+.battle-teams {
+  display: flex;
+  justify-content: space-between;
+}
+.team-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: #8fd19e;
+  opacity: 0.6;
+}
+.team-dot.active {
+  opacity: 1;
+  outline: 2px solid #ffffff55;
+}
+.team-dot.ko {
+  background: #ffffff26;
+}
+.battle-actions h3 {
+  font-size: 15px;
+}
+.battle-moves {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 10px 0;
+}
+.move-button {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid #ffffff1f;
+  border-radius: 10px;
+  background: #ffffff08;
+  color: var(--text);
+  text-align: left;
+}
+.move-button small {
+  color: var(--muted);
+  font-size: 11px;
+}
+.move-button.strong {
+  border-color: #8fd19e88;
+}
+.move-button.weak {
+  opacity: 0.75;
+}
+.battle-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+.battle-result {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  margin: 12px 0;
+}
+.battle-log {
+  display: grid;
+  gap: 4px;
+  max-height: 260px;
+  margin-top: 14px;
+  padding: 10px 12px;
+  overflow-y: auto;
+  border-radius: 10px;
+  background: #00000033;
+  font-size: 13px;
+  list-style: none;
+}
+.battle-log span {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 640px) {
+  .battle-moves {
+    grid-template-columns: 1fr;
+  }
+  .arena-opponents li,
+  .arena-recent li {
+    grid-template-columns: 1fr auto;
+  }
+  .arena-opponents li small,
+  .arena-recent li span {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hp-bar i {
+    transition: none;
+  }
+}

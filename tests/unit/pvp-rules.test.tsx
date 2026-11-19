@@ -38,3 +38,26 @@ describe('règles PvP', () => {
     expect(pvpRules.stake.feePercent).toBe(0);
   });
 });
+
+describe('récit du combat', () => {
+  it('décrit les événements du point de vue du joueur', async () => {
+    const { describeEvent } = await import('../../src/game/battle/log');
+    expect(
+      describeEvent({
+        type: 'move',
+        side: 'a',
+        actor: 'Lyra',
+        move: 'Braise',
+        damage: 12,
+        effectiveness: 2,
+        crit: true,
+      } as never),
+    ).toMatch(/Lyra utilise Braise : 12 dégâts\. Coup critique !/);
+    expect(describeEvent({ type: 'end', winner: 'b' } as never)).toBe(
+      'Défaite…',
+    );
+    expect(
+      describeEvent({ type: 'switch', side: 'b', from: 'X', to: 'Y' } as never),
+    ).toBe('L’adversaire envoie Y.');
+  });
+});

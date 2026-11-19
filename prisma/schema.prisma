@@ -258,3 +258,48 @@ model GuildContribution {
   @@id([guildId, playerId, week])
   @@index([guildId, week], map: "GuildContribution_week")
 }
+
+model PvpTeam {
+  playerId  String   @id
+  copyIds   Json
+  power     Int
+  league    String
+  updatedAt DateTime @default(now()) @db.Timestamptz
+
+  @@index([league, power], map: "PvpTeam_league")
+}
+
+model PvpRating {
+  playerId    String   @id
+  rating      Int      @default(1000)
+  wins        Int      @default(0)
+  losses      Int      @default(0)
+  draws       Int      @default(0)
+  attackDay   String   @default("")
+  attacksUsed Int      @default(0)
+  updatedAt   DateTime @default(now()) @db.Timestamptz
+}
+
+model PvpBattle {
+  id         String   @id
+  mode       String
+  attackerId String
+  defenderId String
+  state      Json
+  log        Json     @default("[]")
+  status     String   @default("active")
+  winner     String?
+  result     Json?
+  createdAt  DateTime @default(now()) @db.Timestamptz
+  updatedAt  DateTime @default(now()) @db.Timestamptz
+
+  @@index([attackerId, status], map: "PvpBattle_attacker")
+  @@index([defenderId, createdAt], map: "PvpBattle_defender")
+  @@index([status, updatedAt], map: "PvpBattle_finished")
+}
+
+model PvpSettlement {
+  id        String   @id
+  standings Json
+  createdAt DateTime @default(now()) @db.Timestamptz
+}

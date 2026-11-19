@@ -1,6 +1,6 @@
 # Combats PvP — conception
 
-État au 19 novembre 2026. Le moteur de combat est écrit et testé (`src/game/battle/`), mais il n'est encore branché ni au site, ni au bot, ni à la base. Rien n'est déployé.
+État au 19 novembre 2026. Le moteur de combat (`src/game/battle/`) et l'arène asynchrone (page `/arena`, `src/server/arena.ts`, `app/api/arena`) sont écrits et testés. Restent les duels en direct avec mise et les commandes du bot.
 
 ## Décisions du propriétaire
 
@@ -98,3 +98,13 @@ L'écart entre raretés est net, parce que les statistiques de base des cartes r
 3. Interface : page Arène (équipe, adversaires, combat, replay, classement par ligue) et duels directs.
 4. Bot : `/arene`, `/duel-cartes`, `/equipe`.
 5. Tests unitaires, intégrations PostgreSQL (séquestre, abandon, délais, concurrence, Elo) et navigateur.
+
+## Arène (construite le 19 novembre)
+
+- Tables `PvpTeam`, `PvpRating`, `PvpBattle`, `PvpSettlement` (migration `20261119010000_pvp_arena`).
+- L'équipe enregistrée sert à l'attaque et à la défense. Le serveur revalide les cartes à chaque attaque : une carte vendue ou proposée dans un échange impose d'enregistrer l'équipe à nouveau ; côté défense, elle est simplement retirée.
+- Attaque : identifiant de combat choisi par le navigateur (idempotence), un seul combat actif, 10 par jour (jour de Paris), adversaire de la même ligue. La graine du combat n'est jamais envoyée au navigateur.
+- Tour : le numéro de tour attendu rend un double clic sans effet (réponse 409, le combat est rechargé).
+- Un combat laissé plus de 30 min sans action est perdu par abandon.
+- Récompenses : le 1er du mois, top 3 de chaque ligue parmi les joueurs ayant livré au moins un combat dans le mois (hypothèse à confirmer), une opération par mois et par ligue, première période novembre 2026.
+- Tests : `scripts/test-arena.ts` (PostgreSQL), `tests/e2e/arena.spec.ts`, `tests/unit/pvp-rules.test.tsx`.
