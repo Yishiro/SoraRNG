@@ -24,7 +24,7 @@ export const fusion = {
   pointValue: { hp: 5, atk: 2, def: 2, spd: 2 } satisfies Stats,
 } as const;
 
-const rarityBase = [40, 48, 56, 64, 72, 80];
+export const rarityBase = [40, 48, 56, 64, 72, 80];
 
 // Profil propre à chaque carte, stable dans le temps (dérivé de son identifiant).
 // FNV-1a 32 bits : identique côté serveur et navigateur.
