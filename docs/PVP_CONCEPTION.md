@@ -78,10 +78,23 @@ L'écart entre raretés est net, parce que les statistiques de base des cartes r
 4. **Bot** : `/arene`, `/duel-cartes`, `/equipe`, classement.
 5. **Tests** : intégrations PostgreSQL (mises, abandon, double action, concurrence), tests navigateur.
 
-## Décisions à prendre par le propriétaire
+## Règles fixées le 19 novembre (`rules.ts`)
 
-- **Mises des duels** : minimum et maximum, commission éventuelle, et ce qu'il advient de la mise en cas d'abandon ou de délai dépassé.
-- **Classement** : points gagnés ou perdus par combat (type Elo), nombre d'attaques d'arène par jour, récompenses mensuelles du top 3 ou par ligue.
-- **Ligues** : nombre et seuils de puissance (par exemple Bronze < 700, Argent < 900, Or < 1 100, Platine ≥ 1 100).
-- **Composition** : peut-on aligner deux exemplaires du même modèle ? Les cartes en vitrine ou mises aux enchères peuvent-elles combattre ?
-- **Duels directs** : délai par tour (par exemple 60 secondes) et conséquence d'un délai dépassé (action automatique de l'IA ou défaite).
+| Sujet           | Règle                                                                                                                                                                                                       |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mises des duels | 100 à 10 000 Munny, identiques des deux côtés, en séquestre ; le gagnant reçoit les deux mises, sans commission ; match nul : chacun récupère la sienne                                                     |
+| Ligues          | Bronze < 700 · Argent 700–899 · Or 900–1 099 · Platine ≥ 1 100 (puissance de l'équipe) ; l'arène propose des adversaires de la même ligue                                                                   |
+| Classement      | Elo, départ 1 000, K = 40 (± 20 points entre égaux), plancher 100 ; l'attaquant et le défenseur bougent tous les deux                                                                                       |
+| Arène           | 10 attaques par jour ; défendre ne coûte rien                                                                                                                                                               |
+| Duels en direct | 60 s par tour ; délai dépassé : l'IA joue à la place du joueur ; au 3e délai, défaite par abandon                                                                                                           |
+| Abandon         | Abandonner ou dépasser 3 fois le délai donne la victoire et les deux mises à l'adversaire ; invitation non acceptée sous 10 min : annulée, mise rendue                                                      |
+| Récompenses     | Chaque mois, dans chacune des 4 ligues : 15 000 / 10 000 / 5 000 Munny au top 3 (120 000 Munny au plus par mois)                                                                                            |
+| Équipes         | 1 à 3 cartes ; plusieurs exemplaires du même modèle autorisés ; une carte aux enchères (hors de l'inventaire) ou proposée dans un échange en cours ne peut pas combattre ; les cartes en vitrine le peuvent |
+
+## Prochaines étapes de construction
+
+1. Migration : `PvpTeam` (équipe de défense), `PvpRating` (Elo, ligue, attaques du jour), `PvpBattle` (graine, état, actions, mise, statut, délais), réglement mensuel comme pour la saison.
+2. Serveur : composer et enregistrer son équipe, attaquer en arène (adversaire de la même ligue, IA en défense, Elo), duels directs (invitation, mise en séquestre, choix simultanés, délais, abandon, versement), récompenses mensuelles par ligue ; tout dans la transaction habituelle avec idempotence.
+3. Interface : page Arène (équipe, adversaires, combat, replay, classement par ligue) et duels directs.
+4. Bot : `/arene`, `/duel-cartes`, `/equipe`.
+5. Tests unitaires, intégrations PostgreSQL (séquestre, abandon, délais, concurrence, Elo) et navigateur.
